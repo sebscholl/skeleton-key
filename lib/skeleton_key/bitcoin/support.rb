@@ -68,6 +68,9 @@ module SkeletonKey
       # @return [String] base58check-encoded xprv
       def serialize_xprv(k_int, chain_code, depth:, parent_fpr:, child_num:)
         priv_version = version_byte(network: @network, purpose: @purpose, private: true)
+
+        puts "Used priv_version: #{priv_version.unpack1("H*")}"
+
         payload = priv_version +
                   [depth].pack("C") +
                   parent_fpr +
@@ -88,6 +91,9 @@ module SkeletonKey
       # @return [String] base58check-encoded xpub
       def serialize_xpub(pubkey_bytes, chain_code, depth:, parent_fpr:, child_num:)
         pub_version = version_byte(network: @network, purpose: @purpose)
+
+        puts "Used pub_version: #{pub_version.unpack1("H*")}"
+
         payload = pub_version +
                   [depth].pack("C") +
                   parent_fpr +

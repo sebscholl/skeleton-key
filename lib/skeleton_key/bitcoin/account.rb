@@ -79,22 +79,22 @@ module SkeletonKey
         child  = 0
 
         # purpose'
+        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
         child = (0x8000_0000 | purpose)
         k, c = ckd_priv(k, c, child)
         depth += 1
-        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
 
         # coin'
+        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
         child = (0x8000_0000 | coin_type)
         k, c = ckd_priv(k, c, child)
         depth += 1
-        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
 
         # account'
+        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
         child = (0x8000_0000 | account)
         k, c = ckd_priv(k, c, child)
         depth += 1
-        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
 
         pub = privkey_to_pubkey_compressed(k)
 
@@ -102,7 +102,7 @@ module SkeletonKey
           k_int: k,
           c: c,
           xprv: serialize_xprv(k, c, depth: depth, parent_fpr: fpr, child_num: child),
-          xpub: serialize_xpub(pub, c, depth: depth, parent_fpr: fpr, child_num: child)
+          xpub: serialize_xpub(pub, c, depth: depth, parent_fpr: fpr, child_num: child),
         }
       end
     end
