@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "fileutils"
+
+# Ensure we're at the gem's root
+APP_ROOT = File.expand_path("..", __dir__)
+Dir.chdir(APP_ROOT)
+
+# 1. Install dependencies
+system("bundle install") || abort("❌ Bundle install failed")
+
+# 2. Set up local development environment
+FileUtils.mkdir_p("tmp")
+
+# 3. Optionally run binstubs install
+system("bundle binstubs bundler --force")
+
+puts "✅ Setup complete! You can now run:"
+puts "   bin/console     # start a console with SkeletonKey loaded"
+puts "   rake            # run the default rake task (tests/lint)"
