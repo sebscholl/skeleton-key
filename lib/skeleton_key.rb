@@ -14,6 +14,7 @@ require_relative "skeleton_key/utils/hashing"
 require_relative "skeleton_key/utils/encoding"
 
 # Derivation methods
+require_relative "skeleton_key/derivation/path"
 require_relative "skeleton_key/derivation/bip32"
 
 # Core functionality

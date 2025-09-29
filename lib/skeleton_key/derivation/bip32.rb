@@ -76,6 +76,54 @@ module SkeletonKey
         hash160(pubkey_compressed)[0, 4]
       end
 
+      # Serializes an extended private key (xprv)
+      #
+      # @param k_int [Integer] private key as integer
+      # @param chain_code [String] 32-byte chain code
+      # @param depth [Integer] depth in the derivation path
+      # @param parent_fpr [String] 4-byte parent fingerprint
+      # @param child_num [Integer] child index
+      # @param version [Integer] version byte (optional)
+      # @return [String] base58check-encoded xprv
+      def serialize_xprv(k_int, chain_code, depth:, parent_fpr:, child_num:, version: nil)
+        priv_version = version || version_byte(network: @network, purpose: @purpose, private: true)
+
+        payload = [
+          priv_version,
+          [depth].pack("C"),
+          parent_fpr,
+          ser32(child_num),
+          chain_code,
+          "\x00", ser256(k_int)
+        ].map(&:b).join
+
+        base58check_encode(payload)
+      end
+
+      # Serializes an extended public key (xpub)
+      #
+      # @param pubkey_bytes [String] compressed public key (33 bytes)
+      # @param chain_code [String] 32-byte chain code
+      # @param depth [Integer] depth in the derivation path
+      # @param parent_fpr [String] 4-byte parent fingerprint
+      # @param child_num [Integer] child index
+      # @param version [Integer] version byte (optional)
+      # @return [String] base58check-encoded xpub
+      def serialize_xpub(pubkey_bytes, chain_code, depth:, parent_fpr:, child_num:, version: nil)
+        pub_version = version || version_byte(network: @network, purpose: @purpose)
+
+        payload = [
+          pub_version,
+          [depth].pack("C"),
+          parent_fpr,
+          ser32(child_num),
+          chain_code,
+          pubkey_bytes
+        ].map(&:b).join
+
+        base58check_encode(payload)
+      end
+
       # CDKpriv (hardened and non-hardened)
       #
       # @param k_parent_int [Integer] parent private key as integer
