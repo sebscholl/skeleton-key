@@ -1,0 +1,17 @@
+example_id                                              | status | run_time        |
+------------------------------------------------------- | ------ | --------------- |
+./spec/integration/vectors/bitcoin_bip44_spec.rb[1:1:1] | passed | 0.00428 seconds |
+./spec/integration/vectors/bitcoin_bip44_spec.rb[1:1:2] | passed | 0.00474 seconds |
+./spec/integration/vectors/bitcoin_bip44_spec.rb[1:2:1] | passed | 0.00338 seconds |
+./spec/integration/vectors/bitcoin_bip44_spec.rb[1:2:2] | passed | 0.00607 seconds |
+./spec/integration/vectors/bitcoin_bip44_spec.rb[1:3:1] | passed | 0.0291 seconds  |
+./spec/integration/vectors/bitcoin_bip49_spec.rb[1:1:1] | passed | 0.00284 seconds |
+./spec/integration/vectors/bitcoin_bip49_spec.rb[1:1:2] | passed | 0.00284 seconds |
+./spec/integration/vectors/bitcoin_bip49_spec.rb[1:2:1] | passed | 0.00279 seconds |
+./spec/integration/vectors/bitcoin_bip49_spec.rb[1:2:2] | passed | 0.00287 seconds |
+./spec/integration/vectors/bitcoin_bip49_spec.rb[1:3:1] | passed | 0.01569 seconds |
+./spec/integration/vectors/bitcoin_bip84_spec.rb[1:1:1] | passed | 0.00292 seconds |
+./spec/integration/vectors/bitcoin_bip84_spec.rb[1:1:2] | passed | 0.00567 seconds |
+./spec/integration/vectors/bitcoin_bip84_spec.rb[1:2:1] | passed | 0.00461 seconds |
+./spec/integration/vectors/bitcoin_bip84_spec.rb[1:2:2] | passed | 0.00601 seconds |
+./spec/integration/vectors/bitcoin_bip84_spec.rb[1:3:1] | passed | 0.01607 seconds |

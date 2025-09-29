@@ -1,5 +1,6 @@
 # Gem dependencies
 require "base58"
+require "bech32"
 
 # Version
 require_relative "skeleton_key/version"
@@ -29,5 +30,7 @@ require_relative "skeleton_key/bitcoin/account"
 
 module SkeletonKey
   class Error < StandardError; end
-  # Your code goes here...
+
+  # Project root directory
+  ROOT = File.expand_path("..", __dir__)
 end

@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
       f.match(%r{^(bin/|lib/|LICENSE|README)})
     end
   end
-  
+
   spec.bindir        = "bin"
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
@@ -28,4 +28,6 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
   spec.metadata["changelog_uri"] = "#{spec.homepage}/CHANGELOG.md"
+
+  spec.add_development_dependency "rspec", "~> 3.12"
 end

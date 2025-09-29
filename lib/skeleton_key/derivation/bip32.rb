@@ -40,6 +40,7 @@ module SkeletonKey
       # @return [String] compressed public key (33 bytes)
       def privkey_to_pubkey_compressed(k_int)
         raise "invalid privkey" if k_int <= 0 || k_int >= ORDER
+
         bn = OpenSSL::BN.new(k_int.to_s(16), 16)
         point = GROUP.generator.mul(bn)
         point_to_bytes_compressed(point)

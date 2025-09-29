@@ -7,6 +7,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     base58 (0.2.3)
+    bech32 (1.5.0)
+      thor (>= 1.1.0)
     date (3.4.1)
     diff-lcs (1.6.2)
     erb (5.0.2)
@@ -41,13 +43,15 @@ GEM
       rspec-support (~> 3.13.0)
     rspec-support (3.13.6)
     stringio (3.1.7)
+    thor (1.4.0)
 
 PLATFORMS
   ruby
   x86_64-linux
 
 DEPENDENCIES
-  base58
+  base58 (~> 0.2.3)
+  bech32 (~> 1.5)
   irb (~> 1.0)
   rake (~> 13.0)
   rspec (~> 3.0)

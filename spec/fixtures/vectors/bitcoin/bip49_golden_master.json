@@ -1,0 +1,80 @@
+{
+  "coin": "bitcoin",
+  "spec": "bip49",
+  "bip39_seed": "13e3e43b779fc6cda3bd9a1e762768dd3e273389adb81787adbe880341609e88",
+  "purpose": 49,
+  "coin_type": 0,
+  "account_index": 0,
+  "account_extended_private_key": "yprvAHidwFNKUoeVKFKxF8WXikPYtAnasHJ8oprYMwZatepYjwycBBi3tQP3UufA7NzaQhfdMqSG2WvzghA1FvWJqSebi32Q7Twp55pEfQuqeLn",
+  "account_extended_public_key": "ypub6WhzLkuDKBCnXjQRMA3Y5tLHSCd5Gk1zB3n9AKyCSzMXckJkij2JSChXL9pvaKnDuNNSDxHP6AG64G5p23nJs9XkieEAmNAYkTuM5dBwHQQ",
+  "bip32_extended_private_key": "yprvAKSSS1dirKXYPMEsPXyeVx85RijeNphsiKKXHmAPykEDsQS7v2Fuz1vW7oNh6PZf9jAF1RubV1Ni8GyBEEGjrvHsupjQNWkhHtYZc27SjZD",
+  "bip32_extended_public_key": "ypub6YRnqXAcgh5qbqKLVZWes64oyka8nHRj5YF869a1Y5mCkCmGTZaAXpEyy5CDmQpQGXWTzNzL5ZUyhRiM29MHHMb9Rkix8wacDkRVocNafd7",
+  "addresses": [
+    {
+      "path": "m/49'/0'/0'/0/0",
+      "address": "3QuhiHxffwNqaaDy2GKRnoN9DJgYGjdfgM",
+      "public_key": "032623937e5d6b55f3b308245920e0017d93e5353830bb37694e8064b5eb5fdd71",
+      "private_key": "L4CrcCpVT6P8UQUYoVD2tKPALbMdzYhBmim59QMjkLGizaxn67su"
+    },
+    {
+      "path": "m/49'/0'/0'/0/1",
+      "address": "3L5BaZvTYy7D3i3ErPaNtYzwoijbw17XTC",
+      "public_key": "02400e8c4179197aa1a4869b9139b71b41cbcd6be70f9e6cff7fed99c215b970c2",
+      "private_key": "L2UgUGVpKpeGaTn9yMu4SDv2z6SoWa8iJuxR9nW99vUh1CUjzjej"
+    },
+    {
+      "path": "m/49'/0'/0'/0/2",
+      "address": "38orzwqwq9SPZbW12rdx3qwjCkA93vfnTx",
+      "public_key": "02579616f58304a46a7e095ce8a17e5e4d23fdffa62232cdfb52cb3427e5ca4eb5",
+      "private_key": "L36WLa9z14sDk6rNUfq1ax9qvoWWioiLZeHtLegyXZVGC5iZRsXx"
+    },
+    {
+      "path": "m/49'/0'/0'/0/3",
+      "address": "32UnMEuVQERcXLwqjBxJrv6xxwQCjALY2x",
+      "public_key": "02593d34ffcaf22c1e7358edd26c25fb46786f5a05bb67195f7db6c550001f2bc6",
+      "private_key": "L18HLQh9m2kToajzX3tp5wPbSUgJoUkAAHgzyb1VmAYkgSDUoWDV"
+    },
+    {
+      "path": "m/49'/0'/0'/0/4",
+      "address": "3F7KpNv5T8qZtHMMYgJgUYVz8kbotM9Khb",
+      "public_key": "03e364b57946fee816d20537acc59f6196dc89c95d5b3b7bff0eb0acbc21ba8233",
+      "private_key": "KzuBwVdE7moq8k7XMVrTXkCDdNuKMHip5PopMQ1WvBsqjdRLBJvh"
+    },
+    {
+      "path": "m/49'/0'/0'/0/5",
+      "address": "39X3seE5R9MVY21n9Tp9LpR5L5DQR1siuU",
+      "public_key": "0322ae1668e3cfd8a3259406b3aab3fabc089bc9dc5c1d44071b836cd4ed0cb575",
+      "private_key": "L5AZRLqnXkjBeFJwH2m9gJzsWk1DmqDunZduWt6xunTCfSsueu8X"
+    },
+    {
+      "path": "m/49'/0'/0'/0/6",
+      "address": "39du45UYxmNAopfkK8F8jT1DY8GjHrFzmo",
+      "public_key": "033cdd6a20d0a9504f93eab5643a5d76e7ab6f77655a2b576bf66dbb095990a011",
+      "private_key": "L3ssfMUXXtxuqW6VHebyt69GEUDsN3v9zT4Tb5bkUMEk4FPU9AC6"
+    },
+    {
+      "path": "m/49'/0'/0'/0/7",
+      "address": "38tdf9xPT7NDAJo4A8274HKHFQFKA128jD",
+      "public_key": "035aaeec13cef0f5b4ed44fff211c4de7a288c5c7c59064de0fb94acf200f449f0",
+      "private_key": "L1eThRKJMsBzz94UXWkG27eF23B6i5Cmjk6tBfih3gbv4MXRQbqk"
+    },
+    {
+      "path": "m/49'/0'/0'/0/8",
+      "address": "37ToN6V4Tme5eAokkd4ULoPXqTe2sAhejL",
+      "public_key": "02062dd5d810cd92d63d23a209291418f38096edc36d61c79c2676a2c742c0a80c",
+      "private_key": "L4sqoAKSWKAv3hJupa8i59k7PHxi4SbuhRJiw5PKfQuLgDVzawGP"
+    },
+    {
+      "path": "m/49'/0'/0'/0/9",
+      "address": "3FagepoB4shGFkbXzWvXfcnQz4m7hL68m3",
+      "public_key": "03f67ec9e569a88032905252b5b3d7b7966c7fe20dd9ae788245bc333d3ed556a3",
+      "private_key": "Kx9x8wjtXQjidTHQAs5NTTwKf24Yh2JYEE5TvQeYnVttemYvqXeg"
+    },
+    {
+      "path": "m/49'/0'/0'/0/10",
+      "address": "33jNG8JzGphwJDC9Jc7Gho9AKS3v5d6Qun",
+      "public_key": "027fc0e2d2b0d80463576a119699305fbcb561393f27167baff1478fe167ef01a8",
+      "private_key": "KycEEQARUPZ21G7ZcpPUvQ7GFEUPdZharDdkkWHa619N17pEJQVa"
+    }
+  ]
+}

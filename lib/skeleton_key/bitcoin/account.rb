@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative "../derivation/bip32"
-
 module SkeletonKey
   module Bitcoin
     # Represents a Bitcoin HD account node derived via BIP32/BIP84.
@@ -63,6 +61,15 @@ module SkeletonKey
         "m/#{purpose}'/#{coin_type}'/#{account_index}'"
       end
 
+      # Derive a child address from this account
+      #
+      # @param change [Integer] 0 = external, 1 = internal/change
+      # @param index [Integer] address index
+      # @return [Hash] derived address details (privkey, pubkey, wif, bech32, etc.)
+      def address(change: 0, index: 0)
+        derive_address_from_account(change: change, index: index)
+      end
+
       private
 
       # Derives an account node details from seed bytes and derivation path components.
@@ -72,39 +79,86 @@ module SkeletonKey
       # @param coin_type [Integer] 0 = mainnet, 1 = testnet
       # @param account [Integer] account number (hardened)
       # @return [Account] the derived account
+      # inside SkeletonKey::Bitcoin::Account
       def derive_from_seed(seed_bytes, purpose: 84, coin_type: 0, account: 0)
+        # --- master (m/) ---
         k, c = master_from_seed(seed_bytes)
-        depth  = 0
-        fpr    = "\x00\x00\x00\x00"
-        child  = 0
+        parent_pub = privkey_to_pubkey_compressed(k)
 
-        # purpose'
-        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
-        child = (0x8000_0000 | purpose)
-        k, c = ckd_priv(k, c, child)
-        depth += 1
+        # helper to derive one step and return child + the correct parent_fpr/child_num/depth for SERIALIZING the child
+        derive_step = ->(k_in, c_in, depth_in, index) do
+          parent_pub = privkey_to_pubkey_compressed(k_in)
+          parent_fpr = fingerprint_from_pubkey(parent_pub)
+          k_out, c_out = ckd_priv(k_in, c_in, index)
+          [k_out, c_out, depth_in + 1, parent_fpr, index]
+        end
 
-        # coin'
-        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
-        child = (0x8000_0000 | coin_type)
-        k, c = ckd_priv(k, c, child)
-        depth += 1
+        depth = 0
 
-        # account'
-        fpr = fingerprint_from_pubkey(privkey_to_pubkey_compressed(k))
-        child = (0x8000_0000 | account)
-        k, c = ckd_priv(k, c, child)
-        depth += 1
+        # m/44'
+        idx_purpose = 0x8000_0000 | purpose
+        k, c, depth, fpr_purpose_parent, child_purpose = derive_step.call(k, c, depth, idx_purpose)
 
-        pub = privkey_to_pubkey_compressed(k)
+        # m/44'/0'
+        idx_coin = 0x8000_0000 | coin_type
+        k, c, depth, fpr_coin_parent, child_coin = derive_step.call(k, c, depth, idx_coin)
+
+        # m/44'/0'/account'
+        idx_account = 0x8000_0000 | account
+        k_acct, c_acct, depth_acct, fpr_acct_parent, child_acct = derive_step.call(k, c, depth, idx_account)
+        pub_acct = privkey_to_pubkey_compressed(k_acct)
+
+        # ----- Account extended keys (SLIP-132: x/ y/ z/ depending on purpose) -----
+        prv_ver_slip = [private_version_byte(network: network, purpose: purpose)].pack("N")
+        pub_ver_slip = [public_version_byte(network: network, purpose: purpose)].pack("N")
+
+        account_xprv = serialize_xprv(
+          k_acct, c_acct,
+          depth: depth_acct,
+          parent_fpr: fpr_acct_parent,
+          child_num: child_acct,
+          version: prv_ver_slip
+        )
+        account_xpub = serialize_xpub(
+          pub_acct, c_acct,
+          depth: depth_acct,
+          parent_fpr: fpr_acct_parent,
+          child_num: child_acct,
+          version: pub_ver_slip
+        )
+
+        # ----- “BIP32 Extended Keys” as shown by Ian Coleman at m/44'/coin'/account'/0 -----
+        # derive the non-hardened change=0 step
+        k_chg0, c_chg0, depth_chg0, fpr_chg0_parent, child_chg0 = derive_step.call(k_acct, c_acct, depth_acct, 0)
+        pub_chg0 = privkey_to_pubkey_compressed(k_chg0)
+
+        bip32_xprv = serialize_xprv(
+          k_chg0, c_chg0,
+          depth: depth_chg0,
+          parent_fpr: fpr_chg0_parent,
+          child_num: child_chg0,
+          version: prv_ver_slip
+        )
+        bip32_xpub = serialize_xpub(
+          pub_chg0, c_chg0,
+          depth: depth_chg0,
+          parent_fpr: fpr_chg0_parent,
+          child_num: child_chg0,
+          version: pub_ver_slip
+        )
 
         {
-          k_int: k,
-          c: c,
-          xprv: serialize_xprv(k, c, depth: depth, parent_fpr: fpr, child_num: child),
-          xpub: serialize_xpub(pub, c, depth: depth, parent_fpr: fpr, child_num: child),
+          k_int: k_acct,
+          c: c_acct,
+          # Ian-Coleman-style “BIP32 Extended Keys” at m/44'/coin'/account'/0
+          bip32_xprv: bip32_xprv,
+          bip32_xpub: bip32_xpub,
+          # Account-level (SLIP-132) keys at m/44'/coin'/account'
+          account_xprv: account_xprv,
+          account_xpub: account_xpub
         }
       end
+
     end
   end
 end

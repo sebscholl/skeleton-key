@@ -6,6 +6,8 @@ module SkeletonKey
 
     attr_reader :bytes
 
+    # @param bytes [String] raw seed bytes
+    # @raise [Errors::InvalidSeedError] if the seed length is not valid
     def initialize(bytes)
       @bytes = bytes
 
