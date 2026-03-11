@@ -7,6 +7,7 @@ SkeletonKey must keep the shared HD wallet foundation separate from chain-specif
 The shared layer owns only chain-agnostic primitives:
 
 - entropy handling
+- recovery formats such as BIP39 and SLIP-0039
 - mnemonic-to-seed derivation
 - seed import and validation
 - derivation path parsing
@@ -15,6 +16,11 @@ The shared layer owns only chain-agnostic primitives:
 - generic BIP32 extended-key serialization primitives
 
 This layer may derive key material from a seed and path, and it may serialize generic BIP32 extended keys. It must not know how any specific blockchain encodes addresses or applies chain-specific version-byte conventions beyond generic extended-key structure.
+
+Recovery formats must stay separate from derivation engines:
+
+- recovery layer: `BIP39`, `SLIP-0039`
+- derivation layer: `BIP32`, `SLIP-0010`
 
 ## Bitcoin Layer
 

@@ -19,9 +19,10 @@ Keep the repository layout strict and predictable. Production code belongs under
 - `bin/`: local development scripts
 
 ## Architecture Boundary
-Keep the abstraction boundary explicit. Shared code may derive key material from entropy, mnemonics, seeds, and BIP32 paths, but it must not know how Bitcoin or Ethereum encode addresses or serialize chain-facing keys. Chain modules own chain conventions, address construction, and external encodings. The canonical reference is [`ARCHITECTURE.md`](ARCHITECTURE.md).
+Keep the abstraction boundary explicit. Recovery code may parse and validate recovery material such as BIP39 mnemonics and SLIP-0039 shares. Shared derivation code may derive key material from normalized seeds and paths, but it must not know how Bitcoin or Ethereum encode addresses or serialize chain-facing keys. Chain modules own chain conventions, address construction, and external encodings. The canonical reference is [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
-- Shared layer: entropy, mnemonic-to-seed derivation, seed validation, path parsing, secp256k1/BIP32 primitives, SLIP-0010 hardened derivation, and generic extended-key serialization
+- Recovery layer: BIP39 mnemonic validation and seed derivation, SLIP-0039 share validation and master-secret recovery
+- Shared derivation layer: entropy, seed validation, path parsing, secp256k1/BIP32 primitives, SLIP-0010 hardened derivation, and generic extended-key serialization
 - Bitcoin layer: version bytes, WIF, Base58Check, Bech32, script and UTXO-specific derivation behavior
 - Ethereum layer: path conventions such as `m/44'/60'/account'/0/index`, Keccak address derivation, EIP-55 checksum formatting, and Ethereum-facing address APIs
 - Solana layer: path conventions such as `m/44'/501'/account'/0'`, Ed25519 key generation, hardened-only derivation, and raw Base58 address encoding

@@ -19,9 +19,10 @@ require_relative "skeleton_key/derivation/slip10"
 
 # Core functionality
 require_relative "skeleton_key/core/entropy"
+require_relative "skeleton_key/recovery/slip39"
 
 # Higher-level abstractions
-require_relative "skeleton_key/mnemonic"
+require_relative "skeleton_key/recovery/bip39"
 require_relative "skeleton_key/seed"
 require_relative "skeleton_key/keyring"
 

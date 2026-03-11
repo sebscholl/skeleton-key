@@ -29,6 +29,12 @@ module SkeletonKey
       end
     end
 
+    class InvalidSlip39ShareError < SkeletonKeyError
+      def initialize(msg = "invalid SLIP-0039 share set")
+        super(msg)
+      end
+    end
+
     class InvalidPathFormatError < SkeletonKeyError
       def initialize(msg = "invalid path format")
         super(msg)

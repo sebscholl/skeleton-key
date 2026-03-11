@@ -38,7 +38,7 @@ module SkeletonKey
         case
         when value.nil? then generate
         when value.is_a?(Seed) then import_from_seed(value)
-        when value.is_a?(Mnemonic) then import_from_mnemonic(value)
+        when value.is_a?(Recovery::Bip39) then import_from_mnemonic(value)
         when hex_string?(value) then import_from_hex(value)
         when mnemonic_string?(value) then import_from_mnemonic(value)
         when byte_string?(value) then import_from_bytes(value)
@@ -88,7 +88,7 @@ module SkeletonKey
       end
 
       def import_from_mnemonic(mnemonic)
-        Mnemonic.import(mnemonic).seed
+        Recovery::Bip39.import(mnemonic).seed
       end
 
       private

@@ -26,9 +26,10 @@ solana_account.address(change: 0)
 
 ## Architecture Boundary
 
-SkeletonKey separates shared HD wallet primitives from chain-specific behavior.
+SkeletonKey separates recovery formats, shared HD wallet primitives, and chain-specific behavior.
 
-- Shared layer: seed handling, path parsing, secp256k1 math, BIP32 child derivation, and generic extended-key serialization primitives
+- Recovery layer: BIP39 mnemonic validation/seed derivation and SLIP-0039 share recovery
+- Shared derivation layer: seed handling, path parsing, secp256k1 math, BIP32 child derivation, SLIP-0010 hardened derivation, and generic extended-key serialization primitives
 - Bitcoin layer: version bytes, WIF, Base58Check, Bech32, script-aware address rules, and UTXO-oriented derivation behavior
 - Ethereum layer: `m/44'/60'/account'/0/index`, Keccak address derivation, EIP-55 checksum formatting, and Ethereum-facing address APIs
 - Solana layer: SLIP-0010 hardened derivation, Ed25519 key generation, and raw Base58 address encoding

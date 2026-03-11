@@ -1,0 +1,230 @@
+{
+  "vectors": [
+    {
+      "name": "single_group_2of4",
+      "master_secret": "1112131415161718191a1b1c1d1e1f20",
+      "passphrase": "",
+      "group_threshold": 1,
+      "member_threshold": 2,
+      "member_count": 4,
+      "extendable": true,
+      "iteration_exponent": 1,
+      "mnemonic_groups": [
+        [
+          "lamp industry academic acid desktop calcium install pitch verdict quiet buyer spirit anatomy lawsuit presence lily acid traveler fitness inherit",
+          "lamp industry academic agency both robin bolt random bulb withdraw ultimate fawn identify plunge clothes luxury antenna lying detailed best",
+          "lamp industry academic always destroy either surface lift pharmacy curly midst standard rhyme slush reunion dream station priest scene discuss",
+          "lamp industry academic aquatic bolt terminal require owner express geology genre firm scroll burden diploma debut surprise skin phrase frozen"
+        ]
+      ],
+      "all_shares": [
+        "lamp industry academic acid desktop calcium install pitch verdict quiet buyer spirit anatomy lawsuit presence lily acid traveler fitness inherit",
+        "lamp industry academic agency both robin bolt random bulb withdraw ultimate fawn identify plunge clothes luxury antenna lying detailed best",
+        "lamp industry academic always destroy either surface lift pharmacy curly midst standard rhyme slush reunion dream station priest scene discuss",
+        "lamp industry academic aquatic bolt terminal require owner express geology genre firm scroll burden diploma debut surprise skin phrase frozen"
+      ],
+      "recovery_set": [
+        "lamp industry academic acid desktop calcium install pitch verdict quiet buyer spirit anatomy lawsuit presence lily acid traveler fitness inherit",
+        "lamp industry academic agency both robin bolt random bulb withdraw ultimate fawn identify plunge clothes luxury antenna lying detailed best"
+      ]
+    },
+    {
+      "name": "single_group_3of4",
+      "master_secret": "22232425262728292a2b2c2d2e2f3031",
+      "passphrase": "PASS2",
+      "group_threshold": 1,
+      "member_threshold": 3,
+      "member_count": 4,
+      "extendable": false,
+      "iteration_exponent": 2,
+      "mnemonic_groups": [
+        [
+          "style envelope academic acne charity mouse worthy marvel deal legs energy national pleasure salary expand execute platform chemical drove knife",
+          "style envelope academic agree diet civil behavior diagnose news platform mountain owner faint arena amuse thumb kitchen failure injury lips",
+          "style envelope academic amazing dragon gather rich exact grasp punish victim mineral escape drove sympathy snake tracks execute ocean froth",
+          "style envelope academic arcade cubic sprinkle fact voting slice numb cluster network pumps very ocean jump deny drink species penalty"
+        ]
+      ],
+      "all_shares": [
+        "style envelope academic acne charity mouse worthy marvel deal legs energy national pleasure salary expand execute platform chemical drove knife",
+        "style envelope academic agree diet civil behavior diagnose news platform mountain owner faint arena amuse thumb kitchen failure injury lips",
+        "style envelope academic amazing dragon gather rich exact grasp punish victim mineral escape drove sympathy snake tracks execute ocean froth",
+        "style envelope academic arcade cubic sprinkle fact voting slice numb cluster network pumps very ocean jump deny drink species penalty"
+      ],
+      "recovery_set": [
+        "style envelope academic acne charity mouse worthy marvel deal legs energy national pleasure salary expand execute platform chemical drove knife",
+        "style envelope academic agree diet civil behavior diagnose news platform mountain owner faint arena amuse thumb kitchen failure injury lips",
+        "style envelope academic amazing dragon gather rich exact grasp punish victim mineral escape drove sympathy snake tracks execute ocean froth"
+      ]
+    },
+    {
+      "name": "single_group_3of5",
+      "master_secret": "333435363738393a3b3c3d3e3f404142",
+      "passphrase": "",
+      "group_threshold": 1,
+      "member_threshold": 3,
+      "member_count": 5,
+      "extendable": true,
+      "iteration_exponent": 0,
+      "mnemonic_groups": [
+        [
+          "desktop clay academic acne careful standard alien amount echo enemy cultural genius company aide zero award hybrid wrap benefit gums",
+          "desktop clay academic agree again hamster born machine funding should adapt mobile daughter black both findings multiple peaceful friar garbage",
+          "desktop clay academic amazing budget research tolerate fiber acid spit literary oral column airport victim aspect nylon grant mouse demand",
+          "desktop clay academic arcade acrobat airport vocal spill carbon floral plastic hour deadline blimp busy fawn kind divorce submit airline",
+          "desktop clay academic axle being cinema capacity listen knife artist glimpse knife glad level marathon fused crazy robin mobile puny"
+        ]
+      ],
+      "all_shares": [
+        "desktop clay academic acne careful standard alien amount echo enemy cultural genius company aide zero award hybrid wrap benefit gums",
+        "desktop clay academic agree again hamster born machine funding should adapt mobile daughter black both findings multiple peaceful friar garbage",
+        "desktop clay academic amazing budget research tolerate fiber acid spit literary oral column airport victim aspect nylon grant mouse demand",
+        "desktop clay academic arcade acrobat airport vocal spill carbon floral plastic hour deadline blimp busy fawn kind divorce submit airline",
+        "desktop clay academic axle being cinema capacity listen knife artist glimpse knife glad level marathon fused crazy robin mobile puny"
+      ],
+      "recovery_set": [
+        "desktop clay academic acne careful standard alien amount echo enemy cultural genius company aide zero award hybrid wrap benefit gums",
+        "desktop clay academic agree again hamster born machine funding should adapt mobile daughter black both findings multiple peaceful friar garbage",
+        "desktop clay academic amazing budget research tolerate fiber acid spit literary oral column airport victim aspect nylon grant mouse demand"
+      ]
+    },
+    {
+      "name": "single_group_4of5",
+      "master_secret": "4445464748494a4b4c4d4e4f50515253",
+      "passphrase": "PASS4",
+      "group_threshold": 1,
+      "member_threshold": 4,
+      "member_count": 5,
+      "extendable": false,
+      "iteration_exponent": 1,
+      "mnemonic_groups": [
+        [
+          "human upstairs academic acquire company silver spark believe flame scholar verify damage losing fused lunch romantic juice main material grownup",
+          "human upstairs academic aide clinic expect duke vintage vitamins both august grill enforce fortune class fishing declare erode teammate visual",
+          "human upstairs academic ambition duration peasant tackle force category paid course impulse gather vegan source pencil coastal mayor switch mansion",
+          "human upstairs academic arena buyer junk thunder fitness execute video indicate bishop training volume nylon thumb coal eraser society deadline",
+          "human upstairs academic beam bumpy debut length voter veteran laundry crazy true heat pitch merit recall tenant total canyon quantity"
+        ]
+      ],
+      "all_shares": [
+        "human upstairs academic acquire company silver spark believe flame scholar verify damage losing fused lunch romantic juice main material grownup",
+        "human upstairs academic aide clinic expect duke vintage vitamins both august grill enforce fortune class fishing declare erode teammate visual",
+        "human upstairs academic ambition duration peasant tackle force category paid course impulse gather vegan source pencil coastal mayor switch mansion",
+        "human upstairs academic arena buyer junk thunder fitness execute video indicate bishop training volume nylon thumb coal eraser society deadline",
+        "human upstairs academic beam bumpy debut length voter veteran laundry crazy true heat pitch merit recall tenant total canyon quantity"
+      ],
+      "recovery_set": [
+        "human upstairs academic acquire company silver spark believe flame scholar verify damage losing fused lunch romantic juice main material grownup",
+        "human upstairs academic aide clinic expect duke vintage vitamins both august grill enforce fortune class fishing declare erode teammate visual",
+        "human upstairs academic ambition duration peasant tackle force category paid course impulse gather vegan source pencil coastal mayor switch mansion",
+        "human upstairs academic arena buyer junk thunder fitness execute video indicate bishop training volume nylon thumb coal eraser society deadline"
+      ]
+    },
+    {
+      "name": "single_group_4of6",
+      "master_secret": "55565758595a5b5c5d5e5f6061626364",
+      "passphrase": "",
+      "group_threshold": 1,
+      "member_threshold": 4,
+      "member_count": 6,
+      "extendable": true,
+      "iteration_exponent": 2,
+      "mnemonic_groups": [
+        [
+          "satisfy emerald academic acquire deliver clay leaf strike devote ruler smith video decrease species indicate ranked scandal guitar military armed",
+          "satisfy emerald academic aide activity emphasis acne often mobile unusual replace fragment submit surface budget prepare minister golden maximum camera",
+          "satisfy emerald academic ambition brave daisy hazard capital society fluff lily hobo response romantic gross modern clothes behavior merchant company",
+          "satisfy emerald academic arena benefit thank idle amuse royal avoid pajamas cowboy military density evil edge luck gather large dictate",
+          "satisfy emerald academic beam advocate much believe ordinary picture undergo numerous guard critical escape zero dream item false thunder epidemic",
+          "satisfy emerald academic black curious declare satisfy temple video senior aspect diagnose squeeze idle anxiety priest space trip alto genuine"
+        ]
+      ],
+      "all_shares": [
+        "satisfy emerald academic acquire deliver clay leaf strike devote ruler smith video decrease species indicate ranked scandal guitar military armed",
+        "satisfy emerald academic aide activity emphasis acne often mobile unusual replace fragment submit surface budget prepare minister golden maximum camera",
+        "satisfy emerald academic ambition brave daisy hazard capital society fluff lily hobo response romantic gross modern clothes behavior merchant company",
+        "satisfy emerald academic arena benefit thank idle amuse royal avoid pajamas cowboy military density evil edge luck gather large dictate",
+        "satisfy emerald academic beam advocate much believe ordinary picture undergo numerous guard critical escape zero dream item false thunder epidemic",
+        "satisfy emerald academic black curious declare satisfy temple video senior aspect diagnose squeeze idle anxiety priest space trip alto genuine"
+      ],
+      "recovery_set": [
+        "satisfy emerald academic acquire deliver clay leaf strike devote ruler smith video decrease species indicate ranked scandal guitar military armed",
+        "satisfy emerald academic aide activity emphasis acne often mobile unusual replace fragment submit surface budget prepare minister golden maximum camera",
+        "satisfy emerald academic ambition brave daisy hazard capital society fluff lily hobo response romantic gross modern clothes behavior merchant company",
+        "satisfy emerald academic arena benefit thank idle amuse royal avoid pajamas cowboy military density evil edge luck gather large dictate"
+      ]
+    },
+    {
+      "name": "single_group_5of6",
+      "master_secret": "666768696a6b6c6d6e6f707172737475",
+      "passphrase": "PASS6",
+      "group_threshold": 1,
+      "member_threshold": 5,
+      "member_count": 6,
+      "extendable": false,
+      "iteration_exponent": 0,
+      "mnemonic_groups": [
+        [
+          "general merchant academic acrobat careful submit burden email camera temple guest camera grant hybrid humidity erode uncover walnut speak style",
+          "general merchant academic aircraft center dance wolf suitable unfold analysis have elevator human drug tolerate firm brave clay garden column",
+          "general merchant academic amount daughter facility trip velvet learn fumes unfair exclude both lilac armed fluff lying mixture skunk trip",
+          "general merchant academic argue database clothes lend fragment hawk exercise calcium argue axis alive length duration medical wrap emission antenna",
+          "general merchant academic beard blue umbrella guilt that source fitness uncover elder glad dining round strike photo dictate ivory excuse",
+          "general merchant academic blanket club disease bedroom relate decent numerous birthday burden says training drug medical provide decorate campus decrease"
+        ]
+      ],
+      "all_shares": [
+        "general merchant academic acrobat careful submit burden email camera temple guest camera grant hybrid humidity erode uncover walnut speak style",
+        "general merchant academic aircraft center dance wolf suitable unfold analysis have elevator human drug tolerate firm brave clay garden column",
+        "general merchant academic amount daughter facility trip velvet learn fumes unfair exclude both lilac armed fluff lying mixture skunk trip",
+        "general merchant academic argue database clothes lend fragment hawk exercise calcium argue axis alive length duration medical wrap emission antenna",
+        "general merchant academic beard blue umbrella guilt that source fitness uncover elder glad dining round strike photo dictate ivory excuse",
+        "general merchant academic blanket club disease bedroom relate decent numerous birthday burden says training drug medical provide decorate campus decrease"
+      ],
+      "recovery_set": [
+        "general merchant academic acrobat careful submit burden email camera temple guest camera grant hybrid humidity erode uncover walnut speak style",
+        "general merchant academic aircraft center dance wolf suitable unfold analysis have elevator human drug tolerate firm brave clay garden column",
+        "general merchant academic amount daughter facility trip velvet learn fumes unfair exclude both lilac armed fluff lying mixture skunk trip",
+        "general merchant academic argue database clothes lend fragment hawk exercise calcium argue axis alive length duration medical wrap emission antenna",
+        "general merchant academic beard blue umbrella guilt that source fitness uncover elder glad dining round strike photo dictate ivory excuse"
+      ]
+    },
+    {
+      "name": "single_group_5of7",
+      "master_secret": "7778797a7b7c7d7e7f80818283848586",
+      "passphrase": "",
+      "group_threshold": 1,
+      "member_threshold": 5,
+      "member_count": 7,
+      "extendable": true,
+      "iteration_exponent": 1,
+      "mnemonic_groups": [
+        [
+          "march aquatic academic acrobat biology fraction bulge forecast injury emperor numerous trash duke husband flame estimate group physics location fused",
+          "march aquatic academic aircraft breathe scene national index forbid bundle family emperor darkness capital invasion spit cage sheriff strategy rescue",
+          "march aquatic academic amount album lilac salt platform iris course level welcome merchant undergo iris tackle making boring organize total",
+          "march aquatic academic argue carpet work depend fiscal gray temple thorn depart easel express admit cluster destroy flame aviation pancake",
+          "march aquatic academic beard course leaves orange mild mixed antenna bike shadow submit analysis genius mental cinema pencil ticket sunlight",
+          "march aquatic academic blanket camera knife install garbage inside angel twin oven activity wealthy squeeze total activity guard smoking random",
+          "march aquatic academic broken camera dance knife firefly vanish purchase hospital rival snake prize downtown knife prepare security welcome seafood"
+        ]
+      ],
+      "all_shares": [
+        "march aquatic academic acrobat biology fraction bulge forecast injury emperor numerous trash duke husband flame estimate group physics location fused",
+        "march aquatic academic aircraft breathe scene national index forbid bundle family emperor darkness capital invasion spit cage sheriff strategy rescue",
+        "march aquatic academic amount album lilac salt platform iris course level welcome merchant undergo iris tackle making boring organize total",
+        "march aquatic academic argue carpet work depend fiscal gray temple thorn depart easel express admit cluster destroy flame aviation pancake",
+        "march aquatic academic beard course leaves orange mild mixed antenna bike shadow submit analysis genius mental cinema pencil ticket sunlight",
+        "march aquatic academic blanket camera knife install garbage inside angel twin oven activity wealthy squeeze total activity guard smoking random",
+        "march aquatic academic broken camera dance knife firefly vanish purchase hospital rival snake prize downtown knife prepare security welcome seafood"
+      ],
+      "recovery_set": [
+        "march aquatic academic acrobat biology fraction bulge forecast injury emperor numerous trash duke husband flame estimate group physics location fused",
+        "march aquatic academic aircraft breathe scene national index forbid bundle family emperor darkness capital invasion spit cage sheriff strategy rescue",
+        "march aquatic academic amount album lilac salt platform iris course level welcome merchant undergo iris tackle making boring organize total",
+        "march aquatic academic argue carpet work depend fiscal gray temple thorn depart easel express admit cluster destroy flame aviation pancake",
+        "march aquatic academic beard course leaves orange mild mixed antenna bike shadow submit analysis genius mental cinema pencil ticket sunlight"
+      ]
+    }
+  ]
+}

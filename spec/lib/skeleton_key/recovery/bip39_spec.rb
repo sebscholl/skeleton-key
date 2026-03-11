@@ -2,8 +2,8 @@
 
 require "spec_helper"
 
-RSpec.describe SkeletonKey::Mnemonic do
-  let(:fixture_rows) { JSON.load_file(SkeletonKey::ROOT + "/spec/fixtures/mnemonics.json").fetch("list") }
+RSpec.describe SkeletonKey::Recovery::Bip39 do
+  let(:fixture_rows) { JSON.load_file(SkeletonKey::ROOT + "/spec/fixtures/recovery/bip39_golden_master.json").fetch("list") }
 
   describe ".import" do
     it "imports a mnemonic string" do
