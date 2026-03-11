@@ -1,0 +1,408 @@
+{
+  "coin": "ethereum",
+  "spec": "bip44",
+  "bip39_mnemonic": "stand deposit bind update bar season trouble misery excite ability flip concert",
+  "bip39_seed": "4989cc6a742305f943fd1127297eacae5b0e568795c2af4ebf85493cfdc48fc4b7a524d410601388c3833fa974fc22da0c2bbcfc543650a1d5b691ea5c66bba8",
+  "bip32_root_key": "xprv9s21ZrQH143K2JaLGTf64dJbULDdjrMXZSSG9wdq27hVRUhrtmxFi1iBdrC9kQesLAX2wazGVo3ZFpF3iV3BBKKwDxnEfuXKgvY6NDoPhqK",
+  "branches": [
+    {
+      "section": "m/44'/60'/0'/0 (hardened)",
+      "bip32_derivation_path": "m/44'/60'/0'/0",
+      "account_index": 0,
+      "branch_index": 0,
+      "hardened_index": true,
+      "account_extended_private_key": "xprv9zYUHLXK5xCmBRkrbofM5h6y1RQctfg4bAnp143j17bFi1usU7rh8gshd7BjhipY88X12Wiuj7yH6diKVGNnNgADZQ2P57rjEti5fj4Z6Vt",
+      "account_extended_public_key": "xpub6DXpgr4CvKm4PuqKhqCMSq3hZTF7J8PuxPiQoSTLZT8EapF21fAwgVCBUNc4aGcJwsgzEwdH5RRgJcCLLm3Sg3tzjoh3VCrDpa7dRp1HHTd",
+      "bip32_extended_private_key": "xprvA29pCNzUHFCX2UfNCz3gpHWxZ8SyKuEJoVm6t74AZHqw3CpG33DZTPm3VQJnWjKGJjx9xZVy5wh7HTLHgiyKpG88TpgjUTLdjrmpMPB5SzE",
+      "bip32_extended_public_key": "xpub6F9AbtXN7ckpExjqK1ahBRTh7AHTjMxAAighgVTn7dNuv19QaaXp1C5XLeEWSSgqWBVGsQsKJZF3npudUQ86WhW2jXGB7pCYSPJbYFPd1ts",
+      "addresses": [
+        {
+          "path": "m/44'/60'/0'/0/0'",
+          "address": "0x076286f21DAB5C23373611D1130acd2016192C39",
+          "compressed_public_key": "02917bc4d725437ce944539132e4756f005258aa5f7146651b4a4a7f8cc7247aca",
+          "private_key": "987e951f3f61a0910775855d6dbcb7fcf07fda077df9eb2001576216fb88c615"
+        },
+        {
+          "path": "m/44'/60'/0'/0/1'",
+          "address": "0x586Ce46C21Af4c287fB66e332a066410D72ED6b3",
+          "compressed_public_key": "03e68f6cb3930d03616f64527bc5bef9364aaa5abb1d844a80a332cc2e78637ec5",
+          "private_key": "c23f7a59522edcb7c7b81432f74fbe41c232d29f6b3f425b5e546af98a80d665"
+        },
+        {
+          "path": "m/44'/60'/0'/0/2'",
+          "address": "0x1261F1c7a12170Da018Ce52aEf7E26dAa5b4Eefc",
+          "compressed_public_key": "025240997a3fd25d1880cc2a5cf731fdb90d3ef61ab3585ba67b135c241309d2ac",
+          "private_key": "4cd7489d5ed5d55a5002ba941ba68af47f3e27a99ce85af988efc06907ed0333"
+        },
+        {
+          "path": "m/44'/60'/0'/0/3'",
+          "address": "0x5295B15B10c71822831e8E161eF6453749d0944b",
+          "compressed_public_key": "03a78c28ae12362c3f05f6627c8565bdb67ead2df0bfd0b88084d29cdc1add6051",
+          "private_key": "b6475495c8f36b87ce88ffbad25f011e76d1429ffb861900d48d88e534791646"
+        },
+        {
+          "path": "m/44'/60'/0'/0/4'",
+          "address": "0x68fF96d471457d20830B1eAC308a900F7E0e5938",
+          "compressed_public_key": "031857de2707b5d4e118ee461f1f088e7bb7ea8c72b6cf8b6a884e8fc7c11a1cc9",
+          "private_key": "9f023a0ea676a02429cd48a5f027dee6ce203e4c5c97b4a5425742a2fea8daa4"
+        },
+        {
+          "path": "m/44'/60'/0'/0/5'",
+          "address": "0x35B213ed9c5584380f34aEcC10C2e2A50cdFB726",
+          "compressed_public_key": "024210d173b738ec3572ea02dd2c8d1df996203d821356fc6e34eeeb4d3febef3d",
+          "private_key": "3f843aaf015ebfc32c876f2e95cfdfcfc8965cd4e0103e3c23517aded7a4a7bb"
+        },
+        {
+          "path": "m/44'/60'/0'/0/6'",
+          "address": "0xDd806Ca07c58bA5027AADdf0C0da6A9619FC57f1",
+          "compressed_public_key": "02548c4a2df90557ea7c39e445d6333beaa13bcac3b165bec74cf2bf07e2d05cb0",
+          "private_key": "448ce521dd3462cbb147aa602162fc755df7ca6327d16c72e62a938449218cf4"
+        },
+        {
+          "path": "m/44'/60'/0'/0/7'",
+          "address": "0x786a373Aad9C1E4Efd979DE9DB474e9aCE233621",
+          "compressed_public_key": "03fb810c31dc4f239e1ed52e8f342b9498c2f9f011f0ba600b2f9bc2940bd4ba40",
+          "private_key": "5d4aba3b06e95f4e3926c97951f3e8811548bfee323294deb025e57a716e51dc"
+        },
+        {
+          "path": "m/44'/60'/0'/0/8'",
+          "address": "0xCBbe6FE9cf1de4680d34619dBB9b473A246Fcd98",
+          "compressed_public_key": "035b02fd873a200ca386ebb0babbadab27b02763352c7443610a1f0d1d5674b3eb",
+          "private_key": "1b08f19af48a64bfcfa53889f3e9189588e654bbac46a086adf9c0e35fdd7dfc"
+        },
+        {
+          "path": "m/44'/60'/0'/0/9'",
+          "address": "0xe6ed4c6C3C16231B7969E1532821F8Ea49350FB9",
+          "compressed_public_key": "03c4c027c95510d886cc1d36c0e03571fd8600d806ef16474dc638ab3bd42af637",
+          "private_key": "3acf7d0e44e12ea902a25636625d80f66f4348815a003b67ee31038e0007a24c"
+        },
+        {
+          "path": "m/44'/60'/0'/0/10'",
+          "address": "0xe8D9C4179cA6bbc92f60248AFfe5E1e1587f3501",
+          "compressed_public_key": "036f5acc2efba307003902f24056b66beba0ee7d7e0f7e9aca597c2a3b4cd12a1b",
+          "private_key": "a33c6d7a5807362bfb9100b7c1a7fab6c92d9f143bf8a8d27217daa808ef0878"
+        },
+        {
+          "path": "m/44'/60'/0'/0/11'",
+          "address": "0xcfCf56fD74a783E5E748F3a1A3Dc559735E55639",
+          "compressed_public_key": "02c99595580e936a7618c43fcd9926d73e868c8ddfc41a0b1eb137b2be83fcead3",
+          "private_key": "bdb2acbc0fd44809db09467ae2f7aa230d62a3ada7219a5c17c7a8ada9e23757"
+        },
+        {
+          "path": "m/44'/60'/0'/0/12'",
+          "address": "0x145252FE6C8EFaC0c246B879F11AAabFA461E3b5",
+          "compressed_public_key": "03a86a782293aa88d43e20438785a294a8226120d26dadda16a797aa47764a1c50",
+          "private_key": "3ac0fa31a53c53eea42d27d424cfe05ea79a3df1aca7a4273d0f475dad8dc4ee"
+        },
+        {
+          "path": "m/44'/60'/0'/0/13'",
+          "address": "0x13814F12dE65667ABf2D0a35d5d9a9825fa20A04",
+          "compressed_public_key": "036c1fe4423cbd34047b88573e6c62411c159fe6218af7cf18cd4fdab4f13b977c",
+          "private_key": "a459709692fa6d3eaff319a732fbf79b6c89246c64c81f1fc7a65efbefc83c98"
+        },
+        {
+          "path": "m/44'/60'/0'/0/14'",
+          "address": "0x4432f54e24Ba50A4C2b0dc15877a94c8BC4a948a",
+          "compressed_public_key": "03590ed53bc3317f399e8d41fea0fb59d25484023e5219114155c6d7a2732c1518",
+          "private_key": "6a556eb503e66205b6c22fe3141a34adaf1e23daedf64ad6b805c6db275b747c"
+        },
+        {
+          "path": "m/44'/60'/0'/0/15'",
+          "address": "0xd6E746F0CD09CD1979CdDE201676Dd62a3B1Fd71",
+          "compressed_public_key": "03ee215e9967b645d343e4595a2666ef2a40b601132bb4d4c123935027a3f5ceee",
+          "private_key": "1647747ff706910156a2c26f3a6a44d58dfbf5178cf1509c3c411a1c985268cf"
+        },
+        {
+          "path": "m/44'/60'/0'/0/16'",
+          "address": "0xeDA72df52F7c52f5F098C547166EAEe1B8Cb3490",
+          "compressed_public_key": "02a694c67d38a751ca48bd7af0e9a973ba3761af43c2d96133afcad75f3ec7b7e7",
+          "private_key": "63333e03b3311bb8ec838c3635dc930c99244e86eace42e0f524057e0182438f"
+        },
+        {
+          "path": "m/44'/60'/0'/0/17'",
+          "address": "0x4ea0f36b10988814dfc4d3073B233F6F01917e9d",
+          "compressed_public_key": "0263a9b177ada3b78683329cc7d8e8868ca383db4770ef1323355300256af9db35",
+          "private_key": "5ffde07175f93fe8f2dd6ed6d326cd6f8bc47d509d24a35cd28fcb028f67eb95"
+        },
+        {
+          "path": "m/44'/60'/0'/0/18'",
+          "address": "0xF5aB18907Cc010534E4977B08D3AF383aF19e033",
+          "compressed_public_key": "02b7d71e6f372afc91fb8694c7ff87d08ef8ccf4fd196b3184abcb44355e13947b",
+          "private_key": "9ac87ab060fa5781d0442e3f83b4cedf65a34dc303b04f86eeda3fed7800234c"
+        },
+        {
+          "path": "m/44'/60'/0'/0/19'",
+          "address": "0x3d61b7f90bd18c933ba5797F0fda87bC5b0Eef64",
+          "compressed_public_key": "0329e43ac7ea1bc998e8d9b830f4093bc6233ef06cdddeb4c9a99d5433502185a7",
+          "private_key": "adcfa751b3521182c8b93374effd9c5acb14273059336ef27474917652de7c50"
+        }
+      ]
+    },
+    {
+      "section": "m/44'/60'/1'/0 (hardened)",
+      "bip32_derivation_path": "m/44'/60'/1'/0",
+      "account_index": 1,
+      "branch_index": 0,
+      "hardened_index": true,
+      "account_extended_private_key": "xprv9zYUHLXK5xCmDpRsqJqsia7oARySSKCH3ZwLM5FghGKhdzXeKyew3GJy63hqExwCJmYZg4m19cZwFSMp61wG4ojo2rfvvDmTgMn5QrWx5uk",
+      "account_extended_public_key": "xpub6DXpgr4CvKm4SJWLwLNt5i4XiTovqmv8Qnrw9TfJFbrgWnrnsWyBb4dSwKY9zitZ6oJgzw3QMz7HmFzyRS2LPcKXkXDN8LAJy46nDzSPDvM",
+      "bip32_extended_private_key": "xprvA12Udcc8q9Jo1c1LZ2SKNCD1dxHppsBkQ7ybD3415Q1PD5AtuFwWa7Ct9zrsHaPrV6n5nPaMFRXjZrtvP5YH1f37BWo35Z5DP6KgsMxC3cX",
+      "bip32_extended_public_key": "xpub6E1q3892fWs6E65of3yKjL9kBz8KEKubmLuC1RTcdjYN5sW3SoFm7uXN1JJ8GESMss9MFvycYHWfEpgwpnmkFjKK2wEoBNkiBgcYLDG7T2R",
+      "addresses": [
+        {
+          "path": "m/44'/60'/1'/0/0'",
+          "address": "0x17310DE4f705f9E7281664f39747E17BA5c60191",
+          "compressed_public_key": "03c0ebe23379fefe4caee3ff39e4a7e73c98a341fb36a57ba138e5d5edecf153e1",
+          "private_key": "b90085883c32cf0149a7445ee27cdec34d5f637410c5de30b3b6736abd2c3735"
+        },
+        {
+          "path": "m/44'/60'/1'/0/1'",
+          "address": "0xaf88492Fcd0b5895a34823a16f2b0A8dD208b422",
+          "compressed_public_key": "02b52a5ce95a8dd928c0ac52b047cdd11c8b138f2bc2e52e75a05fe8b33157d298",
+          "private_key": "7c309a9f03bc8d229267b7c3565004563b768860bd842ff8e4d3dca256bf7343"
+        },
+        {
+          "path": "m/44'/60'/1'/0/2'",
+          "address": "0x7097DB7cFE9eb7DED3C508669280ff140A1706fc",
+          "compressed_public_key": "030d2b33d8e394103119fb9cef6f499d858b47570fd2c6f85655d97abd85b5f700",
+          "private_key": "f89be6a423cc0ebe5eee14ca9621f3a47839475fd4b3d2583d9e8b805ce218f2"
+        },
+        {
+          "path": "m/44'/60'/1'/0/3'",
+          "address": "0x898D2D9aC3Fc25B9C092FdB3317275A9b17f7B26",
+          "compressed_public_key": "0262928303059f6ea31d1a6cf51074978e6a02001e12ad027304c42e82d78499ca",
+          "private_key": "6f4301a58816362ba1240ac51a8d789bf33c45988091391a11781139dfe11b0b"
+        },
+        {
+          "path": "m/44'/60'/1'/0/4'",
+          "address": "0x582937884427e5A8DAf2761f10853ffe65183a0A",
+          "compressed_public_key": "034b24dc4b10f91a33b7c7b84b6255059a8a299ff3fc0aa04028335504abd5ad76",
+          "private_key": "14e3cda91155aed6b0a1e1ebd602e9e45bb342ffa2708785ed15b8bbf6956046"
+        },
+        {
+          "path": "m/44'/60'/1'/0/5'",
+          "address": "0x10eb7d238E85865e3a9fF117815d21B4a373CD48",
+          "compressed_public_key": "0338c909266e8d72fb85b8c5d4a1a6dcf0c5c1cbc2a6073d88d851439a8d966fda",
+          "private_key": "417aa1fb9348a1db84fb089128cf8a2fb9f1485d708ff42ce0a57b8658550a86"
+        },
+        {
+          "path": "m/44'/60'/1'/0/6'",
+          "address": "0xe79B9719662980b5da1b21CbB66A393b3B84F25a",
+          "compressed_public_key": "0351adf0599a6fbdff99a46c44c76b57f2218bece87ef7e3922ebe9fbed4a008d1",
+          "private_key": "ddd99ccff77446bdd559b05a6edbf429d8c8bb97a5a911038e6d65869b90ccd9"
+        },
+        {
+          "path": "m/44'/60'/1'/0/7'",
+          "address": "0x0c62F54b2B59dEd413B5E55Ea9CF16923c578071",
+          "compressed_public_key": "031401747ba9d739c249b4ba0474cce19b8605ef8044f459aa9febae6c5012610e",
+          "private_key": "91f21447337fdb0da3e1778817bb7ffc27fc90e3f0b2898dd51872e93153bc6e"
+        },
+        {
+          "path": "m/44'/60'/1'/0/8'",
+          "address": "0x0D55cb501161f7Ead1954d76AaED6a34390A89b0",
+          "compressed_public_key": "03451d4b96723340eb8af6c50cc60c428cd51431ccda10b6a398db56d4f7c49e5f",
+          "private_key": "5eb0a77fbcdbcf1a21ac7ea83ad1bb12ed493f023e0490669e1aafe50026df3a"
+        },
+        {
+          "path": "m/44'/60'/1'/0/9'",
+          "address": "0x0FE9f832B8ffC956f4579Ed97b157dbeb961BB32",
+          "compressed_public_key": "020ae29d12f2fe0ffa59945b23fe8ff7ca58240a93df107e1b072aab599f18193f",
+          "private_key": "d7016819bafb0b8b73ab43bf4880ea2237cf5cedb9c145ffe6ca53a04422dc39"
+        },
+        {
+          "path": "m/44'/60'/1'/0/10'",
+          "address": "0xFA2ea1b38DA392c235F8424033Fd5C69Cbb95082",
+          "compressed_public_key": "02ae049e7dad11e6179b7bd0ffd2cfe47cabbd60a3bd38a851e70b483b22742031",
+          "private_key": "faebf6043a2f8e01e950e43f55f0895e72a1955432d4c1d31beac699c2caf017"
+        },
+        {
+          "path": "m/44'/60'/1'/0/11'",
+          "address": "0x8Bd01f0adE5719C1bB40518a0fEb10E21e1E1048",
+          "compressed_public_key": "02cdf36e04b52fedecb988264dff90bcf664d247823185dc8ca768b6fbf3b78a32",
+          "private_key": "7cf3569b4d3edca1e91e84040ba6157475894422300a4bbb31d8e0e5f4b59223"
+        },
+        {
+          "path": "m/44'/60'/1'/0/12'",
+          "address": "0x0a8F069eBb81cBe407D84E7C276E41036E4AF44b",
+          "compressed_public_key": "025879a8a618d6c8025c0d839a6867649de3a78ca2722c33254ed03e0c025da8b1",
+          "private_key": "80e5528f33e5b3da9a207bfc0f0ff68c7f0d1984527ee93c67fd816fca1918a5"
+        },
+        {
+          "path": "m/44'/60'/1'/0/13'",
+          "address": "0xD103521c87685619Ac6f1871AEa7beae6cd25Bdc",
+          "compressed_public_key": "03db837b5482bdfa7e1c7e96dd2c01ab6f0eae6e3aa24b7213674c2fae3e8991dc",
+          "private_key": "df38d4ca0daa01df7adaf0185ae32c62fe8374c190361a3f3f6f6742ea1d6141"
+        },
+        {
+          "path": "m/44'/60'/1'/0/14'",
+          "address": "0xfD2A5C9C9a27fF792C5835bbBB737fd5dEF50625",
+          "compressed_public_key": "021711ec6206a2d6a941bc4515a212a33ca708b6167631dafd55511a4d9cddeaca",
+          "private_key": "3f20001d940c514215783c3148384eb455bdf620ea0ae02f8b118ad1e81ab2dc"
+        },
+        {
+          "path": "m/44'/60'/1'/0/15'",
+          "address": "0xe8657b8089a4551B4860aa809C31F1a50164F3b7",
+          "compressed_public_key": "024f63ec51cca6c40e33753a58bde16a0ee3e4b11c60ca7ba3d759a6fd737387b8",
+          "private_key": "cda4ceadccc18c64b38f92fac003f63142f53860654d00b588f246f36cf9e5d7"
+        },
+        {
+          "path": "m/44'/60'/1'/0/16'",
+          "address": "0x5Fd39AFceB12F84D023270C82163e1778491B2e9",
+          "compressed_public_key": "02cd078e82ea0f1f8599ea864dbd2d93b1c23a3ee2372701912857fd86b17bf8b2",
+          "private_key": "0465330ad3a551b8bbff6a2338e84a5843e9840b57cd450a2eee7dbac8df10f2"
+        },
+        {
+          "path": "m/44'/60'/1'/0/17'",
+          "address": "0x8E02291463CaD975A858765ca16118ca92Cba503",
+          "compressed_public_key": "02d2a0388341346756570bc01cf1a6a2eb4eb53974741d805f5c45ec3aa69f64b9",
+          "private_key": "ddcfc1305c8e8d6540df9a10fb13e7415a768121f698b3af07d216e64a597ac8"
+        },
+        {
+          "path": "m/44'/60'/1'/0/18'",
+          "address": "0xfe92B2E01AA564C58002899fDdb9Ca88B7844C8b",
+          "compressed_public_key": "03c8f893736ab6d0ebf7e1af6beb3a392853b0c6fe46ee254423d975f5b7c421f9",
+          "private_key": "2a3107f2a43abe00194dff36b6fcdcfebf4a8eb9182ae9524570db4b457d0626"
+        },
+        {
+          "path": "m/44'/60'/1'/0/19'",
+          "address": "0xd28b7076CA5e763c34fEF545fe6A8305878D4d75",
+          "compressed_public_key": "02589489734286604c12fa839c91f542cdf60b478c875df9d477dbd11048d4a3f8",
+          "private_key": "5b7128d00a1247dc768300bea19b5e272a2e4ac42cd6278acaf524b4677de8ba"
+        }
+      ]
+    },
+    {
+      "section": "m/44'/60'/1'/1 (hardened)",
+      "bip32_derivation_path": "m/44'/60'/1'/1",
+      "account_index": 1,
+      "branch_index": 1,
+      "hardened_index": true,
+      "account_extended_private_key": "xprv9zYUHLXK5xCmDpRsqJqsia7oARySSKCH3ZwLM5FghGKhdzXeKyew3GJy63hqExwCJmYZg4m19cZwFSMp61wG4ojo2rfvvDmTgMn5QrWx5uk",
+      "account_extended_public_key": "xpub6DXpgr4CvKm4SJWLwLNt5i4XiTovqmv8Qnrw9TfJFbrgWnrnsWyBb4dSwKY9zitZ6oJgzw3QMz7HmFzyRS2LPcKXkXDN8LAJy46nDzSPDvM",
+      "bip32_extended_private_key": "xprvA12Udcc8q9Jo4dbLSwnuhNbfjqBNDUsRhWp1SzQVYL8Y5TQQtk3ay3SQtkM8DbkThs7bAURF6ZtSb2Kodh8kNpTuVvWSSuKaojqANLdq6Yp",
+      "bip32_extended_public_key": "xpub6E1q3892fWs6H7foYyKv4WYQHs1rcwbH4jjcFNp76ffWxFjZSHMqWqktk3Y7RaruyBKUn8rNxib2sRnKEYDVjeQJ8YRYm3dMbdxTA8YCELo",
+      "addresses": [
+        {
+          "path": "m/44'/60'/1'/1/0'",
+          "address": "0xD303C20A9D4D6B8d10536e1A9F5092743a05B0f5",
+          "compressed_public_key": "034939c7aefaaee4626a19e5cde5f6709fe4fca689b9fb9ecdfed68bb65278ef7b",
+          "private_key": "541f97de79eb01ab52fb930c0444483a5660be7beeffbfd0bbb0ca15e3d5103a"
+        },
+        {
+          "path": "m/44'/60'/1'/1/1'",
+          "address": "0x58f452FBc3Aa288aF85F455d709627A69f554A30",
+          "compressed_public_key": "037808f773ee45f4f2330ebbded53cf2f133fc882b567b9b90686aadaf39694444",
+          "private_key": "7ce4b054603dbecb9ea2fe9f611e7c5317e6c845383895bf6dcc1581a76ea7f3"
+        },
+        {
+          "path": "m/44'/60'/1'/1/2'",
+          "address": "0x015bB55eBD7DE7F88aF651F470C921a5bcf610eb",
+          "compressed_public_key": "02ad3d338056fca4d069d179b987c8c6a7e0e05f509d462cf1ec8950f768321e22",
+          "private_key": "8e1ee58cb6ffa362ccfc341842bc028893a194edd6cf6e8a3eb6e0c2639ec324"
+        },
+        {
+          "path": "m/44'/60'/1'/1/3'",
+          "address": "0x43887D13D8e6E9003c62f10c98F0Fd1BD5c73665",
+          "compressed_public_key": "036cfbf359bf0ba4567d98e450d3340f1ef47faa8767a32f306d478f7258682d25",
+          "private_key": "679f52fc8ddcef142c5fc1914f21cccceee327e9d28b57996058955dce024d5d"
+        },
+        {
+          "path": "m/44'/60'/1'/1/4'",
+          "address": "0x1DA8acb34616cC1F2c1C9508568b6002bC827Ea0",
+          "compressed_public_key": "02e2bdd2bc6be752c7943b4dfcfb293c9f2da142c7065fbfd9f5d12fc56dc62eeb",
+          "private_key": "b71418f885a37041ad2be6dae0152d254faaf28c0954bc472a34ac07dd435806"
+        },
+        {
+          "path": "m/44'/60'/1'/1/5'",
+          "address": "0x06fbeC588419De6F61aeCf4F25Ea2f414bbf51CB",
+          "compressed_public_key": "0201eb7581767e0ad088e37b8d090d59c9653ae4ea349c4879b5a266cec80a4beb",
+          "private_key": "38d65f5a3cb4a3685ccccea93fd29602e09330c0496c6f518f6c3fde2102c9b5"
+        },
+        {
+          "path": "m/44'/60'/1'/1/6'",
+          "address": "0xCB2B2a6F654E96c204F57f303Afe84E17b8d3695",
+          "compressed_public_key": "031f45fe748ddc772bec2e04dcd84d5be44cd26db851ebed0e916b50135f05da62",
+          "private_key": "c2b0a541a7e6ceacfef9ebee30d6d5d681c464439f0389efb9f167724d4acd7d"
+        },
+        {
+          "path": "m/44'/60'/1'/1/7'",
+          "address": "0xe436DA24Af6d9b67465E8dD797fd108e3990afae",
+          "compressed_public_key": "02e8cde0d1edc5bb39c9263c1c71a766a4a4dab749d3c59654bda3e8d190f2008f",
+          "private_key": "44e1eb65a8df674c801f4358cf371d8d7e7511de8c93af6778a19822aae3401e"
+        },
+        {
+          "path": "m/44'/60'/1'/1/8'",
+          "address": "0xC32c2aAD3F30F6E86F1B12CBf8AC3659248d9eF3",
+          "compressed_public_key": "036132083ca319cc7623bc28a6d75f5cdf3a79afcb26ec95447d4d333117f53b03",
+          "private_key": "84e32c2c6ee6963a0943bd3a0ef3b31cda972d82360d8ced0d708f3a9adb2eb7"
+        },
+        {
+          "path": "m/44'/60'/1'/1/9'",
+          "address": "0x80Cd0B3F660702C444D8d8Aef027661315195737",
+          "compressed_public_key": "029e4a2e3dfbdf316f4ed5f5c85671c05b5b683e3dc1b76334c438e05751ec00d8",
+          "private_key": "4eca347d73cb4fbcf12036a0e2fe461e05844b2719ee7395f796649c26b10224"
+        },
+        {
+          "path": "m/44'/60'/1'/1/10'",
+          "address": "0x140Edab9aa72006676DbD7cb912a85c108E15F47",
+          "compressed_public_key": "0276ef7ccdeea4c670fd62de7d186ae87712cfa5c7b98ee0d03a178fbe04076079",
+          "private_key": "7f60cc7550d26c0ad9a3a9156f65f1dea672b6752c48c7677e4e8d0e6bc76e73"
+        },
+        {
+          "path": "m/44'/60'/1'/1/11'",
+          "address": "0xE214055ca027d28c07962844094EA7fbaF808DE4",
+          "compressed_public_key": "031ed86ebbd966533549297dccba13a6ef48302ce5f9d39831d89983a8dc5bb0ce",
+          "private_key": "578f22c388b9beaf63a384ae362751fe07634a24d7f0207574edb18fcd802c7d"
+        },
+        {
+          "path": "m/44'/60'/1'/1/12'",
+          "address": "0x2dbE390B151bA7486a6c82A6848796144524cfe7",
+          "compressed_public_key": "0326064dd454f892d7e5b8129ace64bfd0a85efc9642e988f4c3fb5da4612c6f7c",
+          "private_key": "4a50bbb6c32e7c5fd0e165f38f789ee4c7266b101c805b0168feababd3a9b9b6"
+        },
+        {
+          "path": "m/44'/60'/1'/1/13'",
+          "address": "0x90EE611c0c5E684a5c4606D402A7887c5Be5E08b",
+          "compressed_public_key": "02d5dc1edf01ff6ccc44e90ddf9305d36bdbaf019323464d1bf99abcaf305dd336",
+          "private_key": "3e6da229ee1ff7fbbef1d5a136813b436308727caf9f4ba8a8fd257f1c854606"
+        },
+        {
+          "path": "m/44'/60'/1'/1/14'",
+          "address": "0x57c2c6D5d11d0b63c63a2808B1DA39104EFcc403",
+          "compressed_public_key": "02b06cc69535b7ebce4ad61e90d197170f5b7d1a6c6d6c7823801504461ed050d4",
+          "private_key": "3400b3684700139f2bb2e84ed49002ea214ed979d99ce2c0bee3c947dade30a2"
+        },
+        {
+          "path": "m/44'/60'/1'/1/15'",
+          "address": "0x6Fc62E5BFa70d0029B03cC0EAA08dA8B7b11ED02",
+          "compressed_public_key": "0327f89e4444e165411b7d970b854ddcae97fe6e968901032be1f1d51c8494dc36",
+          "private_key": "e4e60560330dfb5d9f5ef3c4f06c943ff1e8ebf96c66a0bb356da91b1eab560e"
+        },
+        {
+          "path": "m/44'/60'/1'/1/16'",
+          "address": "0x29a71EA4a9d3EAE0CD48b05B922D3a1451081Ca1",
+          "compressed_public_key": "03340f9017656ff6a0f3c55f48265ae721a5225357653ab39b1d30699cbe25188f",
+          "private_key": "49f29822e507c77f4418d0bbc329f733e3ccfea9c2d9ee03f7b034f4ac71b1dd"
+        },
+        {
+          "path": "m/44'/60'/1'/1/17'",
+          "address": "0xf546Fd84D7c8F813945e54a8349608f0c025EB2F",
+          "compressed_public_key": "0250a298a63a3b6ecde1e4eefd342c898a603d50afca80880929aed54ef0deeaa0",
+          "private_key": "f3baaa90be790e6afa0eb649bd49388144795125b067b9c6407c2cdb6e549df6"
+        },
+        {
+          "path": "m/44'/60'/1'/1/18'",
+          "address": "0xCE6b374f519dbfDc1b3ed1607486E59097896a99",
+          "compressed_public_key": "03b21c8f47302afe09aee75d70b04f1df1c10f938e9eb4a8657f76b7e897665842",
+          "private_key": "0e342142b937b5e965af23a9caa203f82e7d63d5d1dd80165e3ce3b0688b48df"
+        },
+        {
+          "path": "m/44'/60'/1'/1/19'",
+          "address": "0x4df04B46CD5cE7C3690BDd51b69b562df5Ab749C",
+          "compressed_public_key": "02f5518fd0236d85c707fe81b177923259d37a44498c7c94ed9b9910dd026a3d69",
+          "private_key": "ddb06f731cdf6eb68b2d1d1e17fede1902cba8b5607ae7d973dfd9fc88c1b47e"
+        }
+      ]
+    }
+  ]
+}

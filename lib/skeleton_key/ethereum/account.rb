@@ -23,8 +23,17 @@ module SkeletonKey
         derived[:path_prefix]
       end
 
-      def address(change: 0, index: 0)
-        derive_address_from_node(change: change, index: index)
+      def address(change: 0, index: 0, hardened_change: false, hardened_index: false)
+        derive_address_from_node(
+          change: change,
+          index: index,
+          hardened_change: hardened_change,
+          hardened_index: hardened_index
+        )
+      end
+
+      def branch_extended_keys(change: 0, hardened_change: false)
+        derive_branch_extended_keys(change: change, hardened_change: hardened_change)
       end
 
       private
@@ -124,6 +133,10 @@ module SkeletonKey
             version: extended_public_version
           )
         }
+      end
+
+      def legacy_root_branch?
+        purpose == LEGACY_BIP32_PURPOSE
       end
     end
   end
