@@ -1,0 +1,132 @@
+{
+  "coin": "solana",
+  "spec": "bip44_legacy",
+  "mnemonic": "physical spike blood wash duck little give erupt safe oppose speak struggle",
+  "bip39_seed": "a6d95cda25a5c88d6396a0d29daacfaf05aeb9d55d15daa31a4b721e1a44affa1b041fae3600ddb75ddfba22e1bb7ff2aa958a94d59739fb798bdbf7db6689fa",
+  "bip32_root_key": "xprv9s21ZrQH143K2ytaSjzXNCkGAYbmLnESJYYdSMQEgPKd5HbN6AvAS5P5EocodeRvTREjippFd4YAb9UgVzUsPen88k2bYjYmR2zV57G1bZi",
+  "purpose": 44,
+  "coin_type": 501,
+  "account_index": 0,
+  "addresses": [
+    {
+      "path": "m/44'/501'/0'",
+      "address": "3F45ah7mananWS7XCzFRjfDAouwxCyvq94EMH9wZgkWb",
+      "public_key": "2150fc91758c8ee813e00da1d44c66233fdab21f7e14eda2dd9fb85f8e49b598",
+      "private_key": "6e71f1ffb2dda3ce374864acb007d8889ed41d366c39f0d622b440fcc868bbaf"
+    },
+    {
+      "path": "m/44'/501'/1'",
+      "address": "8fAcX4x4CRYohDcr76V42vBs2259ZRSYixBuBARwyMtr",
+      "public_key": "71c8bf7c3aeb39cc3c82e3218c3c7b1ac80b63fa4b585c1e5fec55c0450000ef",
+      "private_key": "add1b019c1b4ccc3ace430f4f4158c2d3f8677572d894d81536c8b86c6cb8e17"
+    },
+    {
+      "path": "m/44'/501'/2'",
+      "address": "G8DyCvNTb8APpvrChyxN7bWzHHQJrkAcXUhizBWrJ64x",
+      "public_key": "e0b908a209722bb65166c8415915a2bc71581a4e9a8d0fcbb57b299ad4006c71",
+      "private_key": "14daea76d0184c89ebc82ac5a4fb5f3712f865de9a3a7859e1f87bab076f548c"
+    },
+    {
+      "path": "m/44'/501'/3'",
+      "address": "5QycJwedb9tfr5mpve43rQRk7AxzNrdVqhPiKxAqBUT8",
+      "public_key": "41931d338d1d50054e5df9dfcc8ce0c1f3e53fc629a7a4abf5497679e9981da7",
+      "private_key": "a9ae071fa09c9442220e606ed32aef32e4fe2b56408301d58692c448f444cd06"
+    },
+    {
+      "path": "m/44'/501'/4'",
+      "address": "6tVAFjiWhkpuWwFZmtnvgbAB23vfHP4y5XNBivdK4Po3",
+      "public_key": "577ae5606f72807234938785019aa1a4b95910985d5e70190493dbc9aa130d5e",
+      "private_key": "8b6f3a222d74c21d16eb7a6089334e7dde682aaff93f3587e5128322db35a89c"
+    },
+    {
+      "path": "m/44'/501'/5'",
+      "address": "4cXahEv1XwbDhH4h67zenrzSYDYsbLhttXcEi6x88ing",
+      "public_key": "35acf79158e193a2e2c442bdc54e27fa92995a87863fad87b6c9b088c9a045c5",
+      "private_key": "60e23ecc8251cd87a025be585239d737b20dce34d5cc7aa53e495a3430096d1c"
+    },
+    {
+      "path": "m/44'/501'/6'",
+      "address": "BcDqMdj1qt8BNoAwP8HSqNuBuTwFdLVL7a5exhKABvP4",
+      "public_key": "9d9ab56e4d1f4869aee67af048a5f924b35f7a264ec69aa7df87869ef493aa53",
+      "private_key": "ac76e1c958995e86de9fb6f9af2f4327dea280c98e026cfab6d3c4dc166c0be0"
+    },
+    {
+      "path": "m/44'/501'/7'",
+      "address": "2yRAZGQUdACLynAer2RSzgVQjbQTLg9mJDN73k4WhY8X",
+      "public_key": "1d4f89114b83165cec673cdf3f3dd711840f260d19083ff537f26dc1883dccc0",
+      "private_key": "498edd2734a31fa1f13cfe9fc1d2abff050e292a87cdb903a95a6dbfd790d6e7"
+    },
+    {
+      "path": "m/44'/501'/8'",
+      "address": "9qgHYpt1hCs6A5hFEkjixcmk8vYSynnUFFPUYmFkqwVB",
+      "public_key": "8355cb5766d1f25e908314c9c3a9791ea31ade8e989254c637cb60a83bab9b6a",
+      "private_key": "2ab03d80e45818159c377982bfeb1102226104b07866d380b095a848044663ad"
+    },
+    {
+      "path": "m/44'/501'/9'",
+      "address": "AAv8oszaMXbLum1bWTM2ZNCgSqvciL3VJBNVwEgnn73d",
+      "public_key": "88437d37b221547a7352d538653ab999732f89666d0b91f3fb5af52b2c7ab5e8",
+      "private_key": "fd9b65d42083c0dda95e7dc8c5eb571f461c0894d27e1d0318031e04e7b71136"
+    },
+    {
+      "path": "m/44'/501'/10'",
+      "address": "4Uhjmu2eeaHcWcFSKojSnTSs2UhexztTa5irJ1fKe5eG",
+      "public_key": "33abcdfd2c963cbba745a0fbc9cf2b6cf23da2f5aaca76764ac83e22712c2b29",
+      "private_key": "c2693dffc8fc673ce5e789e1fae8bef5f7aee8d15933328dc5ff0d854686fc76"
+    },
+    {
+      "path": "m/44'/501'/11'",
+      "address": "DBhXPUPcczTdddW1hhn8QkQJLBc9J82rW8NhxKT1XW5X",
+      "public_key": "b509df2b1639be4b28ec53f6cb271f8a246856e3ee5898b0646aa6a8b045b10a",
+      "private_key": "b120ef63028d5da97b74e11565fa45bf6ed16ca7f006378afaff9273d0bea5a3"
+    },
+    {
+      "path": "m/44'/501'/12'",
+      "address": "G6fBPUqCG1JLap4pkPCq4V3hHXxzAzNmGUFX4PAGWbQs",
+      "public_key": "e052608f0734413cdd172b2acce4780205ecbbd0056e05b28dcd55cf893e3848",
+      "private_key": "79873d26f56192380005e4da1814d8eed20c5bd0bb57ed0439f615b5f0da7ea6"
+    },
+    {
+      "path": "m/44'/501'/13'",
+      "address": "FpZJQSt9S9P7R8zKHTgEHVD3G88xxWBTLNwtDp4CigWF",
+      "public_key": "dc326fd26e1ba817d03e4b4a381b8998483c20ed3607ca7188a7793f464e06d4",
+      "private_key": "69424bd6b0aee3aaa24ee3036a7d1080115078f0bc34facd31a8478797d842a8"
+    },
+    {
+      "path": "m/44'/501'/14'",
+      "address": "DwTERJRVkPuNVdUVCBsi7wmTUfX3uRTFpxfowf8fiSsj",
+      "public_key": "c03f44468ac551cdc559e00ccb7f841940fc1b5039502db2330952c9c45feeaa",
+      "private_key": "b374dfd432a1db88bff0417d48b1597d858342c1c47cc5fe5f536ee354f819c5"
+    },
+    {
+      "path": "m/44'/501'/15'",
+      "address": "AHqcKgwgqCfkoSHL1dqxUcXCiPnu5R7KZacS1BjnvW9t",
+      "public_key": "8a09700a5d60ca1086523cfae29feb138ea5d85b604651b54cbb71c5a0306aef",
+      "private_key": "f9070889ddb9582815744cf4a35d34eb1e0f28f931571031daab4703996f7a87"
+    },
+    {
+      "path": "m/44'/501'/16'",
+      "address": "25wvGEQbh9HB4YaqX3nzYmpFJTJPdeaNeDpu8dfSeLsK",
+      "public_key": "10201b43f92ec10e4f2cb5019af54c596a56a1f3f74a069265ff9e21a71ed5aa",
+      "private_key": "ae08b816848f103e7882cfbad9d88ab6b96be02f65b9e10138b51f04dc7ff82d"
+    },
+    {
+      "path": "m/44'/501'/17'",
+      "address": "EQ16pzrADwtmHSfBf58sboJZyUaVhomELJT7FTK3zqFf",
+      "public_key": "c70c66fa6afbe4a6ce4cb3cecd0858e07042c83d47e470c90e56a77ef61f57da",
+      "private_key": "c514ead5d004924acb6964aadca7f4d1338abe809631ca6d2fdd3dd7827da7cb"
+    },
+    {
+      "path": "m/44'/501'/18'",
+      "address": "2rZjnhDtKGoeJzVqArgZ23aEaKLyuKmVkb2qjNpCY8t4",
+      "public_key": "1b8e29c9742394e587c8256f718e5110fc441ac9261abf36fd1c7052380c00b5",
+      "private_key": "dbe79babb720033d33ce8e6761ed41984680e87f434036a2e36c9c2ff6e4c471"
+    },
+    {
+      "path": "m/44'/501'/19'",
+      "address": "529zrfxR5LPJsYNxtuwr2guKfS38zzCVN2rvVTuPCWYd",
+      "public_key": "3bba808631353ff4914638172228b4c76cddee2fc0c5fe40c7b3724f36088b56",
+      "private_key": "1dcc97f59eb9ba38f2c6e4c1ec665666e1a8bbcfdadc8fab88a69e7cb8f47a69"
+    }
+  ]
+}

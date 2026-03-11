@@ -50,6 +50,10 @@ module SkeletonKey
       SkeletonKey::Ethereum::Account.new(seed: seed.bytes, **)
     end
 
+    def solana(**)
+      SkeletonKey::Solana::Account.new(seed: seed.bytes, **)
+    end
+
     private
 
     # Reader for the seed

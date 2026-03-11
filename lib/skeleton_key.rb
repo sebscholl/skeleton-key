@@ -8,12 +8,14 @@ require_relative "skeleton_key/errors"
 # Utilities
 require_relative "skeleton_key/utils/hashing"
 require_relative "skeleton_key/utils/encoding"
+require_relative "skeleton_key/codecs/base58"
 require_relative "skeleton_key/codecs/base58_check"
 require_relative "skeleton_key/codecs/bech32"
 
 # Derivation methods
 require_relative "skeleton_key/derivation/path"
 require_relative "skeleton_key/derivation/bip32"
+require_relative "skeleton_key/derivation/slip10"
 
 # Core functionality
 require_relative "skeleton_key/core/entropy"
@@ -27,6 +29,8 @@ require_relative "skeleton_key/bitcoin/support"
 require_relative "skeleton_key/bitcoin/account"
 require_relative "skeleton_key/ethereum/support"
 require_relative "skeleton_key/ethereum/account"
+require_relative "skeleton_key/solana/support"
+require_relative "skeleton_key/solana/account"
 
 
 module SkeletonKey

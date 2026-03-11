@@ -11,6 +11,7 @@ The shared layer owns only chain-agnostic primitives:
 - seed import and validation
 - derivation path parsing
 - secp256k1 and BIP32 child-key derivation primitives
+- SLIP-0010 hardened child-key derivation primitives
 - generic BIP32 extended-key serialization primitives
 
 This layer may derive key material from a seed and path, and it may serialize generic BIP32 extended keys. It must not know how any specific blockchain encodes addresses or applies chain-specific version-byte conventions beyond generic extended-key structure.
@@ -38,6 +39,17 @@ Ethereum code owns all Ethereum-specific behavior:
 
 Ethereum must not inherit Bitcoin serialization assumptions such as WIF, Base58Check, Bech32, or Bitcoin-specific field naming conventions.
 
+## Solana Layer
+
+Solana code owns all Solana-specific behavior:
+
+- Solana path conventions such as `m/44'/501'/account'/0'`
+- Ed25519 keypair generation from SLIP-0010 child seeds
+- hardened-only child derivation rules
+- raw Base58 address encoding from the 32-byte public key
+
+Solana must not inherit Bitcoin address encodings or secp256k1 assumptions, and it must not inherit Ethereum address hashing conventions.
+
 ## Testing Implication
 
 Golden-master fixtures should follow the same boundary:
@@ -45,5 +57,6 @@ Golden-master fixtures should follow the same boundary:
 - shared derivation vectors validate shared derivation behavior
 - Bitcoin vectors validate Bitcoin serialization and address behavior
 - Ethereum vectors validate Ethereum address derivation and checksum behavior
+- Solana tests validate hardened Ed25519 derivation behavior and Base58 address encoding
 
 If a fixture proves only Bitcoin script or address semantics, it does not belong in Ethereum coverage.

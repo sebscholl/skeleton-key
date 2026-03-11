@@ -100,5 +100,11 @@ module SkeletonKey
         super(msg)
       end
     end
+
+    class UnsupportedDerivationIndexError < SkeletonKeyError
+      def initialize(msg = "unsupported derivation index")
+        super(msg)
+      end
+    end
   end
 end

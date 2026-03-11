@@ -10,6 +10,7 @@ Keep the repository layout strict and predictable. Production code belongs under
 - `lib/skeleton_key/derivation/`: path parsing and BIP32 derivation logic
 - `lib/skeleton_key/bitcoin/`: Bitcoin-specific behavior
 - `lib/skeleton_key/ethereum/`: Ethereum-specific behavior
+- `lib/skeleton_key/solana/`: Solana-specific behavior
 - `lib/skeleton_key/utils/`: tightly scoped shared helpers
 - `spec/lib/`: unit specs
 - `spec/integration/`: vector and cross-module verification
@@ -20,11 +21,13 @@ Keep the repository layout strict and predictable. Production code belongs under
 ## Architecture Boundary
 Keep the abstraction boundary explicit. Shared code may derive key material from entropy, mnemonics, seeds, and BIP32 paths, but it must not know how Bitcoin or Ethereum encode addresses or serialize chain-facing keys. Chain modules own chain conventions, address construction, and external encodings. The canonical reference is [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
-- Shared layer: entropy, mnemonic-to-seed derivation, seed validation, path parsing, secp256k1/BIP32 primitives, and generic extended-key serialization
+- Shared layer: entropy, mnemonic-to-seed derivation, seed validation, path parsing, secp256k1/BIP32 primitives, SLIP-0010 hardened derivation, and generic extended-key serialization
 - Bitcoin layer: version bytes, WIF, Base58Check, Bech32, script and UTXO-specific derivation behavior
 - Ethereum layer: path conventions such as `m/44'/60'/account'/0/index`, Keccak address derivation, EIP-55 checksum formatting, and Ethereum-facing address APIs
+- Solana layer: path conventions such as `m/44'/501'/account'/0'`, Ed25519 key generation, hardened-only derivation, and raw Base58 address encoding
 - Rule: never place Bitcoin address or serialization logic in shared derivation code
 - Rule: never make Ethereum inherit Bitcoin encodings or Bitcoin-specific field naming conventions
+- Rule: never make Solana inherit secp256k1 assumptions, Bitcoin address encodings, or Ethereum address hashing behavior
 
 ## Risk Posture
 Treat every change as safety-critical. Favor simple, explicit code over clever abstractions, and reject any implementation that cannot be explained line by line, exhaustively tested, and independently validated.
