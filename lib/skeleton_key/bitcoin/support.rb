@@ -106,6 +106,10 @@ module SkeletonKey
       # @return [Array(Integer, Integer)] [xpub_version, xprv_version]
       def version_bytes(network:, purpose:)
         case [purpose, network]
+        when [32, :mainnet] then VERSION_BYTES[:mainnet][:bip44]
+        when [32, :testnet] then VERSION_BYTES[:testnet][:bip44]
+        when [141, :mainnet] then VERSION_BYTES[:mainnet][:bip84]
+        when [141, :testnet] then VERSION_BYTES[:testnet][:bip84]
         when [44, :mainnet] then VERSION_BYTES[:mainnet][:bip44]
         when [44, :testnet] then VERSION_BYTES[:testnet][:bip44]
         when [49, :mainnet] then VERSION_BYTES[:mainnet][:bip49]
@@ -134,6 +138,10 @@ module SkeletonKey
 
         address =
           case purpose
+          when 32
+            to_p2pkh_address(pub, network: network)
+          when 141
+            to_bech32_address(pub, hrp: network == :mainnet ? "bc" : "tb")
           when 44
             to_p2pkh_address(pub, network: network)      # bip44
           when 49
@@ -145,7 +153,7 @@ module SkeletonKey
           end
 
         {
-          path: "m/#{purpose}'/#{coin_type}'/#{account_index}'/#{change}/#{index}",
+          path: legacy_root_branch? ? "m/#{change}/#{index}" : "m/#{purpose}'/#{coin_type}'/#{account_index}'/#{change}/#{index}",
           privkey: k,
           pubkey: pub,
           chain_code: c,
@@ -163,6 +171,10 @@ module SkeletonKey
       # @return [String] 4-byte version bytes for xpub
       def public_version_byte(network:, purpose:)
         case [purpose, network]
+        when [32, :mainnet] then VERSION_BYTES[:mainnet][:bip44][:xpub]
+        when [32, :testnet] then VERSION_BYTES[:testnet][:bip44][:tpub]
+        when [141, :mainnet] then VERSION_BYTES[:mainnet][:bip84][:zpub]
+        when [141, :testnet] then VERSION_BYTES[:testnet][:bip84][:vpub]
         when [44, :mainnet] then VERSION_BYTES[:mainnet][:bip44][:xpub]
 
         when [44, :testnet] then VERSION_BYTES[:testnet][:bip44][:tpub]
@@ -182,6 +194,10 @@ module SkeletonKey
       # @return [String] 4-byte version bytes for xprv
       def private_version_byte(network:, purpose:)
         case [purpose, network]
+        when [32, :mainnet] then VERSION_BYTES[:mainnet][:bip44][:xprv]
+        when [32, :testnet] then VERSION_BYTES[:testnet][:bip44][:tprv]
+        when [141, :mainnet] then VERSION_BYTES[:mainnet][:bip84][:zprv]
+        when [141, :testnet] then VERSION_BYTES[:testnet][:bip84][:vprv]
         when [44, :mainnet] then VERSION_BYTES[:mainnet][:bip44][:xprv]
 
         when [44, :testnet] then VERSION_BYTES[:testnet][:bip44][:tprv]

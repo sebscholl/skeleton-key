@@ -17,6 +17,8 @@ module SkeletonKey
 
       attr_reader :purpose, :coin_type, :account_index, :network, :derived
 
+      LEGACY_BIP32_PURPOSE = 32
+      LEGACY_BIP141_PURPOSE = 141
       DEFAULT_PURPOSE = 84   # BIP84 = native SegWit
       MAINNET_COIN    = 0
       TESTNET_COIN    = 1
@@ -58,6 +60,8 @@ module SkeletonKey
 
       # @return [String] BIP32 path
       def path
+        return "m" if legacy_root_branch?
+
         "m/#{purpose}'/#{coin_type}'/#{account_index}'"
       end
 
@@ -81,6 +85,8 @@ module SkeletonKey
       # @return [Account] the derived account
       # inside SkeletonKey::Bitcoin::Account
       def derive_from_seed(seed_bytes, purpose: 84, coin_type: 0, account: 0)
+        return derive_legacy_root_from_seed(seed_bytes) if legacy_root_branch_purpose?(purpose)
+
         # --- master (m/) ---
         k, c = master_from_seed(seed_bytes)
         parent_pub = privkey_to_pubkey_compressed(k)
@@ -157,6 +163,55 @@ module SkeletonKey
           account_xprv: account_xprv,
           account_xpub: account_xpub
         }
+      end
+
+      def derive_legacy_root_from_seed(seed_bytes)
+        k_master, c_master = master_from_seed(seed_bytes)
+        version_prv = [private_version_byte(network: network, purpose: purpose)].pack("N")
+        version_pub = [public_version_byte(network: network, purpose: purpose)].pack("N")
+        master_pub = privkey_to_pubkey_compressed(k_master)
+        master_fpr = fingerprint_from_pubkey(master_pub)
+        k_branch, c_branch = ckd_priv(k_master, c_master, 0)
+        pub_branch = privkey_to_pubkey_compressed(k_branch)
+
+        {
+          k_int: k_master,
+          c: c_master,
+          bip32_xprv: serialize_xprv(
+            k_branch,
+            c_branch,
+            depth: 1,
+            parent_fpr: master_fpr,
+            child_num: 0,
+            version: version_prv
+          ),
+          bip32_xpub: serialize_xpub(
+            pub_branch,
+            c_branch,
+            depth: 1,
+            parent_fpr: master_fpr,
+            child_num: 0,
+            version: version_pub
+          ),
+          account_xprv: "",
+          account_xpub: ""
+        }
+      end
+
+      def legacy_bip32?
+        purpose == LEGACY_BIP32_PURPOSE
+      end
+
+      def legacy_bip141?
+        purpose == LEGACY_BIP141_PURPOSE
+      end
+
+      def legacy_root_branch?
+        legacy_root_branch_purpose?(purpose)
+      end
+
+      def legacy_root_branch_purpose?(value)
+        [LEGACY_BIP32_PURPOSE, LEGACY_BIP141_PURPOSE].include?(value)
       end
 
     end
