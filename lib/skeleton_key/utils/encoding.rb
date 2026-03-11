@@ -23,7 +23,7 @@ module SkeletonKey
       # @param [String] payload binary string to encode
       # @return [String] base58check-encoded string
       def base58check_encode(payload)
-        Base58.binary_to_base58(payload + Hashing.checksum(payload), :bitcoin)
+        Codecs::Base58Check.encode(payload)
       end
 
       ##

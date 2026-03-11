@@ -1,0 +1,189 @@
+{
+  "fixture": "base58check_decode",
+  "source": "base58 gem",
+  "alphabet": "bitcoin",
+  "valid_cases": [
+    {
+      "label": "leading_zero_bytes_0",
+      "encoded": "An6Ui6sE1F",
+      "payload_hex": "01020304",
+      "checksum_hex": "8de472e2",
+      "decoded_hex": "010203048de472e2"
+    },
+    {
+      "label": "leading_zero_bytes_1",
+      "encoded": "1An6UhWF92g",
+      "payload_hex": "0001020304",
+      "checksum_hex": "768a07c1",
+      "decoded_hex": "0001020304768a07c1"
+    },
+    {
+      "label": "leading_zero_bytes_2",
+      "encoded": "11An6UeerQM6",
+      "payload_hex": "000001020304",
+      "checksum_hex": "06facc21",
+      "decoded_hex": "00000102030406facc21"
+    },
+    {
+      "label": "leading_zero_bytes_3",
+      "encoded": "111An6UkqueAM",
+      "payload_hex": "00000001020304",
+      "checksum_hex": "f92b2192",
+      "decoded_hex": "00000001020304f92b2192"
+    },
+    {
+      "label": "leading_zero_bytes_4",
+      "encoded": "1111An6UiDPjNT",
+      "payload_hex": "0000000001020304",
+      "checksum_hex": "924b53d4",
+      "decoded_hex": "0000000001020304924b53d4"
+    },
+    {
+      "label": "leading_zero_bytes_8",
+      "encoded": "11111111An6UgiJjxf",
+      "payload_hex": "000000000000000001020304",
+      "checksum_hex": "578da85c",
+      "decoded_hex": "000000000000000001020304578da85c"
+    },
+    {
+      "label": "empty_payload",
+      "encoded": "3QJmnh",
+      "payload_hex": "",
+      "checksum_hex": "5df6e0e2",
+      "decoded_hex": "5df6e0e2"
+    },
+    {
+      "label": "single_byte_zero",
+      "encoded": "1Wh4bh",
+      "payload_hex": "00",
+      "checksum_hex": "1406e058",
+      "decoded_hex": "001406e058"
+    },
+    {
+      "label": "single_byte_ff",
+      "encoded": "VrZDWwe",
+      "payload_hex": "ff",
+      "checksum_hex": "c0b057f5",
+      "decoded_hex": "ffc0b057f5"
+    },
+    {
+      "label": "four_byte_incrementing",
+      "encoded": "13DV5niCGP",
+      "payload_hex": "00010203",
+      "checksum_hex": "f7a355c0",
+      "decoded_hex": "00010203f7a355c0"
+    },
+    {
+      "label": "twenty_byte_incrementing",
+      "encoded": "12D2adLM3UKy4Z4giRbReR6gjWx1w6Dz",
+      "payload_hex": "000102030405060708090a0b0c0d0e0f10111213",
+      "checksum_hex": "dc732db5",
+      "decoded_hex": "000102030405060708090a0b0c0d0e0f10111213dc732db5"
+    },
+    {
+      "label": "thirty_two_byte_incrementing",
+      "encoded": "16qJFWMMHFy3xDdLmvUeyc2S6FrWRhJP51HsvDYdz9d1FsYG",
+      "payload_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+      "checksum_hex": "2f287b4d",
+      "decoded_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f2f287b4d"
+    },
+    {
+      "label": "sixty_four_byte_incrementing",
+      "encoded": "12jVjGbD3wrDT6L19fyB486MyMfMdNjc148QTEgR2qypJqKtTHnBDUjubAxFytva52tzNzog1PChUSJ1vFMgt11fwd15",
+      "payload_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "checksum_hex": "01c9f464",
+      "decoded_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f01c9f464"
+    },
+    {
+      "label": "privkey_one_compressed",
+      "encoded": "KwDiBf89QgGbjEhKnhXJuH7LrciVrZi3qYjgd9M7rFU73sVHnoWn",
+      "payload_hex": "80000000000000000000000000000000000000000000000000000000000000000101",
+      "checksum_hex": "4671fc3f",
+      "decoded_hex": "800000000000000000000000000000000000000000000000000000000000000001014671fc3f"
+    },
+    {
+      "label": "privkey_one_uncompressed",
+      "encoded": "5HpHagT65TZzG1PH3CSu63k8DbpvD8s5ip4nEB3kEsreAnchuDf",
+      "payload_hex": "800000000000000000000000000000000000000000000000000000000000000001",
+      "checksum_hex": "a85aa87e",
+      "decoded_hex": "800000000000000000000000000000000000000000000000000000000000000001a85aa87e"
+    },
+    {
+      "label": "privkey_max_minus_one_compressed",
+      "encoded": "L5oLkpV3aqBjhki6LmvChTCq73v9gyymzzMpBbhDLjDpJi5jb7VE",
+      "payload_hex": "80fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01",
+      "checksum_hex": "a576a36d",
+      "decoded_hex": "80fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01a576a36d"
+    },
+    {
+      "label": "testnet_privkey_one_compressed",
+      "encoded": "cMahea7zqjxrtgAbB7LSGbcQUr1uX1ojuat9jZodMN87JcbXMTcA",
+      "payload_hex": "ef000000000000000000000000000000000000000000000000000000000000000101",
+      "checksum_hex": "84e38d1f",
+      "decoded_hex": "ef00000000000000000000000000000000000000000000000000000000000000010184e38d1f"
+    },
+    {
+      "label": "p2pkh_zero_hash",
+      "encoded": "1111111111111111111114oLvT2",
+      "payload_hex": "000000000000000000000000000000000000000000",
+      "checksum_hex": "94a00911",
+      "decoded_hex": "00000000000000000000000000000000000000000094a00911"
+    },
+    {
+      "label": "p2pkh_ff_hash",
+      "encoded": "1QLbz7JHiBTspS962RLKV8GndWFwi5j6Qr",
+      "payload_hex": "00ffffffffffffffffffffffffffffffffffffffff",
+      "checksum_hex": "fa06820b",
+      "decoded_hex": "00fffffffffffffffffffffffffffffffffffffffffa06820b"
+    },
+    {
+      "label": "p2sh_zero_hash",
+      "encoded": "31h1vYVSYuKP6AhS86fbRdMw9XHieotbST",
+      "payload_hex": "050000000000000000000000000000000000000000",
+      "checksum_hex": "dc8c61c4",
+      "decoded_hex": "050000000000000000000000000000000000000000dc8c61c4"
+    },
+    {
+      "label": "testnet_p2pkh_incrementing",
+      "encoded": "mfWyW5fc9NUj75YAnFgoRLrjxgLDn2MMth",
+      "payload_hex": "6f000102030405060708090a0b0c0d0e0f10111213",
+      "checksum_hex": "194aa756",
+      "decoded_hex": "6f000102030405060708090a0b0c0d0e0f10111213194aa756"
+    },
+    {
+      "label": "testnet_p2sh_incrementing",
+      "encoded": "2MsFHcNAMAPx9GrWdzHRjprHSevhRzmwbaT",
+      "payload_hex": "c4000306090c0f1215181b1e2124272a2d30333639",
+      "checksum_hex": "e022df2c",
+      "decoded_hex": "c4000306090c0f1215181b1e2124272a2d30333639e022df2c"
+    },
+    {
+      "label": "xprv_depth0_zeroes",
+      "encoded": "xprv9s21ZrQH143K2EDGXpNbsnyEi8jeV64NxA2pduBTWifS5ru9pQKDGk5oPPTAqAhWqoHx4Aj72raozWKdyZehB9byQTdqAq7SZjZxZNttgjn",
+      "payload_hex": "0488ade40000000000000000001111111111111111111111111111111111111111111111111111111111111111002222222222222222222222222222222222222222222222222222222222222222",
+      "checksum_hex": "cd3d55f5",
+      "decoded_hex": "0488ade40000000000000000001111111111111111111111111111111111111111111111111111111111111111002222222222222222222222222222222222222222222222222222222222222222cd3d55f5"
+    },
+    {
+      "label": "xpub_depth0_zeroes",
+      "encoded": "xpub661MyMwAqRbcEiHjdqucEvuyGAa8tYnEKNxRSHb554CQxfEJMwdTpYQHEeUwGokAxP6QEG1SWmaGWb4yhTNgEQstVk6RWTJHUuTyJgmgMc5",
+      "payload_hex": "0488b21e0000000000000000001111111111111111111111111111111111111111111111111111111111111111022222222222222222222222222222222222222222222222222222222222222222",
+      "checksum_hex": "db96693a",
+      "decoded_hex": "0488b21e0000000000000000001111111111111111111111111111111111111111111111111111111111111111022222222222222222222222222222222222222222222222222222222222222222db96693a"
+    },
+    {
+      "label": "zprv_depth3_sample",
+      "encoded": "zprvAdxshxTC16snjTcZd1dppFgkL2W8mRiDDJKWabWKdxLQsCF4HAa7dbiRVs5afcMys1fCxjuppGm7wtfdFCzQMSMDZUiD9jQNvizs6JCeZUu",
+      "payload_hex": "04b2430c03deadbeef8000002cabababababababababababababababababababababababababababababababab00cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "checksum_hex": "55102d2a",
+      "decoded_hex": "04b2430c03deadbeef8000002cabababababababababababababababababababababababababababababababab00cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd55102d2a"
+    },
+    {
+      "label": "zpub_depth3_sample",
+      "encoded": "zpub6rxE7Tz5qUS5wwh2j3AqBPdUt4LdAtS4aXF7NyuwCHsPjzaCphtNBQ2uMA46HUrfq28tGemsCmNaRJ1jtDL74QU1SQEujWH7qYuGLCUp9Hc",
+      "payload_hex": "04b2474603deadbeef8000002cabababababababababababababababababababababababababababababababab03cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "checksum_hex": "2241870b",
+      "decoded_hex": "04b2474603deadbeef8000002cabababababababababababababababababababababababababababababababab03cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd2241870b"
+    }
+  ]
+}

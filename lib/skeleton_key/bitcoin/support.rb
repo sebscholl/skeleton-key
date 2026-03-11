@@ -76,11 +76,11 @@ module SkeletonKey
       def to_bech32_address(pubkey_bytes, hrp: "bc")
         prog = hash160(pubkey_bytes) # 20-byte witness program (P2WPKH)
 
-        prog5 = Bech32.convert_bits(prog.bytes, 8, 5, true)
+        prog5 = Codecs::Bech32.convert_bits(prog.bytes, 8, 5, true)
         # witness version 0 + witness program converted to 5-bit words
         data = [0] + prog5
 
-        Bech32.encode(hrp, data, Bech32::Encoding::BECH32)
+        Codecs::Bech32.encode(hrp, data, Codecs::Bech32::Encoding::BECH32)
       end
 
       # Returns the version byte for extended keys based on network, purpose, and key type

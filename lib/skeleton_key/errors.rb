@@ -76,5 +76,29 @@ module SkeletonKey
         super("unsupported purpose/network combination: purpose=#{purpose}, network=#{network}")
       end
     end
+
+    class InvalidBase58Error < SkeletonKeyError
+      def initialize(msg = "invalid base58 string")
+        super(msg)
+      end
+    end
+
+    class InvalidChecksumError < SkeletonKeyError
+      def initialize(msg = "invalid checksum")
+        super(msg)
+      end
+    end
+
+    class InvalidBech32Error < SkeletonKeyError
+      def initialize(msg = "invalid bech32 string")
+        super(msg)
+      end
+    end
+
+    class InvalidConvertBitsError < SkeletonKeyError
+      def initialize(msg = "invalid convert_bits input")
+        super(msg)
+      end
+    end
   end
 end

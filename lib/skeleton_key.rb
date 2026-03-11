@@ -1,7 +1,3 @@
-# Gem dependencies
-require "base58"
-require "bech32"
-
 # Version
 require_relative "skeleton_key/version"
 
@@ -12,6 +8,8 @@ require_relative "skeleton_key/errors"
 # Utilities
 require_relative "skeleton_key/utils/hashing"
 require_relative "skeleton_key/utils/encoding"
+require_relative "skeleton_key/codecs/base58_check"
+require_relative "skeleton_key/codecs/bech32"
 
 # Derivation methods
 require_relative "skeleton_key/derivation/path"

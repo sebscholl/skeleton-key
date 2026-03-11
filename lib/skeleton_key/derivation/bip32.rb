@@ -2,7 +2,6 @@
 
 require "openssl"
 require "digest"
-require "base58"
 
 module SkeletonKey
   module Derivation

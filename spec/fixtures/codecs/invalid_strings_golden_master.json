@@ -1,0 +1,247 @@
+{
+  "fixture": "invalid_strings",
+  "source": {
+    "base58check": "base58 gem",
+    "bech32": "bech32 gem"
+  },
+  "base58check": {
+    "malformed_cases": [
+      {
+        "label": "contains_zero",
+        "encoded": "10",
+        "decoded_hex": null,
+        "checksum_valid": false
+      },
+      {
+        "label": "contains_upper_i",
+        "encoded": "1I",
+        "decoded_hex": null,
+        "checksum_valid": false
+      },
+      {
+        "label": "contains_upper_o",
+        "encoded": "1O",
+        "decoded_hex": null,
+        "checksum_valid": false
+      },
+      {
+        "label": "contains_lower_l",
+        "encoded": "1l",
+        "decoded_hex": null,
+        "checksum_valid": false
+      },
+      {
+        "label": "whitespace",
+        "encoded": "1 2",
+        "decoded_hex": null,
+        "checksum_valid": false
+      },
+      {
+        "label": "empty",
+        "encoded": "",
+        "decoded_hex": "00",
+        "checksum_valid": false
+      }
+    ],
+    "checksum_failure_cases": [
+      {
+        "label": "checksum_mutation_An6Ui6sE",
+        "encoded": "An6Ui6sE11",
+        "decoded_hex": "010203048de472d4",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_An6Ui6sE",
+        "encoded": "An6Ui6sE1",
+        "decoded_hex": "0472cf86dc36f2",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_1An6UhWF",
+        "encoded": "1An6UhWF921",
+        "decoded_hex": "0001020304768a079a",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_1An6UhWF",
+        "encoded": "1An6UhWF92",
+        "decoded_hex": "000472cf86752371",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_11An6Uee",
+        "encoded": "11An6UeerQM1",
+        "decoded_hex": "00000102030406facc1c",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_11An6Uee",
+        "encoded": "11An6UeerQM",
+        "decoded_hex": "00000472cf8488bce6",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_111An6Uk",
+        "encoded": "111An6UkqueA1",
+        "decoded_hex": "00000001020304f92b217e",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_111An6Uk",
+        "encoded": "111An6UkqueA",
+        "decoded_hex": "0000000472cf88b5b58b",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_1111An6U",
+        "encoded": "1111An6UiDPjN1",
+        "decoded_hex": "0000000001020304924b53ba",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_1111An6U",
+        "encoded": "1111An6UiDPjN",
+        "decoded_hex": "000000000472cf86efa4c1",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_11111111",
+        "encoded": "11111111An6UgiJjx1",
+        "decoded_hex": "000000000000000001020304578da836",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_11111111",
+        "encoded": "11111111An6UgiJjx",
+        "decoded_hex": "00000000000000000472cf85ec5f97",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_3QJmnh",
+        "encoded": "3QJmn1",
+        "decoded_hex": "5df6e0ba",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_3QJmnh",
+        "encoded": "3QJmn",
+        "decoded_hex": "019ebd41",
+        "checksum_valid": false
+      },
+      {
+        "label": "checksum_mutation_1Wh4bh",
+        "encoded": "1Wh4b1",
+        "decoded_hex": "001406e030",
+        "checksum_valid": false
+      },
+      {
+        "label": "truncated_1Wh4bh",
+        "encoded": "1Wh4b",
+        "decoded_hex": "005864f8",
+        "checksum_valid": false
+      }
+    ]
+  },
+  "bech32": [
+    {
+      "label": "mixed_case",
+      "encoded": "bC1qw508d6qejxtdg4y5r3zarvary0c5xw7kygt080",
+      "decoded": null
+    },
+    {
+      "label": "missing_separator",
+      "encoded": "bcqw508d6qejxtdg4y5r3zarvary0c5xw7kygt080",
+      "decoded": null
+    },
+    {
+      "label": "invalid_character",
+      "encoded": "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kygt08i",
+      "decoded": null
+    },
+    {
+      "label": "empty",
+      "encoded": "",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_bc1qqqqq",
+      "encoded": "bc1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9e75rq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_bc1qqqqq",
+      "encoded": "bc1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9e75r",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_bc1qllll",
+      "encoded": "bc1qllllllllllllllllllllllllllllllllfglmyq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_bc1qllll",
+      "encoded": "bc1qllllllllllllllllllllllllllllllllfglmy",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_bc1qqqqs",
+      "encoded": "bc1qqqqsyqcyq5rqwzqfpg9scrgwpugpzysn4v034q",
+      "decoded": null
+    },
+    {
+      "label": "truncated_bc1qqqqs",
+      "encoded": "bc1qqqqsyqcyq5rqwzqfpg9scrgwpugpzysn4v034",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_bc1qqqrs",
+      "encoded": "bc1qqqrsu9guyv4rzwplgex4gkmzd9c8wl593jfe4gdg47mtm3xt6tvssfx6fq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_bc1qqqrs",
+      "encoded": "bc1qqqrsu9guyv4rzwplgex4gkmzd9c8wl593jfe4gdg47mtm3xt6tvssfx6f",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_tb1qqqqq",
+      "encoded": "tb1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq0l98cq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_tb1qqqqq",
+      "encoded": "tb1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq0l98c",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_tb1qllll",
+      "encoded": "tb1qllllllllllllllllllllllllllllllllrwyglq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_tb1qllll",
+      "encoded": "tb1qllllllllllllllllllllllllllllllllrwygl",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_tb1qqqqs",
+      "encoded": "tb1qqqqsyqcyq5rqwzqfpg9scrgwpugpzysnl25zwq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_tb1qqqqs",
+      "encoded": "tb1qqqqsyqcyq5rqwzqfpg9scrgwpugpzysnl25zw",
+      "decoded": null
+    },
+    {
+      "label": "checksum_mutation_tb1qqqrs",
+      "encoded": "tb1qqqrsu9guyv4rzwplgex4gkmzd9c8wl593jfe4gdg47mtm3xt6tvs8ps4nq",
+      "decoded": null
+    },
+    {
+      "label": "truncated_tb1qqqrs",
+      "encoded": "tb1qqqrsu9guyv4rzwplgex4gkmzd9c8wl593jfe4gdg47mtm3xt6tvs8ps4n",
+      "decoded": null
+    }
+  ]
+}
