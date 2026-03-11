@@ -23,6 +23,12 @@ module SkeletonKey
       end
     end
 
+    class InvalidMnemonicError < SkeletonKeyError
+      def initialize(msg = "must be a BIP39 mnemonic with #{SkeletonKey::Constants::MNEMONIC_WORD_COUNTS.inspect} words")
+        super(msg)
+      end
+    end
+
     class InvalidPathFormatError < SkeletonKeyError
       def initialize(msg = "invalid path format")
         super(msg)

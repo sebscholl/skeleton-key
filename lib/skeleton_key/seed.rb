@@ -2,6 +2,7 @@ require "securerandom"
 
 module SkeletonKey
   class Seed
+    include Utils::Encoding
     extend Utils::Encoding
 
     attr_reader :bytes
@@ -37,7 +38,9 @@ module SkeletonKey
         case
         when value.nil? then generate
         when value.is_a?(Seed) then import_from_seed(value)
+        when value.is_a?(Mnemonic) then import_from_mnemonic(value)
         when hex_string?(value) then import_from_hex(value)
+        when mnemonic_string?(value) then import_from_mnemonic(value)
         when byte_string?(value) then import_from_bytes(value)
         when octet_array?(value) then import_from_octets(value)
         else
@@ -82,6 +85,18 @@ module SkeletonKey
       # @return [Seed] the created Seed
       def import_from_seed(seed)
         new(seed.bytes)
+      end
+
+      def import_from_mnemonic(mnemonic)
+        Mnemonic.import(mnemonic).seed
+      end
+
+      private
+
+      def mnemonic_string?(value)
+        return false unless value.is_a?(String)
+
+        Constants::MNEMONIC_WORD_COUNTS.include?(value.strip.split(/\s+/).length)
       end
     end
   end

@@ -21,6 +21,14 @@ module SkeletonKey
     ENTROPY_LENGTHS = [16, 20, 24, 28, 32].freeze
 
     ##
+    # Valid BIP39 mnemonic lengths in words.
+    #
+    # BIP39 supports 12, 15, 18, 21, and 24 word phrases.
+    #
+    # @return [Array<Integer>] allowed mnemonic word counts
+    MNEMONIC_WORD_COUNTS = [12, 15, 18, 21, 24].freeze
+
+    ##
     # Valid master secret lengths for SLIP-39.
     #
     # SLIP-39 supports secrets of 128, 192, or 256 bits,

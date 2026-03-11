@@ -1,0 +1,79 @@
+{
+  "list": [
+    {
+      "length": 12,
+      "bip39_mnemonic": "physical spike blood wash duck little give erupt safe oppose speak struggle",
+      "bip39_seed": "a6d95cda25a5c88d6396a0d29daacfaf05aeb9d55d15daa31a4b721e1a44affa1b041fae3600ddb75ddfba22e1bb7ff2aa958a94d59739fb798bdbf7db6689fa"
+    },
+    {
+      "length": 12,
+      "bip39_mnemonic": "version poet fiber stuff harvest one photo disagree flag bomb feed wrestle",
+      "bip39_seed": "548edbd7964fdb2a0633848e46d4d434a41ddebeafee02fbd5bbc2931c37d62b50c4a72374102b4854d85a10fbfdde67ab7dc3fa5194fdca9209403baec04921"
+    },
+    {
+      "length": 12,
+      "bip39_mnemonic": "nerve flavor web cheap breeze fox praise punch glad enrich wash leader",
+      "bip39_seed": "879312006ba1c8e09f7029accc904b1440fe3fb95b7058818cf3013d36575c2dc4c9df8e59569b5b4598753f713ac0e1ae0b152e3f0ea508453d9bc8b109feb5"
+    },
+    {
+      "length": 15,
+      "bip39_mnemonic": "van border clip scan excuse alert cave exclude twist bounce provide popular wrestle leaf series",
+      "bip39_seed": "5bbe7a2bc0d95087c41706c65c9122f610bf255f0551b588ec825bd40e7f7d6b4cc3ee7150df4e0bddac2de1eb80f322318a6d3db78cba000ae526121cfe2d64"
+    },
+    {
+      "length": 15,
+      "bip39_mnemonic": "minimum drive hill culture burger cousin habit parade slight goose sad still garment season lyrics",
+      "bip39_seed": "991759337103f3811e6458d56b4df3414d3eface55c491db7bd30364f114991921fc12df0dff9e8ce717ef9f8f6d814cf946d9d6bbe12821f4b36bbf706ffaad"
+    },
+    {
+      "length": 15,
+      "bip39_mnemonic": "fan immune below target little soda random what nice property domain move toe change shoe",
+      "bip39_seed": "0364f338551a8959d3184b097c856c8046548c7bd8a4fe6373a9372cd0e3828080674797135b7413b898fe31fbf49c2958d47826be763ba9a7888d3f4095b9a7"
+    },
+    {
+      "length": 18,
+      "bip39_mnemonic": "know strong puppy print wage age amazing typical trouble laugh earth rather minimum broken banana fog venue kid",
+      "bip39_seed": "dd1153a5b8032536087b1028564e3ab9f648d2cd36ebebe55860742da3c854147cacad00470cff1c25cdf93d6a9250ad0e8bc87865299521dc897c94cdd3988a"
+    },
+    {
+      "length": 18,
+      "bip39_mnemonic": "similar olympic name clerk gaze close cancel tiger insect exotic faculty mother panic more long uncle super pull",
+      "bip39_seed": "5a58f7aac67637730d872d3f151b858552552e0cde5d4a0447374617bcd5a4b08d99157e26d21155b709a6f3858bbff1ff65ff5206534380b7690c7ffcb69f1c"
+    },
+    {
+      "length": 18,
+      "bip39_mnemonic": "twice loan battle verify doll coach capital cry long idea say oval lesson boil right nasty adapt knee",
+      "bip39_seed": "49e8735c1787d51b5ae48f1e7cb83db4405d851c1935b97e665d94d77cb7828d0687ff4adc69b9c70ee42ac16ac2deb0ea1e7c30f228e95a38ad06f6ca589f86"
+    },
+    {
+      "length": 21,
+      "bip39_mnemonic": "spice maze cancel weasel physical economy energy recall anchor thrive pause world topic oblige idea inflict pave mutual twice stumble decade",
+      "bip39_seed": "a22022dbe4a47dbc1926ed39b8661460445726a8a33af3ebb9ccba0817158901c3f2b591ba3c06a439e9718bbe141aef40d7edd4e7bff50f15a8c12820ae6e74"
+    },
+    {
+      "length": 21,
+      "bip39_mnemonic": "myself fly vapor buzz train snow taxi actress pudding often joke betray impulse attack suit soldier beauty urge stool burden beach",
+      "bip39_seed": "d40c01ab1ab9406334daf72beaa83e492c8eff03694811702fdce51eb8cfee3e79035ce55910fe9e4ea7e58f54eaddcc3ff4703bb67e3eecaee868d5a331242f"
+    },
+    {
+      "length": 21,
+      "bip39_mnemonic": "youth sustain antique resist smoke funny museum they village economy ketchup clip cage flag wife illegal math depth quarter alert relax",
+      "bip39_seed": "2afbbd1cc8ede1347f501598332e475e6954a2559d2c53496771bcec4c2417271c8d698823bb228b357540a04266193f04b5c3d81723bb3a17da8a33d658ea81"
+    },
+    {
+      "length": 24,
+      "bip39_mnemonic": "series invite charge walk spring spot extra beyond isolate reform glove lamp certain monster apple circle hood rival offer quarter news junk engine range",
+      "bip39_seed": "ed16e1459616de3342421600a9187337a2d2b3886f6f9eab24e2684ba6b60612beea328e7925c443b8f83aea86f02c2a43f1147c7e3798c91a1637095f49782e"
+    },
+    {
+      "length": 24,
+      "bip39_mnemonic": "duck left trash silk cradle submit quiz local setup pyramid guess father merit stable clock weekend profit journey museum bird organ urge stereo provide",
+      "bip39_seed": "67681c770382da085d9de0e0324817661be53fe0f863dec4b00c085a11762c1105dcde86169ca289ff0ae4ab1afa426c6c84f0b48dc7716b716a272b667e3885"
+    },
+    {
+      "length": 24,
+      "bip39_mnemonic": "flash chest emerge duck believe jaguar theme expose galaxy pride asset worry resist talent output carpet claw spell music float hurdle toilet little health",
+      "bip39_seed": "1755f305f8d1f54c73b44985a762eb2105f9ce57ddb7c0c55641959a637be7557a258ba014b3af111c53fc4ee67adfdedcfadde652c151a9bfc802d5fcd332f1"
+    }
+  ]
+}
