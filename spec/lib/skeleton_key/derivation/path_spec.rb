@@ -44,7 +44,7 @@ RSpec.describe SkeletonKey::Derivation::Path do
     end
 
     it "raises on out-of-bounds index" do
-      expect { path.hardened?(10) }.to raise_error(RuntimeError, /Index out of bounds/)
+      expect { path.hardened?(10) }.to raise_error(SkeletonKey::Errors::IndexOutOfBoundsError, /index out of bounds/i)
     end
   end
 
@@ -72,7 +72,7 @@ RSpec.describe SkeletonKey::Derivation::Path do
 
   describe "invalid path strings" do
     it "raises if missing m/" do
-      expect { described_class.new("44'/0'/0'") }.to raise_error(RuntimeError, /Invalid path format/)
+      expect { described_class.new("44'/0'/0'") }.to raise_error(SkeletonKey::Errors::InvalidPathFormatError, /invalid path format/i)
     end
   end
 end

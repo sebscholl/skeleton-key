@@ -46,6 +46,10 @@ module SkeletonKey
       SkeletonKey::Bitcoin::Account.new(seed: seed.bytes, **)
     end
 
+    def ethereum(**)
+      SkeletonKey::Ethereum::Account.new(seed: seed.bytes, **)
+    end
+
     private
 
     # Reader for the seed

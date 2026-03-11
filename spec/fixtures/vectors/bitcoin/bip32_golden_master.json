@@ -2,6 +2,7 @@
   "coin": "bitcoin",
   "spec": "bip32",
   "bip39_seed": "13e3e43b779fc6cda3bd9a1e762768dd3e273389adb81787adbe880341609e88",
+  "bip32_root_key": "xprv9s21ZrQH143K3AwNwKoMbYrbyb83udoGJwEvQvCP92fcR86RcfqMK51K98wbaVCcRwMpGzfk9nSfLhtQqprBBg89a6YcXMuhqhGp3UfU9UB",
   "purpose": 32,
   "coin_type": 0,
   "account_index": 0,

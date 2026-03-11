@@ -102,6 +102,137 @@ module SkeletonKey
       def hmac_sha512(key, data)
         OpenSSL::HMAC.digest("SHA512", key, data)
       end
+
+      def keccak256(data)
+        rate = 136
+        state = Array.new(25, 0)
+        offset = 0
+
+        while offset + rate <= data.bytesize
+          keccak_absorb_block(state, data.byteslice(offset, rate))
+          keccak_f1600(state)
+          offset += rate
+        end
+
+        tail = (data.byteslice(offset, data.bytesize - offset) || +"").b
+        tail << "\x01".b
+        tail << "\x00".b * (rate - tail.bytesize)
+        tail.setbyte(rate - 1, tail.getbyte(rate - 1) | 0x80)
+
+        keccak_absorb_block(state, tail)
+        keccak_f1600(state)
+        keccak_squeeze(state, 32)
+      end
+
+      def keccak_absorb_block(state, block)
+        (block.bytesize / 8).times do |idx|
+          lane_bytes = block.byteslice(idx * 8, 8).bytes
+          lane = lane_bytes.each_with_index.reduce(0) do |acc, (byte, byte_idx)|
+            acc | (byte << (8 * byte_idx))
+          end
+          state[idx] ^= lane
+        end
+      end
+
+      def keccak_squeeze(state, length)
+        output = +"".b
+        lane_index = 0
+
+        while output.bytesize < length
+          output << [state[lane_index]].pack("Q<")
+          lane_index += 1
+          if lane_index == 17 && output.bytesize < length
+            keccak_f1600(state)
+            lane_index = 0
+          end
+        end
+
+        output.byteslice(0, length)
+      end
+
+      def keccak_f1600(state)
+        24.times do |round|
+          c = 5.times.map do |x|
+            state[x] ^ state[x + 5] ^ state[x + 10] ^ state[x + 15] ^ state[x + 20]
+          end
+
+          d = 5.times.map do |x|
+            c[(x - 1) % 5] ^ keccak_rotl64(c[(x + 1) % 5], 1)
+          end
+
+          25.times do |idx|
+            state[idx] = (state[idx] ^ d[idx % 5]) & keccak_mask
+          end
+
+          b = Array.new(25, 0)
+          5.times do |x|
+            5.times do |y|
+              b[y + (5 * ((2 * x + 3 * y) % 5))] =
+                keccak_rotl64(state[x + (5 * y)], keccak_rotation_offsets[x][y])
+            end
+          end
+
+          5.times do |x|
+            5.times do |y|
+              idx = x + (5 * y)
+              state[idx] = b[idx] ^ ((~b[((x + 1) % 5) + (5 * y)]) & b[((x + 2) % 5) + (5 * y)])
+              state[idx] &= keccak_mask
+            end
+          end
+
+          state[0] ^= keccak_round_constants[round]
+        end
+      end
+
+      def keccak_rotl64(value, shift)
+        shift %= 64
+        return value & keccak_mask if shift.zero?
+
+        ((value << shift) | (value >> (64 - shift))) & keccak_mask
+      end
+
+      def keccak_mask
+        0xFFFF_FFFF_FFFF_FFFF
+      end
+
+      def keccak_rotation_offsets
+        [
+          [0, 36, 3, 41, 18],
+          [1, 44, 10, 45, 2],
+          [62, 6, 43, 15, 61],
+          [28, 55, 25, 21, 56],
+          [27, 20, 39, 8, 14]
+        ]
+      end
+
+      def keccak_round_constants
+        [
+          0x0000000000000001,
+          0x0000000000008082,
+          0x800000000000808A,
+          0x8000000080008000,
+          0x000000000000808B,
+          0x0000000080000001,
+          0x8000000080008081,
+          0x8000000000008009,
+          0x000000000000008A,
+          0x0000000000000088,
+          0x0000000080008009,
+          0x000000008000000A,
+          0x000000008000808B,
+          0x800000000000008B,
+          0x8000000000008089,
+          0x8000000000008003,
+          0x8000000000008002,
+          0x8000000000000080,
+          0x000000000000800A,
+          0x800000008000000A,
+          0x8000000080008081,
+          0x8000000000008080,
+          0x0000000080000001,
+          0x8000000080008008
+        ]
+      end
     end
   end
 end

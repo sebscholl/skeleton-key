@@ -2,6 +2,7 @@
   "coin": "bitcoin",
   "spec": "bip49",
   "bip39_seed": "13e3e43b779fc6cda3bd9a1e762768dd3e273389adb81787adbe880341609e88",
+  "bip32_root_key": "xprv9s21ZrQH143K3AwNwKoMbYrbyb83udoGJwEvQvCP92fcR86RcfqMK51K98wbaVCcRwMpGzfk9nSfLhtQqprBBg89a6YcXMuhqhGp3UfU9UB",
   "purpose": 49,
   "coin_type": 0,
   "account_index": 0,
@@ -75,6 +76,60 @@
       "address": "33jNG8JzGphwJDC9Jc7Gho9AKS3v5d6Qun",
       "public_key": "027fc0e2d2b0d80463576a119699305fbcb561393f27167baff1478fe167ef01a8",
       "private_key": "KycEEQARUPZ21G7ZcpPUvQ7GFEUPdZharDdkkWHa619N17pEJQVa"
+    },
+    {
+      "path": "m/49'/0'/0'/0/11",
+      "address": "3FyfP2godmZexZSU6Bsf19JvN4W6vkAT1s",
+      "public_key": "02864a149483a0b2953b6dd3543185985119464c07a1423943029b6309442f6e6c",
+      "private_key": "L1LCoEUky26NSohNUF5ThQCYkV8ddeLCKHXjVkjam6gvA2GdPiou"
+    },
+    {
+      "path": "m/49'/0'/0'/0/12",
+      "address": "365y5Vfzh7vprTyHuWCmu7paqAzjuijfA1",
+      "public_key": "029ebc6d720ac8d21f24c00f0c77c3ad88ed9f45e8dc05a2ca718499d7b9a877dc",
+      "private_key": "KyrYyyJgY3ukUsRgDCEDjrCxb2P5jLxdBWaVPt9peRwbGSwVnYko"
+    },
+    {
+      "path": "m/49'/0'/0'/0/13",
+      "address": "3Fa1PYBDmNsbEwDNWkk6qk5tAnx1f6RwbA",
+      "public_key": "03d1a7823700fb96bfcaa517c991f26a1bfb8040548d9e28dc944141cb66e0e4b2",
+      "private_key": "L3J4eJZXnKfHMaxiYZG6ewsii1EZ7c9rPxPRNb71LcyqCD8SG56Y"
+    },
+    {
+      "path": "m/49'/0'/0'/0/14",
+      "address": "39B7p2dMMkyr3992AMwDtmYbRM5rGMWRB2",
+      "public_key": "02d313d7288dfc5ee7c90fe54f9f1e37b341a5f8f553a2a0d8a2e10f95913262bc",
+      "private_key": "Kzwyp91CBe3WLwzSJSJeR9YTe7wuSa5mAks8Bb2sisC4ToSPtrxv"
+    },
+    {
+      "path": "m/49'/0'/0'/0/15",
+      "address": "31nRPWsELs4AxczcLp36osv7jLJi8UmPbC",
+      "public_key": "037f5ec575d1fe432a0e6cf5bf5a6c2de23fbdc63911620d1686e1fbd47077e8cc",
+      "private_key": "KzXxiqc6sywat4oxBDX7moNykjEpernrmgZ8Yse46AwsyuQb1GUw"
+    },
+    {
+      "path": "m/49'/0'/0'/0/16",
+      "address": "39FepKiKxL7HAmNqcvVkzmbCuELVdE31NN",
+      "public_key": "03fcb515d56e9fec2bb4dfac641b457c15c11538f7adf131e39d9d5320dc0d1251",
+      "private_key": "L1n7JhHFC5tmqHdngvZaE3hETmYnTyuXq2VcpQnasJeUyLkm5XRH"
+    },
+    {
+      "path": "m/49'/0'/0'/0/17",
+      "address": "3J2zLoaXUSchnmpqTBAUqhvVvecrx48dAT",
+      "public_key": "03722d9394ddd8e1e4e953ff3cde2330cbebc01f4be2e9f042f1d856d5fda647e8",
+      "private_key": "L5eJ2HcYV2LV4T6u66TephYiDCY5ZBixDFpoBWWTV7K9M6ifJ4Ve"
+    },
+    {
+      "path": "m/49'/0'/0'/0/18",
+      "address": "34cPEp5DvH47zy61zPudA3oZfTpJnGbAgu",
+      "public_key": "03685e3ca9484ad97372fb21df5b919c02e9204f6ecd46b6b937d02e48dc555807",
+      "private_key": "KyNk6pQUxPWFj8eX8rcjuttpXAkRKaohB9C29P3xs79vvKsZ5MgH"
+    },
+    {
+      "path": "m/49'/0'/0'/0/19",
+      "address": "32k89Q7syGz9ikyckYRKvmNPPwJyRXpawt",
+      "public_key": "02e0a6570548c38c237e0facd66cc60af4872d2bda31f2fac8a3f7a5f0745242ea",
+      "private_key": "L2bwJJFLv4zrgZVsRdwS9BUGnfcfhP7BDA62Q93VhJuFusUWj8nN"
     }
   ]
 }

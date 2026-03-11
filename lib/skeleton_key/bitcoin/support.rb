@@ -117,7 +117,7 @@ module SkeletonKey
         when [84, :mainnet] then VERSION_BYTES[:mainnet][:bip84]
         when [84, :testnet] then VERSION_BYTES[:testnet][:bip84]
         else
-          raise "Unsupported purpose/network"
+          raise Errors::UnsupportedPurposeNetworkError.new(purpose: purpose, network: network)
         end
       end
 
@@ -149,7 +149,7 @@ module SkeletonKey
           when 84
             to_bech32_address(pub, hrp: network == :mainnet ? "bc" : "tb") # Native SegWit
           else
-            raise "Unsupported purpose: #{purpose}"
+            raise Errors::UnsupportedPurposeError.new(purpose)
           end
 
         {
@@ -183,7 +183,7 @@ module SkeletonKey
         when [84, :mainnet] then VERSION_BYTES[:mainnet][:bip84][:zpub]
         when [84, :testnet] then VERSION_BYTES[:testnet][:bip84][:vpub]
         else
-          raise "Unsupported purpose/network"
+          raise Errors::UnsupportedPurposeNetworkError.new(purpose: purpose, network: network)
         end
       end
 
@@ -206,7 +206,7 @@ module SkeletonKey
         when [84, :mainnet] then VERSION_BYTES[:mainnet][:bip84][:zprv]
         when [84, :testnet] then VERSION_BYTES[:testnet][:bip84][:vprv]
         else
-          raise "Unsupported purpose/network"
+          raise Errors::UnsupportedPurposeNetworkError.new(purpose: purpose, network: network)
         end
       end
     end

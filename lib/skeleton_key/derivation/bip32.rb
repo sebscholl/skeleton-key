@@ -29,7 +29,7 @@ module SkeletonKey
         ir = i[32, 32]
         k_int = parse256(il)
 
-        raise "invalid master key" if k_int <= 0 || k_int >= ORDER
+        raise Errors::InvalidMasterKeyError if k_int <= 0 || k_int >= ORDER
 
         [k_int, ir]
       end
@@ -39,11 +39,19 @@ module SkeletonKey
       # @param k_int [Integer] private key as integer
       # @return [String] compressed public key (33 bytes)
       def privkey_to_pubkey_compressed(k_int)
-        raise "invalid privkey" if k_int <= 0 || k_int >= ORDER
+        raise Errors::InvalidPrivateKeyError if k_int <= 0 || k_int >= ORDER
 
         bn = OpenSSL::BN.new(k_int.to_s(16), 16)
         point = GROUP.generator.mul(bn)
         point_to_bytes_compressed(point)
+      end
+
+      def privkey_to_pubkey_uncompressed(k_int)
+        raise Errors::InvalidPrivateKeyError if k_int <= 0 || k_int >= ORDER
+
+        bn = OpenSSL::BN.new(k_int.to_s(16), 16)
+        point = GROUP.generator.mul(bn)
+        point.to_octet_string(:uncompressed)
       end
 
       # Convert OpenSSL::PKey::EC::Point to compressed public key bytes
@@ -144,10 +152,10 @@ module SkeletonKey
         i = hmac_sha512(c_parent, data)
         il = parse256(i[0, 32])
         ir = i[32, 32]
-        raise "IL out of range" if il >= ORDER
+        raise Errors::DerivationValueOutOfRangeError if il >= ORDER
 
         child = (il + k_parent_int) % ORDER
-        raise "derived invalid key" if child == 0
+        raise Errors::InvalidDerivedKeyError if child == 0
         [child, ir]
       end
 
@@ -158,12 +166,12 @@ module SkeletonKey
       # @param index [Integer] child index (non-hardened only)
       # @return [Array(String, String)] [child_pubkey_bytes, child_chain_code] CKDpub result
       def ckd_pub(pub_parent_bytes, c_parent, index)
-        raise "cannot CKDpub hardened" if index >= 0x8000_0000
+        raise Errors::HardenedPublicDerivationError if index >= 0x8000_0000
 
         i = hmac_sha512(c_parent, pub_parent_bytes + ser32(index))
         il = parse256(i[0, 32])
         ir = i[32, 32]
-        raise "IL out of range" if il >= ORDER
+        raise Errors::DerivationValueOutOfRangeError if il >= ORDER
 
         # child_point = G*IL + K_par
         child_point = GROUP.generator.mul(OpenSSL::BN.new(il.to_s(16), 16)) +

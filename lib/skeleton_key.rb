@@ -27,6 +27,8 @@ require_relative "skeleton_key/keyring"
 # Specific account implementations
 require_relative "skeleton_key/bitcoin/support"
 require_relative "skeleton_key/bitcoin/account"
+require_relative "skeleton_key/ethereum/support"
+require_relative "skeleton_key/ethereum/account"
 
 
 module SkeletonKey

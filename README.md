@@ -1,91 +1,48 @@
 # SkeletonKey
 
-A Ruby gem for [describe purpose].
+SkeletonKey is a Ruby library for deterministic wallet derivation with vector-based validation across Bitcoin and Ethereum.
 
 ## Installation
 
 ```bash
-gem install skeleton_key
+bundle install
 ```
 
-Great call — this is the kind of thing that gets muddy fast in crypto libraries. If you want `SkeletonKey` to feel solid, you need sharp definitions. Here’s a convention you can adopt (and bake into docs/tests):
+## Current API
 
----
-
-# 🔑 Naming Conventions
-
-### **Entropy**
-
-* **Definition**: Random bytes from a secure source (`SecureRandom`, hardware RNG, dice rolls, etc.).
-* **Typical size**: 128–256 bits.
-* **Usage**: Input for creating mnemonics or seeds.
-* **Analogy**: The raw randomness you start with.
-* **Naming**: `Entropy` (never call this a seed or secret).
-
----
-
-### **Mnemonic**
-
-* **Definition**: Human-readable representation of entropy (BIP-39 or SLIP-39 words).
-* **Size**: Depends on entropy length (128-256 bits entropy → 12–24 words).
-* **Usage**: Backup/recovery format for entropy (and by extension the seed).
-* **Naming**: `Mnemonic` (never confuse this with the seed itself).
-
----
-
-### **Seed**
-
-* **Definition**: Deterministic byte string derived from entropy/mnemonic (e.g., BIP-39 PBKDF2 output, SLIP-39 master secret).
-* **Size**: 32–64 bytes depending on scheme (Trezor SLIP-39 master secret = 32 bytes, BIP-39 seed = 64 bytes).
-* **Usage**: Input to BIP-32/SLIP-10 master key generation.
-* **Naming**: `Seed` → "root material for derivation".
-
----
-
-### **Master Key**
-
-* **Definition**: The root keypair (and chain code) generated from a seed via BIP-32/SLIP-10.
-* **Usage**: Top of the HD wallet tree.
-* **Naming**: `MasterKey`.
-
----
-
-### **Secret Key (Private Key)**
-
-* **Definition**: A single account’s private key (may be derived at any path).
-* **Usage**: Signs transactions/messages.
-* **Naming**: `PrivateKey` or `SecretKey` (prefer `PrivateKey` unless you want Solana-style “secret key” which is 64-bytes = priv+pub).
-
----
-
-### **Public Key**
-
-* **Definition**: The public half of a keypair.
-* **Usage**: Basis for addresses.
-* **Naming**: `PublicKey`.
-
----
-
-### **Address**
-
-* **Definition**: Chain-specific encoding of a public key (base58 for Solana, bech32 for Bitcoin, hex checksum for Ethereum).
-* **Naming**: `Address`.
-
----
-
-# 🧩 Example Flow in `SkeletonKey`
+The public entry point is `SkeletonKey::Keyring`. Initialize a keyring from a seed, then derive chain-specific accounts from it.
 
 ```ruby
-entropy   = SkeletonKey::Entropy.generate(256)
-mnemonic  = SkeletonKey::Mnemonic.from_entropy(entropy)
-seed      = SkeletonKey::Seed.from_mnemonic(mnemonic)
-master    = SkeletonKey::MasterKey.from_seed(seed)
+keyring = SkeletonKey::Keyring.new(seed: "13e3e43b779fc6cda3bd9a1e762768dd3e273389adb81787adbe880341609e88")
 
-btc_key   = SkeletonKey::Bitcoin::Key.from_master(master, account: 0, index: 0)
-eth_key   = SkeletonKey::Ethereum::Key.from_master(master, account: 0, index: 0)
-sol_key   = SkeletonKey::Solana::Key.from_master(master, account: 0, index: 0)
+bitcoin_account = keyring.bitcoin(purpose: 84, coin_type: 0, account_index: 0)
+ethereum_account = keyring.ethereum(purpose: 44, coin_type: 60, account_index: 0)
 
-btc_key.private_key
-btc_key.public_key
-btc_key.address
+bitcoin_account.address(change: 0, index: 0)
+ethereum_account.address(change: 0, index: 0)
+```
+
+## Architecture Boundary
+
+SkeletonKey separates shared HD wallet primitives from chain-specific behavior.
+
+- Shared layer: seed handling, path parsing, secp256k1 math, BIP32 child derivation, and generic extended-key serialization primitives
+- Bitcoin layer: version bytes, WIF, Base58Check, Bech32, script-aware address rules, and UTXO-oriented derivation behavior
+- Ethereum layer: `m/44'/60'/account'/0/index`, Keccak address derivation, EIP-55 checksum formatting, and Ethereum-facing address APIs
+
+Bitcoin serialization or address rules must not leak into shared derivation code. Ethereum must use generic extended-key naming at the API and fixture level rather than Bitcoin-specific shorthand such as `xpub` field names.
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) and [AGENTS.md](AGENTS.md) for contributor-facing rules.
+
+## Validation
+
+This project relies on deterministic golden-master fixtures under `spec/fixtures/vectors/`. Integration specs compare SkeletonKey output against externally generated vectors for:
+
+- Bitcoin BIP32, BIP44, BIP49, BIP84, and BIP141
+- Ethereum BIP32 and BIP44
+
+Run the full suite with:
+
+```bash
+bundle exec rspec
 ```

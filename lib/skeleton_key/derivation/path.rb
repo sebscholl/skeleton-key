@@ -44,9 +44,9 @@ module SkeletonKey
       #
       # @param index [Integer] index in the path array (0-based)
       # @return [Boolean] true if hardened
-      # @raise [RuntimeError] if index is out of bounds
+      # @raise [Errors::IndexOutOfBoundsError] if index is out of bounds
       def hardened?(idx)
-        raise "Index out of bounds" if idx < 0 || idx >= parts.size
+        raise Errors::IndexOutOfBoundsError if idx < 0 || idx >= parts.size
 
         (parts[idx] & HARDENED_FLAG) != 0
       end
@@ -76,7 +76,7 @@ module SkeletonKey
       # @param path_str [String] BIP32 path string (e.g. "m/44'/0'/0'/0/0")
       # @return [Array<Integer>] Array of indices
       def parse(path_str)
-        raise "Invalid path format" unless path_str.start_with?("m/")
+        raise Errors::InvalidPathFormatError unless path_str.start_with?("m/")
 
         path_str.split("/").drop(1).map { |part| encode_index(part) }
       end
