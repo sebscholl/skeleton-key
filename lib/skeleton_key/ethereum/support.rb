@@ -40,15 +40,16 @@ module SkeletonKey
 
         pubkey_compressed = privkey_to_pubkey_compressed(k_int)
         pubkey_uncompressed = privkey_to_pubkey_uncompressed(k_int)
+        ethereum_public_key = pubkey_uncompressed.byteslice(1, 64)
 
         {
           path: "#{path}/#{change}/#{index}",
           private_key: ser256(k_int).unpack1("H*"),
-          public_key: pubkey_compressed.unpack1("H*"),
+          public_key: ethereum_public_key.unpack1("H*"),
           address: to_checksum_address(pubkey_uncompressed),
           chain_code: chain_code,
           privkey: k_int,
-          pubkey: pubkey_compressed
+          pubkey: ethereum_public_key
         }
       end
     end
