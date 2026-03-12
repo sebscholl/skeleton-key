@@ -4,6 +4,8 @@ require "spec_helper"
 
 RSpec.describe SkeletonKey::Recovery::Bip39 do
   let(:fixture_rows) { load_fixture("recovery/bip39_golden_master").fetch("list") }
+  let(:generation_fixture) { load_fixture("recovery/bip39_generation_golden_master") }
+  let(:generation_rows) { generation_fixture.fetch("vectors") }
 
   describe ".import" do
     it "imports a mnemonic string" do
@@ -20,6 +22,18 @@ RSpec.describe SkeletonKey::Recovery::Bip39 do
   end
 
   describe ".generate" do
+    it "covers three password and three non-password vectors for each supported mnemonic length" do
+      grouped_rows = generation_rows.group_by { |row| row.fetch("word_count") }
+
+      SkeletonKey::Constants::MNEMONIC_WORD_COUNTS.each do |word_count|
+        rows = grouped_rows.fetch(word_count)
+        without_passphrase, with_passphrase = rows.partition { |row| row.fetch("passphrase").empty? }
+
+        expect(without_passphrase.length).to be >= 3
+        expect(with_passphrase.length).to be >= 3
+      end
+    end
+
     it "generates mnemonics at each supported BIP39 length" do
       SkeletonKey::Constants::MNEMONIC_WORD_COUNTS.each do |word_count|
         mnemonic = described_class.generate(word_count: word_count)
@@ -29,12 +43,14 @@ RSpec.describe SkeletonKey::Recovery::Bip39 do
       end
     end
 
-    it "reproduces the known all-zero 12-word BIP39 vector from explicit entropy" do
-      mnemonic = described_class.generate(word_count: 12, entropy: ("\x00".b * 16))
+    it "matches the external generation vectors for explicit entropy" do
+      generation_rows.each do |row|
+        entropy = [row.fetch("entropy")].pack("H*")
+        mnemonic = described_class.generate(word_count: row.fetch("word_count"), entropy: entropy)
 
-      expect(mnemonic.phrase).to eq(
-        "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
-      )
+        expect(mnemonic.phrase).to eq(row.fetch("mnemonic"))
+        expect(mnemonic.seed(passphrase: row.fetch("passphrase")).hex).to eq(row.fetch("seed"))
+      end
     end
 
     it "round-trips deterministic entropy across every supported entropy length" do
@@ -45,6 +61,16 @@ RSpec.describe SkeletonKey::Recovery::Bip39 do
 
         expect(mnemonic.words.length).to eq((byte_length * 8 * 33) / (32 * 11))
         expect(described_class.new(mnemonic.phrase).phrase).to eq(mnemonic.phrase)
+      end
+    end
+
+    it "matches the external generation vectors when converting entropy directly" do
+      generation_rows.each do |row|
+        mnemonic = described_class.from_entropy(row.fetch("entropy"))
+
+        expect(mnemonic.words.length).to eq(row.fetch("word_count"))
+        expect(mnemonic.phrase).to eq(row.fetch("mnemonic"))
+        expect(mnemonic.seed(passphrase: row.fetch("passphrase")).hex).to eq(row.fetch("seed"))
       end
     end
 
@@ -68,6 +94,14 @@ RSpec.describe SkeletonKey::Recovery::Bip39 do
       phrase = fixture_rows.first.fetch("bip39_mnemonic").split(" ").join("  ")
 
       expect(described_class.new(phrase).seed.hex).to eq(fixture_rows.first.fetch("bip39_seed"))
+    end
+
+    it "recreates the external generation-vector seeds with the fixture passphrase" do
+      generation_rows.each do |row|
+        mnemonic = described_class.new(row.fetch("mnemonic"))
+
+        expect(mnemonic.seed(passphrase: row.fetch("passphrase")).hex).to eq(row.fetch("seed"))
+      end
     end
   end
 

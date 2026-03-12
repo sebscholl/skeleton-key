@@ -1,252 +1,571 @@
 {
   "coin": "solana",
   "spec": "bip44_standard",
-  "mnemonic": "physical spike blood wash duck little give erupt safe oppose speak struggle",
+  "bip39_mnemonic": "physical spike blood wash duck little give erupt safe oppose speak struggle",
   "bip39_seed": "a6d95cda25a5c88d6396a0d29daacfaf05aeb9d55d15daa31a4b721e1a44affa1b041fae3600ddb75ddfba22e1bb7ff2aa958a94d59739fb798bdbf7db6689fa",
   "bip32_root_key": "xprv9s21ZrQH143K2ytaSjzXNCkGAYbmLnESJYYdSMQEgPKd5HbN6AvAS5P5EocodeRvTREjippFd4YAb9UgVzUsPen88k2bYjYmR2zV57G1bZi",
   "purpose": 44,
   "coin_type": 501,
-  "account_index": 0,
-  "addresses": [
+  "branches": [
     {
-      "path": "m/44'/501'/0'/0'",
-      "address": "9AG2WefCGLBTVVEiASi27qnWRHo6NM5pM2nChc6M2m57",
-      "public_key": "793cb673f994d106094881eb7baa800dc8e80a2340f06e2dd5620925c0d2be66",
-      "private_key": "c5de5e83b308e8234f9f1242f7d163d1b321c091d0de3d28dc67cdfebcc628b5"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 0,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/0'",
+          "address": "9AG2WefCGLBTVVEiASi27qnWRHo6NM5pM2nChc6M2m57",
+          "public_key": "793cb673f994d106094881eb7baa800dc8e80a2340f06e2dd5620925c0d2be66",
+          "private_key": "c5de5e83b308e8234f9f1242f7d163d1b321c091d0de3d28dc67cdfebcc628b5"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/1'",
-      "address": "2PLE7chhrm5Q93fboyYQa1Z3SAwGMNfsGQggR3We3FSi",
-      "public_key": "1494342911c74cf10431ccb0ddb93f12a6e95c688614056c0330e7889534620b",
-      "private_key": "16c1f5d9a55bef1dce1b8f2d69a2d734284256eb6b6d829dba783a26822b4051"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 1,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/1'",
+          "address": "2PLE7chhrm5Q93fboyYQa1Z3SAwGMNfsGQggR3We3FSi",
+          "public_key": "1494342911c74cf10431ccb0ddb93f12a6e95c688614056c0330e7889534620b",
+          "private_key": "16c1f5d9a55bef1dce1b8f2d69a2d734284256eb6b6d829dba783a26822b4051"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/2'",
-      "address": "BksNsfANk2pr7rHeWj2cvy11JZxokZngNv5ZF5XGNc6a",
-      "public_key": "9fd1ce3f53383bf4b0277b641bfb459fcb2b4370429b1df64c3b918d10fdff27",
-      "private_key": "5033fe23224fba6256e6185be2097c6f6c97154e440750ef686ad5e3a0340223"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 2,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/2'",
+          "address": "BksNsfANk2pr7rHeWj2cvy11JZxokZngNv5ZF5XGNc6a",
+          "public_key": "9fd1ce3f53383bf4b0277b641bfb459fcb2b4370429b1df64c3b918d10fdff27",
+          "private_key": "5033fe23224fba6256e6185be2097c6f6c97154e440750ef686ad5e3a0340223"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/3'",
-      "address": "9WpQMDGkRoqhaNEtZQv64pish697tKx7nXAfAAS59aFV",
-      "public_key": "7e80efe70e243831f053f60256810d2b92cfa886952ff05d80efe9e406e6fdcc",
-      "private_key": "3d8c7f656cea3ce424b83ed5955f6273b938f26e1c900a93d17eaa32686157e2"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 3,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/3'",
+          "address": "9WpQMDGkRoqhaNEtZQv64pish697tKx7nXAfAAS59aFV",
+          "public_key": "7e80efe70e243831f053f60256810d2b92cfa886952ff05d80efe9e406e6fdcc",
+          "private_key": "3d8c7f656cea3ce424b83ed5955f6273b938f26e1c900a93d17eaa32686157e2"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/4'",
-      "address": "FypubDSSdepMr4E7tXCkYnrXujmyfRXTrkd41Lb5dtnB",
-      "public_key": "de924f823ba4108c1251033ad8b2a64cf6eb3f98679949c0265bd87cfd201f48",
-      "private_key": "05a99eae92ffea0ba37cba2feaeb7672ea7c97b14a5072f127dbdb3e03a535d1"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 4,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/4'",
+          "address": "FypubDSSdepMr4E7tXCkYnrXujmyfRXTrkd41Lb5dtnB",
+          "public_key": "de924f823ba4108c1251033ad8b2a64cf6eb3f98679949c0265bd87cfd201f48",
+          "private_key": "05a99eae92ffea0ba37cba2feaeb7672ea7c97b14a5072f127dbdb3e03a535d1"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/5'",
-      "address": "7rNzMzcHTHgCS4emt587cqhHzTAt1BQkC7iszQQvDgvv",
-      "public_key": "65cc71b9effe39f20f3ee768734d7ffe2be22c1335c1cbe373e2d3bfd186ee83",
-      "private_key": "7d8ba9565b275ed2a1d55172bc99cd232692b8169d98ec4a637dfca78e387f5e"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 5,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/5'",
+          "address": "7rNzMzcHTHgCS4emt587cqhHzTAt1BQkC7iszQQvDgvv",
+          "public_key": "65cc71b9effe39f20f3ee768734d7ffe2be22c1335c1cbe373e2d3bfd186ee83",
+          "private_key": "7d8ba9565b275ed2a1d55172bc99cd232692b8169d98ec4a637dfca78e387f5e"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/6'",
-      "address": "GXQ23U7NeGUPdSStwPBHLGWYWyFrP4FNQfCBtUfES2wX",
-      "public_key": "e6a8c1325c19f41256ce6a4dba1aaf2f7dfce08021a635a3c590fefc3a2d8f36",
-      "private_key": "a7e721eca4c66ebf7e4400698698a4d3dbadb39453358df3a6eddb968d579d43"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 6,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/6'",
+          "address": "GXQ23U7NeGUPdSStwPBHLGWYWyFrP4FNQfCBtUfES2wX",
+          "public_key": "e6a8c1325c19f41256ce6a4dba1aaf2f7dfce08021a635a3c590fefc3a2d8f36",
+          "private_key": "a7e721eca4c66ebf7e4400698698a4d3dbadb39453358df3a6eddb968d579d43"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/7'",
-      "address": "DqqaDtVtN95TQ8h6JE9uzWdMEz9rHawFCdtZ63CnTaLE",
-      "public_key": "becf0b1b7b40c016a47612c72adc01be1832e767c64d76562877c86f14ac8ebf",
-      "private_key": "a046df3d30b143b11216e4552aa4aaed337bf29954f443e2b3d426950816d123"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 7,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/7'",
+          "address": "DqqaDtVtN95TQ8h6JE9uzWdMEz9rHawFCdtZ63CnTaLE",
+          "public_key": "becf0b1b7b40c016a47612c72adc01be1832e767c64d76562877c86f14ac8ebf",
+          "private_key": "a046df3d30b143b11216e4552aa4aaed337bf29954f443e2b3d426950816d123"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/8'",
-      "address": "56q5TR3XHmWbpNSTnPu3eqrBn8Jt2ViubLdVozSax7ym",
-      "public_key": "3ced032b740e6d5553de43343a48a70a3c934996409ac2b36034914f3a6b6d3c",
-      "private_key": "250009f18a1e62c5625f9e4aa83bbe9cdccc70d97249872abc0bc6177b67a545"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 8,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/8'",
+          "address": "56q5TR3XHmWbpNSTnPu3eqrBn8Jt2ViubLdVozSax7ym",
+          "public_key": "3ced032b740e6d5553de43343a48a70a3c934996409ac2b36034914f3a6b6d3c",
+          "private_key": "250009f18a1e62c5625f9e4aa83bbe9cdccc70d97249872abc0bc6177b67a545"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/9'",
-      "address": "4djYPByWcwzzA1nnCFvRMbEYjGr1GCGW9HbhiChmQ9Uo",
-      "public_key": "35fc123de541663ab03cf3b04e4fb5d1bd2e216f41c2b110f7f9f34ab87c4804",
-      "private_key": "f3026f8b2bf4fa04f8b50e5231ef3f7ea3edcaffec6e9ed54aaa9ddb2aacbc08"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 9,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/9'",
+          "address": "4djYPByWcwzzA1nnCFvRMbEYjGr1GCGW9HbhiChmQ9Uo",
+          "public_key": "35fc123de541663ab03cf3b04e4fb5d1bd2e216f41c2b110f7f9f34ab87c4804",
+          "private_key": "f3026f8b2bf4fa04f8b50e5231ef3f7ea3edcaffec6e9ed54aaa9ddb2aacbc08"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/10'",
-      "address": "H8S2AiZQSGPnMVCmp4kFhfhEsYxuCuLSGr3yQvMJGXZE",
-      "public_key": "efa258ca3fd2f23052794a9c4cf99150e56137f425b544e8ae1c39fda5cefd2d",
-      "private_key": "c4c33630ba143cadd90220207e9907fab074ebd23b83ddd0d59563fb4ad7fff9"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 10,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/10'",
+          "address": "H8S2AiZQSGPnMVCmp4kFhfhEsYxuCuLSGr3yQvMJGXZE",
+          "public_key": "efa258ca3fd2f23052794a9c4cf99150e56137f425b544e8ae1c39fda5cefd2d",
+          "private_key": "c4c33630ba143cadd90220207e9907fab074ebd23b83ddd0d59563fb4ad7fff9"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/11'",
-      "address": "4QY9nrscSR8CbVxWXv9KJh7orj9NGjTzAbavWhrnrdDx",
-      "public_key": "329aa47faa3b0db98904c38f58dfe6e47a0da2e71ce0bb81384ec2c4a431c697",
-      "private_key": "f57685a1d1052e5affd281ffc3735258345af53f0ea43ff0f450c0aa28f817a6"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 11,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/11'",
+          "address": "4QY9nrscSR8CbVxWXv9KJh7orj9NGjTzAbavWhrnrdDx",
+          "public_key": "329aa47faa3b0db98904c38f58dfe6e47a0da2e71ce0bb81384ec2c4a431c697",
+          "private_key": "f57685a1d1052e5affd281ffc3735258345af53f0ea43ff0f450c0aa28f817a6"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/12'",
-      "address": "5WSEFhgM7gKiy74dzLHirPMp9JDuriixpsHcMNSuUQDa",
-      "public_key": "42f91dfc78e7914024ffb6e0cdafa92d1521065475605e97fd666dc6a3073f6d",
-      "private_key": "60c042733dda66cb8ad6956a5c8d979edecb01d30559d9eb25b4dd3cf36b4745"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 12,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/12'",
+          "address": "5WSEFhgM7gKiy74dzLHirPMp9JDuriixpsHcMNSuUQDa",
+          "public_key": "42f91dfc78e7914024ffb6e0cdafa92d1521065475605e97fd666dc6a3073f6d",
+          "private_key": "60c042733dda66cb8ad6956a5c8d979edecb01d30559d9eb25b4dd3cf36b4745"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/13'",
-      "address": "6Tc6QSvDiDimVBoDMV9gegZ1QycBktHP63ZxDpxiGd59",
-      "public_key": "511b3734ca25e66a962fa875de9757fec7f6359f79d72f0f8615b4f94cb24a08",
-      "private_key": "b9aabd4eba32ca93cb919dc4c7f14f4023a46b08d7ca7bd818beb95033ef9363"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 13,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/13'",
+          "address": "6Tc6QSvDiDimVBoDMV9gegZ1QycBktHP63ZxDpxiGd59",
+          "public_key": "511b3734ca25e66a962fa875de9757fec7f6359f79d72f0f8615b4f94cb24a08",
+          "private_key": "b9aabd4eba32ca93cb919dc4c7f14f4023a46b08d7ca7bd818beb95033ef9363"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/14'",
-      "address": "H3ymLRU27E1CSWEHWWWKNVvw2fH2SPJh15yxPzbG7PJP",
-      "public_key": "ee7e560d96a09b5033e1b66a0292b4ed2c2ccdf9d818eb960cc41a5528946768",
-      "private_key": "371fa72fe21e8c860915f472ebbc059d3976949170558347709f1905c8cb96b9"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 14,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/14'",
+          "address": "H3ymLRU27E1CSWEHWWWKNVvw2fH2SPJh15yxPzbG7PJP",
+          "public_key": "ee7e560d96a09b5033e1b66a0292b4ed2c2ccdf9d818eb960cc41a5528946768",
+          "private_key": "371fa72fe21e8c860915f472ebbc059d3976949170558347709f1905c8cb96b9"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/15'",
-      "address": "CjvUE4UA35c9TjGCF8YxmR1Dp5YvdGm8JP6xdvcsCXwU",
-      "public_key": "ae6f6880b22cf9c05b712565ba9cd4e627c4ec170501a344f9a18a959182c687",
-      "private_key": "3bf26f1bcabde31db2b5e59714c0bf4ebc2db4b4dd6998f45b6d62366dbbf484"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 15,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/15'",
+          "address": "CjvUE4UA35c9TjGCF8YxmR1Dp5YvdGm8JP6xdvcsCXwU",
+          "public_key": "ae6f6880b22cf9c05b712565ba9cd4e627c4ec170501a344f9a18a959182c687",
+          "private_key": "3bf26f1bcabde31db2b5e59714c0bf4ebc2db4b4dd6998f45b6d62366dbbf484"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/16'",
-      "address": "BHsyCsFiwGre5uyMAvcdjWED3dCct546HJtALzqbXQXU",
-      "public_key": "98e7cb08086b3457cd0e38adc8e3b064dcd16a1f7bc62228b9ad84e86114c6b3",
-      "private_key": "537c64227d329969448d4c9511e501e0454c39e60ece1e8161d142bf17839df4"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 16,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/16'",
+          "address": "BHsyCsFiwGre5uyMAvcdjWED3dCct546HJtALzqbXQXU",
+          "public_key": "98e7cb08086b3457cd0e38adc8e3b064dcd16a1f7bc62228b9ad84e86114c6b3",
+          "private_key": "537c64227d329969448d4c9511e501e0454c39e60ece1e8161d142bf17839df4"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/17'",
-      "address": "4ckgaaT9NfwqPfUPaiLhhe7HocE5wH8MY5xCwcc2GD7k",
-      "public_key": "35bbc7eb902f317073deae2155a27b787fd57af4342f9a4b9746eec1b6bea43f",
-      "private_key": "b5ee8cf079102937157e065fa2b4f6a983be29964a50e96d3878ca39c4c0574a"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 17,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/17'",
+          "address": "4ckgaaT9NfwqPfUPaiLhhe7HocE5wH8MY5xCwcc2GD7k",
+          "public_key": "35bbc7eb902f317073deae2155a27b787fd57af4342f9a4b9746eec1b6bea43f",
+          "private_key": "b5ee8cf079102937157e065fa2b4f6a983be29964a50e96d3878ca39c4c0574a"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/18'",
-      "address": "5CBjveKxMiUwmAgNF3V6AnkVVH8G9Jyh6pToRizk9swv",
-      "public_key": "3e4c47cc0c0e6fdee5edfa0355220c50103e39c5441ff2236c869bd306f78349",
-      "private_key": "1321d24dbfbab5d40c07ad186acdfdb3f11d17f590e7af4a2c14e787fd45ad50"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 18,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/18'",
+          "address": "5CBjveKxMiUwmAgNF3V6AnkVVH8G9Jyh6pToRizk9swv",
+          "public_key": "3e4c47cc0c0e6fdee5edfa0355220c50103e39c5441ff2236c869bd306f78349",
+          "private_key": "1321d24dbfbab5d40c07ad186acdfdb3f11d17f590e7af4a2c14e787fd45ad50"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/19'",
-      "address": "9Ca2QkAYVrZWeDLEc7UULHKrMJ3FKYpCwgBdbKxe4g2u",
-      "public_key": "79d43999f3a8516e1e7fca854f573db2a06531125b838dd937c1f63fc65c7192",
-      "private_key": "3c4b33a82b7e64b852214be6409d3922212f756229cc41bed94656d4ad99f912"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 19,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/19'",
+          "address": "9Ca2QkAYVrZWeDLEc7UULHKrMJ3FKYpCwgBdbKxe4g2u",
+          "public_key": "79d43999f3a8516e1e7fca854f573db2a06531125b838dd937c1f63fc65c7192",
+          "private_key": "3c4b33a82b7e64b852214be6409d3922212f756229cc41bed94656d4ad99f912"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/0'/20'",
-      "address": "J6sDFoPmvDjSSs6eub9BAhcKmcokLmmnq4ntR5YDXZfg",
-      "public_key": "fe175b1b65a2017174ef6371f52c761c02d7d9de9b5434323fae8b7dac7fef13",
-      "private_key": "e4559696bfa69689c8314f59bfa95b1fc790591b4c359210b43726483b449f64"
+      "section": "m/44/501/0",
+      "bip32_derivation_path": "m/44'/501'/0'",
+      "account_index": 0,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/0'/20'",
+          "address": "J6sDFoPmvDjSSs6eub9BAhcKmcokLmmnq4ntR5YDXZfg",
+          "public_key": "fe175b1b65a2017174ef6371f52c761c02d7d9de9b5434323fae8b7dac7fef13",
+          "private_key": "e4559696bfa69689c8314f59bfa95b1fc790591b4c359210b43726483b449f64"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/1'/20'",
-      "address": "9UdH1E56NpuhjvTGEkMBAVLu1ZVLMa9qfPWVdqBXT8ct",
-      "public_key": "7df131cff7efcda61fe5336c1826537ee8f6ffd191dcfc3cdcf99cc5a774084d",
-      "private_key": "a7c560a40d525840eedf8e3a63e4f93f1065c7edb367f3c33e44d042d20972fa"
+      "section": "m/44/501/1",
+      "bip32_derivation_path": "m/44'/501'/1'",
+      "account_index": 1,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/1'/20'",
+          "address": "9UdH1E56NpuhjvTGEkMBAVLu1ZVLMa9qfPWVdqBXT8ct",
+          "public_key": "7df131cff7efcda61fe5336c1826537ee8f6ffd191dcfc3cdcf99cc5a774084d",
+          "private_key": "a7c560a40d525840eedf8e3a63e4f93f1065c7edb367f3c33e44d042d20972fa"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/2'/20'",
-      "address": "9jqKpob6ncf5Qn6LPq2vy84nt88BPruuuYsdHzBwTg3M",
-      "public_key": "81d687b74b08b2a87c31410d31e22f906b467dc444a3708d76d05bb02655a2f4",
-      "private_key": "e34eb61fc8f2936ff7b4299bd58de2f4e2e02df956428f852d5d88b33aa9f668"
+      "section": "m/44/501/2",
+      "bip32_derivation_path": "m/44'/501'/2'",
+      "account_index": 2,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/2'/20'",
+          "address": "9jqKpob6ncf5Qn6LPq2vy84nt88BPruuuYsdHzBwTg3M",
+          "public_key": "81d687b74b08b2a87c31410d31e22f906b467dc444a3708d76d05bb02655a2f4",
+          "private_key": "e34eb61fc8f2936ff7b4299bd58de2f4e2e02df956428f852d5d88b33aa9f668"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/3'/20'",
-      "address": "9hr3LGmRT7C819mUbV8YbmaGXTvhnSeESFktMQjE3ors",
-      "public_key": "81542d7eead7e99a7567e9f7e9b8238f571b824a85438bf69c2c1e2fab59d4e4",
-      "private_key": "ee967a146df52ee476d2cb2d6667d3eba9fa6f42864816bba0f9b6c3fa33898c"
+      "section": "m/44/501/3",
+      "bip32_derivation_path": "m/44'/501'/3'",
+      "account_index": 3,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/3'/20'",
+          "address": "9hr3LGmRT7C819mUbV8YbmaGXTvhnSeESFktMQjE3ors",
+          "public_key": "81542d7eead7e99a7567e9f7e9b8238f571b824a85438bf69c2c1e2fab59d4e4",
+          "private_key": "ee967a146df52ee476d2cb2d6667d3eba9fa6f42864816bba0f9b6c3fa33898c"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/4'/20'",
-      "address": "9mZXwQxQ4Tj5uHJPvpDn5sBVYuUbuuSz2QGa4PgYkdzq",
-      "public_key": "8247d62f71131b739b06928e9ecdf5f2520d1fbd53fcb3d44c008ab92cac4f32",
-      "private_key": "741ac7101be64471acdfbbcdb238f140a1a6108f6ef4792c3b477fe8828c13ff"
+      "section": "m/44/501/4",
+      "bip32_derivation_path": "m/44'/501'/4'",
+      "account_index": 4,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/4'/20'",
+          "address": "9mZXwQxQ4Tj5uHJPvpDn5sBVYuUbuuSz2QGa4PgYkdzq",
+          "public_key": "8247d62f71131b739b06928e9ecdf5f2520d1fbd53fcb3d44c008ab92cac4f32",
+          "private_key": "741ac7101be64471acdfbbcdb238f140a1a6108f6ef4792c3b477fe8828c13ff"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/5'/20'",
-      "address": "ANEuRn4BXPbXEK7admwaADjYrGT9wd5tFD9wxeamGYzE",
-      "public_key": "8b2a19bcc80b00a5b3ebdc16d5925e4a0ccf2e5d7baa8c19846e3c0033f273cb",
-      "private_key": "85b9f2f46f62bb73551b0ea738d94c8c99214247787b7f6b22d6352bd069166d"
+      "section": "m/44/501/5",
+      "bip32_derivation_path": "m/44'/501'/5'",
+      "account_index": 5,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/5'/20'",
+          "address": "ANEuRn4BXPbXEK7admwaADjYrGT9wd5tFD9wxeamGYzE",
+          "public_key": "8b2a19bcc80b00a5b3ebdc16d5925e4a0ccf2e5d7baa8c19846e3c0033f273cb",
+          "private_key": "85b9f2f46f62bb73551b0ea738d94c8c99214247787b7f6b22d6352bd069166d"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/6'/20'",
-      "address": "3FDJwACrybS62BCrdzsbTSTBWhrDtk2vbXXuZzgMBSfm",
-      "public_key": "215b6c59731e91be073affa842c263721bbf8b25510ee6dee7832ee80b2753bc",
-      "private_key": "bd3118f12330798f93e37e4dda582804094ec9afa557a4e820d5348ebfed12e2"
+      "section": "m/44/501/6",
+      "bip32_derivation_path": "m/44'/501'/6'",
+      "account_index": 6,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/6'/20'",
+          "address": "3FDJwACrybS62BCrdzsbTSTBWhrDtk2vbXXuZzgMBSfm",
+          "public_key": "215b6c59731e91be073affa842c263721bbf8b25510ee6dee7832ee80b2753bc",
+          "private_key": "bd3118f12330798f93e37e4dda582804094ec9afa557a4e820d5348ebfed12e2"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/7'/20'",
-      "address": "8rhA5L1tF7UmoXHEzu7Fgu1dAHbjG9QdZEt98F2E3PFz",
-      "public_key": "74bcac55a806ee8dc8705c240f4030aefc4ada9ba722e3e995ee0e5c224ca33d",
-      "private_key": "98dafd3b9162ee0c2ed770700875d29ab28dd9677b2b2e1ae4002b998beaa27c"
+      "section": "m/44/501/7",
+      "bip32_derivation_path": "m/44'/501'/7'",
+      "account_index": 7,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/7'/20'",
+          "address": "8rhA5L1tF7UmoXHEzu7Fgu1dAHbjG9QdZEt98F2E3PFz",
+          "public_key": "74bcac55a806ee8dc8705c240f4030aefc4ada9ba722e3e995ee0e5c224ca33d",
+          "private_key": "98dafd3b9162ee0c2ed770700875d29ab28dd9677b2b2e1ae4002b998beaa27c"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/8'/20'",
-      "address": "8WKbWYH8zS69wR1s2R1Zk1W1xKBNEd7JV1KYXLVBtwNM",
-      "public_key": "6f84ad67f4a0b6a5aaf685729502b2030478eec67c66407070ebf5f47fe2d546",
-      "private_key": "f44a3a5a3a1c3bda0003f2afbc362a343770a1d4279be21121b05e8ab031a133"
+      "section": "m/44/501/8",
+      "bip32_derivation_path": "m/44'/501'/8'",
+      "account_index": 8,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/8'/20'",
+          "address": "8WKbWYH8zS69wR1s2R1Zk1W1xKBNEd7JV1KYXLVBtwNM",
+          "public_key": "6f84ad67f4a0b6a5aaf685729502b2030478eec67c66407070ebf5f47fe2d546",
+          "private_key": "f44a3a5a3a1c3bda0003f2afbc362a343770a1d4279be21121b05e8ab031a133"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/9'/20'",
-      "address": "tDxBmDLTYF1fNCAGv3EdFCFWMW2XZnDDUtsziLwKiXK",
-      "public_key": "0d1f43fa96a5ecbe3472552ab5de5729c2cd375dfcce541cfbfc48ba84571772",
-      "private_key": "ba1489e9b9ea6cb4067a3470b80a2c5be420e97d1a47f38d18fabdc29242a140"
+      "section": "m/44/501/9",
+      "bip32_derivation_path": "m/44'/501'/9'",
+      "account_index": 9,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/9'/20'",
+          "address": "tDxBmDLTYF1fNCAGv3EdFCFWMW2XZnDDUtsziLwKiXK",
+          "public_key": "0d1f43fa96a5ecbe3472552ab5de5729c2cd375dfcce541cfbfc48ba84571772",
+          "private_key": "ba1489e9b9ea6cb4067a3470b80a2c5be420e97d1a47f38d18fabdc29242a140"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/10'/20'",
-      "address": "6UgNZmapDnQsBnbNNXAitzq7JnMiY5kFnosGVvT9RH7G",
-      "public_key": "5161a2631284ad06993683501a7997cc3ad2ac7235b862b72e6900840a32b66b",
-      "private_key": "fa7f32a4aaa6e405ad9624344b9498242f60a3040e166a4c5483e0d0ef85b1a2"
+      "section": "m/44/501/10",
+      "bip32_derivation_path": "m/44'/501'/10'",
+      "account_index": 10,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/10'/20'",
+          "address": "6UgNZmapDnQsBnbNNXAitzq7JnMiY5kFnosGVvT9RH7G",
+          "public_key": "5161a2631284ad06993683501a7997cc3ad2ac7235b862b72e6900840a32b66b",
+          "private_key": "fa7f32a4aaa6e405ad9624344b9498242f60a3040e166a4c5483e0d0ef85b1a2"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/11'/20'",
-      "address": "4FWT7PdkcNrYZKLFDfNDL3SAMimdohHijdgPgENn9LRS",
-      "public_key": "304a7dd4a01c16bbe34aae22be64de89302fa6db1376a2a05e6dbd79ebd12925",
-      "private_key": "32383b9e6a174815bc899dfbe50fc01c0645d7a70aacca588a2dcb9526738752"
+      "section": "m/44/501/11",
+      "bip32_derivation_path": "m/44'/501'/11'",
+      "account_index": 11,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/11'/20'",
+          "address": "4FWT7PdkcNrYZKLFDfNDL3SAMimdohHijdgPgENn9LRS",
+          "public_key": "304a7dd4a01c16bbe34aae22be64de89302fa6db1376a2a05e6dbd79ebd12925",
+          "private_key": "32383b9e6a174815bc899dfbe50fc01c0645d7a70aacca588a2dcb9526738752"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/12'/20'",
-      "address": "2BxudEyhVMVg8otAg7fTpymcvFZFgNogqbn9dkTUyZdz",
-      "public_key": "11aab5aa5f0795a51adf42878c10aea9981e3245c75c41b607a035231bad3151",
-      "private_key": "95117c123265ea0b0600fe66cfa17141cc75dadae6276b5af5db4795628fdf8f"
+      "section": "m/44/501/12",
+      "bip32_derivation_path": "m/44'/501'/12'",
+      "account_index": 12,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/12'/20'",
+          "address": "2BxudEyhVMVg8otAg7fTpymcvFZFgNogqbn9dkTUyZdz",
+          "public_key": "11aab5aa5f0795a51adf42878c10aea9981e3245c75c41b607a035231bad3151",
+          "private_key": "95117c123265ea0b0600fe66cfa17141cc75dadae6276b5af5db4795628fdf8f"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/13'/20'",
-      "address": "24VV2zds8W2ekx3LJ5hV3JUu2aeNvpkMAe5G5bjHGejP",
-      "public_key": "0fc0a2b578ed8b35650d1b181312b7bef632e250b53dd989e7fb9985c8f4c6e6",
-      "private_key": "cdcebf148f1c87e07243d72a30a1f183d20cb6fe10c4453a32e3f9b6d1b47742"
+      "section": "m/44/501/13",
+      "bip32_derivation_path": "m/44'/501'/13'",
+      "account_index": 13,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/13'/20'",
+          "address": "24VV2zds8W2ekx3LJ5hV3JUu2aeNvpkMAe5G5bjHGejP",
+          "public_key": "0fc0a2b578ed8b35650d1b181312b7bef632e250b53dd989e7fb9985c8f4c6e6",
+          "private_key": "cdcebf148f1c87e07243d72a30a1f183d20cb6fe10c4453a32e3f9b6d1b47742"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/14'/20'",
-      "address": "Fe53GVdkedUCtP2Jaw9YttHYZv3HJrnuTwBmSK4tKiBj",
-      "public_key": "d982ac85cccef27418a542876db4f04ef02d915b6ae22b337b3307005bf35e12",
-      "private_key": "707f9bba6b420bff5697c241e8c5acece9420001ccb0404da1011b4ad4ca1406"
+      "section": "m/44/501/14",
+      "bip32_derivation_path": "m/44'/501'/14'",
+      "account_index": 14,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/14'/20'",
+          "address": "Fe53GVdkedUCtP2Jaw9YttHYZv3HJrnuTwBmSK4tKiBj",
+          "public_key": "d982ac85cccef27418a542876db4f04ef02d915b6ae22b337b3307005bf35e12",
+          "private_key": "707f9bba6b420bff5697c241e8c5acece9420001ccb0404da1011b4ad4ca1406"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/15'/20'",
-      "address": "FsCKNNfcGRvMxHkvNR8f7Gub1xrAwtQCANqMRoeiwkDh",
-      "public_key": "dcdf74087b05e5fc3c960fba38dff7f44d02ae9276898fdccfeb9afdd2f46f8c",
-      "private_key": "1a8139fffd04808ce02a6a5050d36485893309376f872095b3c2e22ca932d790"
+      "section": "m/44/501/15",
+      "bip32_derivation_path": "m/44'/501'/15'",
+      "account_index": 15,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/15'/20'",
+          "address": "FsCKNNfcGRvMxHkvNR8f7Gub1xrAwtQCANqMRoeiwkDh",
+          "public_key": "dcdf74087b05e5fc3c960fba38dff7f44d02ae9276898fdccfeb9afdd2f46f8c",
+          "private_key": "1a8139fffd04808ce02a6a5050d36485893309376f872095b3c2e22ca932d790"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/16'/20'",
-      "address": "8A9RfDMU5VZ1j4PfoQZsFDZD7GxkkkrFdfrEBobyM9x8",
-      "public_key": "6a598fe6dcd6367fd14c5d542337a44289db0ce2cef253756f832ff0c139c2fd",
-      "private_key": "32828b49d83f1d78ad039d64ed99e09da6a3bd8393753d43046534a93a001c5d"
+      "section": "m/44/501/16",
+      "bip32_derivation_path": "m/44'/501'/16'",
+      "account_index": 16,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/16'/20'",
+          "address": "8A9RfDMU5VZ1j4PfoQZsFDZD7GxkkkrFdfrEBobyM9x8",
+          "public_key": "6a598fe6dcd6367fd14c5d542337a44289db0ce2cef253756f832ff0c139c2fd",
+          "private_key": "32828b49d83f1d78ad039d64ed99e09da6a3bd8393753d43046534a93a001c5d"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/17'/20'",
-      "address": "9EN4GApLYprTpFM3i8Bwzw9iRCwFYjbgaFVx1Q7GXzxF",
-      "public_key": "7a49dab29b78b1ca428c5e4da01683c55647ceb5491ed5459cb8f94606a0dea8",
-      "private_key": "18dc8b41e86a7e260520ee5530f7ae65921bf0f0ad9b5dfda199dc5508afdb92"
+      "section": "m/44/501/17",
+      "bip32_derivation_path": "m/44'/501'/17'",
+      "account_index": 17,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/17'/20'",
+          "address": "9EN4GApLYprTpFM3i8Bwzw9iRCwFYjbgaFVx1Q7GXzxF",
+          "public_key": "7a49dab29b78b1ca428c5e4da01683c55647ceb5491ed5459cb8f94606a0dea8",
+          "private_key": "18dc8b41e86a7e260520ee5530f7ae65921bf0f0ad9b5dfda199dc5508afdb92"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/18'/20'",
-      "address": "DH2aiRGpSM9L84tgtjau7xQ1k3VEtymHVUNpE91zFJ7k",
-      "public_key": "b66752f2d6cb3653b9231c003a5f876be550a7e4e072a26bfa4043ea25222f2b",
-      "private_key": "c90e15e200880ffc92b0d6a21486be4a258c2cac95f6301a5c4bf4136b2bc38e"
+      "section": "m/44/501/18",
+      "bip32_derivation_path": "m/44'/501'/18'",
+      "account_index": 18,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/18'/20'",
+          "address": "DH2aiRGpSM9L84tgtjau7xQ1k3VEtymHVUNpE91zFJ7k",
+          "public_key": "b66752f2d6cb3653b9231c003a5f876be550a7e4e072a26bfa4043ea25222f2b",
+          "private_key": "c90e15e200880ffc92b0d6a21486be4a258c2cac95f6301a5c4bf4136b2bc38e"
+        }
+      ]
     },
     {
-      "path": "m/44'/501'/19'/20'",
-      "address": "B5xYYNrk8WL7bKUa6cxSyah8KFq9sJt1JaK2gFe1wvCf",
-      "public_key": "95d9feff7e44cafa0a7e6c86bb168f840698ffa3ed57289b3cf33a7a8b8971a8",
-      "private_key": "d556cd44b7d6e60925846e21cc002a877c932327d0b12ad088247f57172af051"
+      "section": "m/44/501/19",
+      "bip32_derivation_path": "m/44'/501'/19'",
+      "account_index": 19,
+      "branch_index": 20,
+      "addresses": [
+        {
+          "path": "m/44'/501'/19'/20'",
+          "address": "B5xYYNrk8WL7bKUa6cxSyah8KFq9sJt1JaK2gFe1wvCf",
+          "public_key": "95d9feff7e44cafa0a7e6c86bb168f840698ffa3ed57289b3cf33a7a8b8971a8",
+          "private_key": "d556cd44b7d6e60925846e21cc002a877c932327d0b12ad088247f57172af051"
+        }
+      ]
     }
   ]
 }

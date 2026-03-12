@@ -37,13 +37,17 @@ require_relative "skeleton_key/recovery/bip39"
 require_relative "skeleton_key/seed"
 require_relative "skeleton_key/keyring"
 
-# Specific account implementations
-require_relative "skeleton_key/bitcoin/support"
-require_relative "skeleton_key/bitcoin/account"
-require_relative "skeleton_key/ethereum/support"
-require_relative "skeleton_key/ethereum/account"
-require_relative "skeleton_key/solana/support"
-require_relative "skeleton_key/solana/account"
+# Canonical chain namespace
+require_relative "skeleton_key/chains/bitcoin/support/versioning"
+require_relative "skeleton_key/chains/bitcoin/support/paths"
+require_relative "skeleton_key/chains/bitcoin/support/outputs"
+require_relative "skeleton_key/chains/bitcoin/support"
+require_relative "skeleton_key/chains/bitcoin/account_derivation"
+require_relative "skeleton_key/chains/bitcoin/account"
+require_relative "skeleton_key/chains/ethereum/support"
+require_relative "skeleton_key/chains/ethereum/account"
+require_relative "skeleton_key/chains/solana/support"
+require_relative "skeleton_key/chains/solana/account"
 
 module SkeletonKey
   ##

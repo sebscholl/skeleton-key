@@ -1,6 +1,6 @@
 # Documentation Style Guide
 
-SkeletonKey source files should read like audited technical notes, not just executable code. Follow the established YARD-style annotation pattern already used in older files such as `lib/skeleton_key/keyring.rb`, `lib/skeleton_key/bitcoin/account.rb`, and `lib/skeleton_key/utils/hashing.rb`.
+SkeletonKey source files should read like audited technical notes, not just executable code. Follow the established YARD-style annotation pattern already used in older files such as `lib/skeleton_key/keyring.rb`, `lib/skeleton_key/chains/bitcoin/account.rb`, and `lib/skeleton_key/utils/hashing.rb`.
 
 ## Goals
 

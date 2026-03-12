@@ -199,6 +199,26 @@ seed = SkeletonKey::Recovery::Slip39.recover(shares, passphrase: "PASS8")
 
 Important safety note: `Slip39.recover` validates the share set, but a wrong passphrase is not guaranteed to raise. It can yield a different valid-length secret. If passphrase correctness matters operationally, verify the recovered seed against a known address, fingerprint, or other expected identifier.
 
+## Ruby Secret Handling
+
+SkeletonKey is intentionally a sharp library: the point is to recover and export key material so the caller can hand it to signing, wallet, or custody code. That is useful, but it carries Ruby-specific constraints.
+
+Ruby does not provide hard guarantees for secure memory erasure:
+
+- strings are garbage-collected
+- sensitive values may be copied during encoding, packing, or concatenation
+- intermediate buffers may exist outside the object you hold
+
+SkeletonKey therefore does not claim guaranteed zeroization. The correct posture is best-effort operational hygiene:
+
+- keep mnemonics, seeds, private keys, and WIFs in scope for as little time as possible
+- avoid logging, inspecting, or serializing secret-bearing objects in development tools
+- prefer process boundaries and short-lived workers for sensitive workflows
+- hand recovered keys directly to downstream signing code instead of caching them in application state
+- verify recovered BIP39 or SLIP-0039 material against known addresses or fingerprints before using it operationally
+
+If your threat model requires hard memory guarantees, Ruby is the wrong layer to trust with long-lived secret custody.
+
 ## Keyring Experience
 
 [`SkeletonKey::Keyring`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/keyring.rb) is the main developer entry point. It accepts normalized seed material and exposes chain-specific account builders.
@@ -276,7 +296,7 @@ All three comparisons should print `true`.
 
 ## Bitcoin Experience
 
-Bitcoin accounts are created through [`SkeletonKey::Bitcoin::Account`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/bitcoin/account.rb).
+Bitcoin accounts are created through [`SkeletonKey::Chains::Bitcoin::Account`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/chains/bitcoin/account.rb).
 
 Examples:
 
@@ -320,7 +340,7 @@ Supported Bitcoin purposes:
 
 ## Ethereum Experience
 
-Ethereum accounts are created through [`SkeletonKey::Ethereum::Account`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/ethereum/account.rb).
+Ethereum accounts are created through [`SkeletonKey::Chains::Ethereum::Account`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/chains/ethereum/account.rb).
 
 ```ruby
 account = keyring.ethereum(purpose: 44, coin_type: 60, account_index: 0)
@@ -357,7 +377,7 @@ Supported Ethereum purposes:
 
 ## Solana Experience
 
-Solana accounts are created through [`SkeletonKey::Solana::Account`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/solana/account.rb).
+Solana accounts are created through [`SkeletonKey::Chains::Solana::Account`](/home/sebscholl/Code/skeleton-key/lib/skeleton_key/chains/solana/account.rb).
 
 ```ruby
 account = keyring.solana(account_index: 0)
@@ -446,17 +466,14 @@ Fixture layout:
 
 The preferred validation model in this repository is external golden-master comparison against established tools and independently generated corpora.
 
-## Fixture Generation and Scripts
+## Fixture Policy
 
-Not every script under `scripts/` is equally important.
+Golden-master fixtures in this repository are frozen validation artifacts, not routine developer outputs.
 
-Current reproducibility scripts:
-
-- `scripts/generate_slip39_fixtures.py`
-- `scripts/generate_ethereum_fixtures.rb`
-- `scripts/generate_solana_fixtures.rb`
-
-Migration and normalization scripts also exist for fixture maintenance. Review them before using them as canonical generators.
+- do not casually regenerate fixtures as part of ordinary feature work
+- treat fixture diffs as safety-critical review items
+- when a fixture must change, document the external source and validation reason in the commit or PR
+- prefer adding new coverage over rewriting existing canonical corpora
 
 ## Repository Layout
 
@@ -464,9 +481,9 @@ Key directories:
 
 - `lib/skeleton_key/recovery/`: BIP39 and SLIP-0039 recovery
 - `lib/skeleton_key/derivation/`: BIP32, SLIP-0010, derivation paths
-- `lib/skeleton_key/bitcoin/`: Bitcoin account and support logic
-- `lib/skeleton_key/ethereum/`: Ethereum account and support logic
-- `lib/skeleton_key/solana/`: Solana account and support logic
+- `lib/skeleton_key/chains/bitcoin/`: Bitcoin account and support logic
+- `lib/skeleton_key/chains/ethereum/`: Ethereum account and support logic
+- `lib/skeleton_key/chains/solana/`: Solana account and support logic
 - `lib/skeleton_key/codecs/`: local Base58, Base58Check, Bech32 codecs
 - `spec/lib/`: unit specs
 - `spec/integration/`: vector compliance specs

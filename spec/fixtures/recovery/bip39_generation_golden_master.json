@@ -1,0 +1,279 @@
+{
+  "source": "python_mnemonic_reference",
+  "generation_strategy": "sha256(label) truncated to the supported BIP39 entropy size",
+  "vectors": [
+    {
+      "entropy": "00000000000000000000000000000000",
+      "word_count": 12,
+      "passphrase": "TREZOR",
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "seed": "c55257c360c07c72029aebc1b53c05ed0362ada38ead3e3e9efa3708e53495531f09a6987599d18264c1e1c92f2cf141630c7a3c4ab7c81b2f001698e7463b04"
+    },
+    {
+      "entropy": "80808080808080808080808080808080",
+      "word_count": 12,
+      "passphrase": "TREZOR",
+      "mnemonic": "letter advice cage absurd amount doctor acoustic avoid letter advice cage above",
+      "seed": "d71de856f81a8acc65e6fc851a38d4d7ec216fd0796d0a6827a3ad6ed5511a30fa280f12eb2e47ed2ac03b5c462a0358d18d69fe4f985ec81778c1b370b652a8"
+    },
+    {
+      "entropy": "ffffffffffffffffffffffffffffffff",
+      "word_count": 12,
+      "passphrase": "TREZOR",
+      "mnemonic": "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo wrong",
+      "seed": "ac27495480225222079d7be181583751e86f571027b0497b5b5d11218e0a8a13332572917f0f8e5a589620c6f15b11c61dee327651a14c34e18231052e48c069"
+    },
+    {
+      "entropy": "57b7c47ea74712a60f87f683fa1d2470",
+      "word_count": 12,
+      "passphrase": "",
+      "mnemonic": "fish sail cabbage excess illness fantasy dignity yard loop special empower they",
+      "seed": "3dbfec93a63d9213c9bf32b11de591fa29a9009f04989b8990c639edaa2957475a9d4f83b2502214836dde58e6c4e718286a84e906ece8112ecfe1996f17e7ef"
+    },
+    {
+      "entropy": "d3ca092a36bed68199caf38c59289c31",
+      "word_count": 12,
+      "passphrase": "",
+      "mnemonic": "stable expect enhance hope uniform dolphin grunt fury middle sing check glimpse",
+      "seed": "a72aa6d55df46dd970a267f6fc963dd68ffd99f451ef9f249aea11b9bfbf60f1200fe9c78f7145dfdeb8fdc5f950abf6137185a4633ce8e48b876050f810e133"
+    },
+    {
+      "entropy": "c4434dc93977f267ccb209d34a1e2c82",
+      "word_count": 12,
+      "passphrase": "",
+      "mnemonic": "session bounce inch indicate left crop crazy donkey spy extend menu again",
+      "seed": "9d05d489d5f6e5836d336813bf0f4bb36195774ce6ab2ac404452ae02e448f23014a906a69cfe8a02c35edc03c0612fb182fff4d8d0f036285dae483c3a98e86"
+    },
+    {
+      "entropy": "2499020aec6a0f59405cc519b25577d7",
+      "word_count": 12,
+      "passphrase": "SkeletonKey-12-1",
+      "mnemonic": "cause siege live sugar path protect accident obvious boost naive fuel question",
+      "seed": "fbd5a67ff2df179ecd1fdb85877946e5a253b36498e787401e13e609cd086881ed18cd3e3825ea82f8fbaceb170e8d940c572cbb7ddee49d060cedc3d8844ec7"
+    },
+    {
+      "entropy": "720f46aef83cc95d90d1004510c04a27",
+      "word_count": 12,
+      "passphrase": "SkeletonKey-12-2",
+      "mnemonic": "improve kick produce vacant smart put drive cactus eagle maid barely exhaust",
+      "seed": "a1da881c0e1a1cf367cbf00079ca35dae17b74c83bcae24962fc65794a2588d14e71bc55e239bb0c025f67b739752b619eab33ec42339c3ab2b6f259fdae351d"
+    },
+    {
+      "entropy": "4b09777c54ec9635fda33f6393aec398",
+      "word_count": 12,
+      "passphrase": "SkeletonKey-12-3",
+      "mnemonic": "enrich entry tenant prefer siren brain walk gun glory output rail core",
+      "seed": "7778f1f0e29bff0c100c28a2ff837a9925efd487dc742352106b4b9cf8c1c7765165946b131017f3b08bb70399c57c79e1abe9b624babd0660d40ac79454e5d7"
+    },
+    {
+      "entropy": "c49dcd797923b9a7f8829be47531cf60582a7793",
+      "word_count": 15,
+      "passphrase": "",
+      "mnemonic": "setup unveil furnace venture describe stadium tilt fat tongue praise inherit scheme live design era",
+      "seed": "100f52b64839036993e05173001fd3943fd352bfe6a1b1ce3cde5c5787654bdcdf2c0f45d07f6b36e671c69c33806d4f51f71a18151bae480b09a78627f8cab4"
+    },
+    {
+      "entropy": "3709978c731e4e3f813513653bb2b921f21cf4f1",
+      "word_count": 15,
+      "passphrase": "",
+      "mnemonic": "damage erosion toast tower top cabin age pen gown talk purity dumb canyon kidney shoe",
+      "seed": "0dc64999433f6e79001d6f7f5f16c7f539e6f4af47ad48202ff621f8ad797a19009d6a49bbe8b3aff10765142ca7573a3cd3bad0c80862126d7c71b5156cf10c"
+    },
+    {
+      "entropy": "b04a09791e09d6f114d30bbdea37dfd5a873ef23",
+      "word_count": 15,
+      "passphrase": "",
+      "mnemonic": "raccoon expect furnace despair output joy fashion gesture sadness faculty wave prize mango wasp monkey",
+      "seed": "9514713cabe02d8028903496877fdfb1b017c85f9ad3d95b861b555ac4046f395d7772c2dfb0fba978054688b860ccb100a2d3c7861f9db8972f61ffc29f7f25"
+    },
+    {
+      "entropy": "0782d5fbbc42b44c34a83555c5c776dda10e43ee",
+      "word_count": 15,
+      "passphrase": "SkeletonKey-15-1",
+      "mnemonic": "always birth leave joy clip champion sport allow fiction comfort tank robust axis capable reward",
+      "seed": "69a708e21fbde3e6382c87c38917a5fca92decc35c66965ec8e2634bedf209a7dfd3e2c746d86cf105475e98f99b794955ed185e1b1221646f4fbc5f5a254fd1"
+    },
+    {
+      "entropy": "944e92e24c0ebab8a0cf47858d0428c0dc9c2375",
+      "word_count": 15,
+      "passphrase": "SkeletonKey-15-2",
+      "mnemonic": "nephew innocent review object two fox lobster trophy machine habit any like six balance stumble",
+      "seed": "390a69d8ccd5a43d5a98222b61355c5849bcedf225058b9b3a7e0c5beb4d056318d8757ac181a659167e6110504a580e8415400312055fc851d229ab5d4ca15e"
+    },
+    {
+      "entropy": "747c20e85a00d0118b96e60646e0964008a8f4a3",
+      "word_count": 15,
+      "passphrase": "SkeletonKey-15-3",
+      "mnemonic": "inner three deliver reduce artist angle comic system alien damage cereal length melody kid million",
+      "seed": "c37e232f65faa5c6521c3c610535031975a60c3cf60c7a42bac3f3ca7338deb57549989c0b50f49bdf2a32f4003b92b79eb2730133c1b6af834e1e9f70c9346a"
+    },
+    {
+      "entropy": "a54065d3aa57ccd1ecfd28190a3387a048e932090e907868",
+      "word_count": 18,
+      "passphrase": "",
+      "mnemonic": "pipe add insane feed lamp happy recycle pink boil face tiger dog model october category spirit journey dune",
+      "seed": "3f4a9420bdbdcc31e0ca081dfedcf45e62087f1a0b8308f339d3ce03a3b64a375043795ce415e3edae7e6d7b021e23f28f87dbef33c6d44ec17376a9a6c53f3c"
+    },
+    {
+      "entropy": "000000000000000000000000000000000000000000000000",
+      "word_count": 18,
+      "passphrase": "TREZOR",
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon agent",
+      "seed": "035895f2f481b1b0f01fcf8c289c794660b289981a78f8106447707fdd9666ca06da5a9a565181599b79f53b844d8a71dd9f439c52a3d7b3e8a79c906ac845fa"
+    },
+    {
+      "entropy": "808080808080808080808080808080808080808080808080",
+      "word_count": 18,
+      "passphrase": "TREZOR",
+      "mnemonic": "letter advice cage absurd amount doctor acoustic avoid letter advice cage absurd amount doctor acoustic avoid letter always",
+      "seed": "107d7c02a5aa6f38c58083ff74f04c607c2d2c0ecc55501dadd72d025b751bc27fe913ffb796f841c49b1d33b610cf0e91d3aa239027f5e99fe4ce9e5088cd65"
+    },
+    {
+      "entropy": "ffffffffffffffffffffffffffffffffffffffffffffffff",
+      "word_count": 18,
+      "passphrase": "TREZOR",
+      "mnemonic": "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo when",
+      "seed": "0cd6e5d827bb62eb8fc1e262254223817fd068a74b5b449cc2f667c3f1f985a76379b43348d952e2265b4cd129090758b3e3c2c49103b5051aac2eaeb890a528"
+    },
+    {
+      "entropy": "03541104b4f4b0afb0e7fd483c6d6d95c8b232779a74e524",
+      "word_count": 18,
+      "passphrase": "",
+      "mnemonic": "addict party donkey hazard enrich fit seminar zero else toddler fork clog menu bomb taxi excess topple celery",
+      "seed": "ba5fcb91d1fe20c2060660b9ee1ffd23b6a823879dd86d7098d637ae10cbab3f9c00e7bb313ecadf351d5a937ada79f28f428251d88974a67a4d5d753226d7c0"
+    },
+    {
+      "entropy": "c95f405f333ae9338bbdccb271973a48ce02051dc5abe954",
+      "word_count": 18,
+      "passphrase": "",
+      "mnemonic": "sing wheel blind grid purse oil confirm ridge raven million soldier muscle then action jacket rely true pigeon",
+      "seed": "2b0b231f48539f5dd7290386eab5cb1f0ee3c7910f95fe5aede042f110b3114619082d0e66a5ba1458fedae950057d7bbe869abdcc789ffbf5fc4b7ab374059b"
+    },
+    {
+      "entropy": "ed41ec09bdc96ccab8a76a54b544493e1dbae66c3347f37f",
+      "word_count": 18,
+      "passphrase": "SkeletonKey-18-1",
+      "mnemonic": "unhappy author act knee nothing grab tip unhappy feed pretty banner label sweet industry radio happy vibrant zero",
+      "seed": "d900dea5072b0b3b5bdaa7115a674892ce52c2c07da5423e080e9a6e0547d631975710b31bb622c5b52f75af695d9448a250ef21e35db25c0f47af52b16d1dc1"
+    },
+    {
+      "entropy": "70d149bd7103d226ddeba599da9bcd10bc45bb91171bfcc6",
+      "word_count": 18,
+      "passphrase": "SkeletonKey-18-2",
+      "mnemonic": "ignore medal hungry tilt diamond beach jeans input oil state viable cannon session tape dust toddler wolf crop",
+      "seed": "d998ac510b89564e845cfb3c3b1ffc521c43be43ce12076b657632a2afdfe6beaf3a478321f4d2c8890c782ec067da38df008b57c25be83bc50caac3b060de18"
+    },
+    {
+      "entropy": "62388dc26bc28534fc91d7888ab579b12b3eb9e68afea5cb",
+      "word_count": 18,
+      "passphrase": "SkeletonKey-18-3",
+      "mnemonic": "giraffe settle identify stuff choose omit venture depend mass fiber fury girl recycle friend olive garlic place funny",
+      "seed": "912e5a58c7121ecd5f75203bf336c52665ecd38712408036a28393b6dd2d63c1d5de305abe353a541168580dd3e1930b3960befb8c53cabc6c4eb13b8dac445a"
+    },
+    {
+      "entropy": "d593dd5dd6da3033b91f50e41f179f60b1d5ebf9b7bb29c3f1f5b928",
+      "word_count": 21,
+      "passphrase": "",
+      "mnemonic": "stereo page first pumpkin perfect border tongue tube tomato weather treat scrap bubble vote traffic wash clap buzz latin inch mention",
+      "seed": "6c39f07222b11a2d8b197eabaa397ce1364f7626912db8ceff3fe426f1c9d3ee9fcb4dade52f1538ec5794a4675bc1013aeb77d64806d200a86f0195625892a9"
+    },
+    {
+      "entropy": "bfc7f0668f5171d932cc6bff3b98d37d741197361c606a5665c17b40",
+      "word_count": 21,
+      "passphrase": "",
+      "mnemonic": "save display boost burger blade uncle sleep miracle you system crumble wife donate slide such metal heart rebel icon walk armor",
+      "seed": "815aeb78055aafba0176e2ad3897b80a27143eabb4cf659c439342cc52f07dffa8f36a0f9a6a05346aa12b39c6a6126a06f29e5d5de2daf1a9a4f58d77c2bc55"
+    },
+    {
+      "entropy": "b4f750db1518f571f06bb71d77e3a67d9a7e5bf2f3d70b8aa69f7cb9",
+      "word_count": 21,
+      "passphrase": "",
+      "mnemonic": "reject ritual cycle clay monster rib script ivory buddy sample trumpet will pony combine slim kit argue festival pond west mystery",
+      "seed": "484900185c4d5c7074da87ceb3f6787efef592855366121ada790ab8fc10f270cf0a1be0e134cc70c493ffd858066c683bcea8a38ecfdaeeb27e06660b7d8145"
+    },
+    {
+      "entropy": "b2803c7c2225cff86bd6e3a3776aa757ad6f8692ae23f6af340bdd80",
+      "word_count": 21,
+      "passphrase": "SkeletonKey-21-1",
+      "mnemonic": "raw acid business dust friend wire quantum symbol pet robust prefer quantum street select enjoy settle wall keen actual roast attack",
+      "seed": "164e0e4e506896ea3ef73e9314533f83dcd3af398186a2fcb9e77cdac3f94622171369cdc66cb71c619cdee257af874999d175318f95d5b276d6e549af79beab"
+    },
+    {
+      "entropy": "cc43191daef1fadc17a2004eede342f909cd00a99af8c789ace26934",
+      "word_count": 21,
+      "passphrase": "SkeletonKey-21-2",
+      "mnemonic": "slush boat electric fuel cabbage host future divorce exclude humor spawn velvet orphan leopard please gallery shy estate decade sponsor dog",
+      "seed": "f061b7e9d0507bdce6283533a243727a291a41a7fc3083643584dfc5d9b15f38aea6f84f0aa42514a14313b8e6adea783bd9c87873237e3ba6e39075daaaaa42"
+    },
+    {
+      "entropy": "59416b22386f32f6f54f5732f99649e526ff1f08782d7a7a9e9407de",
+      "word_count": 21,
+      "passphrase": "SkeletonKey-21-3",
+      "mnemonic": "flock area silk ignore veteran kiwi steel turtle cream smile mystery ski husband moon capable aisle kidney stay pink autumn truth",
+      "seed": "b160810174d3cd202c8044c4a1dcea09ec813cf61fb9369b4364f3d8e41416b0d897486e47dd012a368afca8dbd17b7033a0aadd7e7673044315f75c44a0634f"
+    },
+    {
+      "entropy": "4847179ceeb8cd5b835333413499a2bc188d700d209d9cc84a79af0bca6b8cf5",
+      "word_count": 24,
+      "passphrase": "",
+      "mnemonic": "embark december transfer talent mimic punch ask grid donkey pill hamster join match retreat cruel beauty orphan drastic oyster fun royal cupboard critic pottery",
+      "seed": "a603f0826d10632a4af4c0b5d6afb78a72e716eceaa31b5f54c5bd7c8947abdfd05adf31bbac2b3ea02c1a573142048c558a69825ad94e4d973d6b050ae496b4"
+    },
+    {
+      "entropy": "0000000000000000000000000000000000000000000000000000000000000000",
+      "word_count": 24,
+      "passphrase": "TREZOR",
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon art",
+      "seed": "bda85446c68413707090a52022edd26a1c9462295029f2e60cd7c4f2bbd3097170af7a4d73245cafa9c3cca8d561a7c3de6f5d4a10be8ed2a5e608d68f92fcc8"
+    },
+    {
+      "entropy": "8080808080808080808080808080808080808080808080808080808080808080",
+      "word_count": 24,
+      "passphrase": "TREZOR",
+      "mnemonic": "letter advice cage absurd amount doctor acoustic avoid letter advice cage absurd amount doctor acoustic avoid letter advice cage absurd amount doctor acoustic bless",
+      "seed": "c0c519bd0e91a2ed54357d9d1ebef6f5af218a153624cf4f2da911a0ed8f7a09e2ef61af0aca007096df430022f7a2b6fb91661a9589097069720d015e4e982f"
+    },
+    {
+      "entropy": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "word_count": 24,
+      "passphrase": "TREZOR",
+      "mnemonic": "zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo zoo vote",
+      "seed": "dd48c104698c30cfe2b6142103248622fb7bb0ff692eebb00089b32d22484e1613912f0a5b694407be899ffd31ed3992c456cdf60f5d4564b8ba3f05a69890ad"
+    },
+    {
+      "entropy": "fa6a46bfbaa7b9ea7df3a250533ab2f3f09f49c67ee118bf1288b4b6941843c4",
+      "word_count": 24,
+      "passphrase": "",
+      "mnemonic": "whip fall quiz inspire knee vivid water inmate expect oil protect tree antique pilot boring switch board weasel peasant harvest harsh around audit main",
+      "seed": "dc6ac266002445cac67053c779d1bb98d784be6ca692203ebb0529d74c8cb9d105bfd02272229ef88d1c077df84de4efd7a285c2c7ceaa2089bc73c397ec3ca6"
+    },
+    {
+      "entropy": "954bbcf2809e103e0ba00dfdf02495e0b802911312ad0f0c42bcfaf9a88a47b8",
+      "word_count": 24,
+      "passphrase": "",
+      "mnemonic": "next fuel device abuse three business company accuse worth license century scrap lens embrace era fiber audit ginger quality vote once early bus atom",
+      "seed": "3f218a7c2c0ef794b9d2e43a1215bc827eeebfddeab158d39dc31ebcb7729dce634378c70acc12475324f81c8f383a2542331d8476abe8dfd8d8756b2ca39f5d"
+    },
+    {
+      "entropy": "5596f795cafa12a794923d9017ce42f8ce979261310b5b430d3e9409fb5d9811",
+      "word_count": 24,
+      "passphrase": "SkeletonKey-24-1",
+      "mnemonic": "few response tornado nominee patrol fatigue false element mosquito salmon mouse various truly since luggage cannon forget blur exile chimney panic put gate claw",
+      "seed": "03165289a962258e3f8ff2942b0b5070730317dd7539cc64763a6b7a38f84d94dc4381a37dd2d4b07219d473f4e524e57da3cbc10275943a5ba5df7d0bf74266"
+    },
+    {
+      "entropy": "a52056f7e8b876cc1e0835258da264647b76383f0c43badd508fa0a6f7845831",
+      "word_count": 24,
+      "passphrase": "SkeletonKey-24-2",
+      "mnemonic": "pioneer actor sadness sphere manual gravity join allow cereal home october similar resist bright wire mask river tunnel catalog donor hunt season general culture",
+      "seed": "f736c08fd54bf09bce3fc0bb58a4c762e585b07a2a2a51237e5822b60a514000d496ce2ceca4b43d0cceb5bd1739761518c570b38e0adcfdfec85ced073405a2"
+    },
+    {
+      "entropy": "cb6c277955c9f2c2bff9e5ea424a15ca7d5e2e4b5de8adb847bbe04d62e552b5",
+      "word_count": 24,
+      "passphrase": "SkeletonKey-24-3",
+      "mnemonic": "slice gentle tattoo process palace genuine zoo device tumble banner lyrics neutral sting blame coin rug pumpkin season upon scene stomach increase enlist rotate",
+      "seed": "11c5ea770dff62096d20b10cc53fd9648ca1a20a98f8fa6de8de79f2b7b3f373a576d3682839200787a6c41c8c33c1ff816f5e31a82f831d088eca2820594ee2"
+    }
+  ]
+}

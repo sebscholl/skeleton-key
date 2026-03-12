@@ -15,7 +15,7 @@ module SkeletonKey
   # - another {Seed} instance,
   # - or nothing (in which case a new random seed will be generated).
   #
-  # Each plugin (e.g. {SkeletonKey::Bitcoin::Account}) receives the canonical
+  # Each plugin (e.g. {SkeletonKey::Chains::Bitcoin::Account}) receives the canonical
   # {Seed} and is responsible for deriving its own keys according to the
   # chain’s standard derivation path (BIP44, BIP84, SLIP-10, etc.).
   #
@@ -28,7 +28,7 @@ module SkeletonKey
   #   account = keyring.bitcoin(purpose: 84, coin_type: 0, account: 0)
   #
   # @see SkeletonKey::Seed
-  # @see SkeletonKey::Bitcoin::Account
+  # @see SkeletonKey::Chains::Bitcoin::Account
   class Keyring
     # Initializes a new Keyring with an optional seed
     #
@@ -40,18 +40,18 @@ module SkeletonKey
 
     # Access the Bitcoin account derived from the seed
     #
-    # @param kwargs [Hash] options to pass to Bitcoin::Account (purpose, coin_type, account_index, network)
-    # @return [Bitcoin::Account] the derived Bitcoin account
+    # @param kwargs [Hash] options to pass to Chains::Bitcoin::Account
+    # @return [Chains::Bitcoin::Account] the derived Bitcoin account
     def bitcoin(**)
-      SkeletonKey::Bitcoin::Account.new(seed: seed.bytes, **)
+      SkeletonKey::Chains::Bitcoin::Account.new(seed: seed.bytes, **)
     end
 
     def ethereum(**)
-      SkeletonKey::Ethereum::Account.new(seed: seed.bytes, **)
+      SkeletonKey::Chains::Ethereum::Account.new(seed: seed.bytes, **)
     end
 
     def solana(**)
-      SkeletonKey::Solana::Account.new(seed: seed.bytes, **)
+      SkeletonKey::Chains::Solana::Account.new(seed: seed.bytes, **)
     end
 
     private

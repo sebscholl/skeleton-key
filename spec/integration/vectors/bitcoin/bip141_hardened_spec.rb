@@ -2,8 +2,8 @@
 
 require "json"
 
-RSpec.describe "Bitcoin BIP141 Vector Compliance" do
-  let(:vectors) { load_fixture("vectors/bitcoin/bip141_golden_master") }
+RSpec.describe "Bitcoin BIP141 Hardened Vector Compliance" do
+  let(:vectors) { load_fixture("vectors/bitcoin/bip141_hardened_golden_master") }
   let(:keyring) { SkeletonKey::Keyring.new(seed: vectors["bip39_seed"]) }
 
   subject(:bitcoin_account) { keyring.bitcoin(purpose: 141) }
@@ -19,22 +19,24 @@ RSpec.describe "Bitcoin BIP141 Vector Compliance" do
 
   describe "BIP141 Root Extended Keys" do
     it "derives the correct extended private key for the external branch" do
-      expect(bitcoin_account.derived[:bip32_xprv]).to eq(external_branch["bip32_extended_private_key"])
+      branch_keys = bitcoin_account.branch_extended_keys(change: external_branch["branch_index"])
+      expect(branch_keys[:xprv]).to eq(external_branch["bip32_extended_private_key"])
     end
 
     it "derives the correct extended public key for the external branch" do
-      expect(bitcoin_account.derived[:bip32_xpub]).to eq(external_branch["bip32_extended_public_key"])
+      branch_keys = bitcoin_account.branch_extended_keys(change: external_branch["branch_index"])
+      expect(branch_keys[:xpub]).to eq(external_branch["bip32_extended_public_key"])
     end
   end
 
   describe "Address Derivation" do
-    it "derives the expected native SegWit addresses and keys for each root branch" do
+    it "derives the expected native SegWit hardened addresses and keys for each root branch" do
       fixture_branches(vectors).each do |branch|
         change = branch["branch_index"]
 
         branch["addresses"].each do |addr|
-          index = addr["path"].split("/").last.to_i
-          derived = bitcoin_account.address(change: change, index: index)
+          index = addr["path"].split("/").last.delete("'").to_i
+          derived = bitcoin_account.address(change: change, index: index, hardened_index: true)
 
           aggregate_failures("for #{addr['path']}") do
             expect(derived[:path]).to eq(addr["path"])

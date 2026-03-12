@@ -7,21 +7,25 @@ RSpec.describe "Ethereum BIP44 Vector Compliance" do
   let(:keyring) { SkeletonKey::Keyring.new(seed: vectors["bip39_seed"]) }
 
   describe "Address Derivation" do
-    it "derives the expected Ethereum addresses and keys" do
-      vectors["addresses"].each do |addr|
-        path_parts = addr["path"].split("/")
-        account_index = path_parts[3].delete("'").to_i
-        change = path_parts[4].to_i
-        index = path_parts[5].to_i
+    it "derives the expected Ethereum addresses and keys for each branch" do
+      fixture_branches(vectors).each do |branch|
+        ethereum_account = keyring.ethereum(
+          purpose: 44,
+          coin_type: 60,
+          account_index: branch["account_index"]
+        )
+        change = branch["branch_index"]
 
-        derived = keyring.ethereum(purpose: 44, coin_type: 60, account_index: account_index)
-          .address(change: change, index: index)
+        branch["addresses"].each do |addr|
+          index = addr["path"].split("/").last.to_i
+          derived = ethereum_account.address(change: change, index: index)
 
-        aggregate_failures("for #{addr['path']}") do
-          expect(derived[:path]).to eq(addr["path"])
-          expect(derived[:private_key]).to eq(addr["private_key"])
-          expect(derived[:public_key]).to eq(addr["public_key"])
-          expect(derived[:address]).to eq(addr["address"])
+          aggregate_failures("for #{addr['path']}") do
+            expect(derived[:path]).to eq(addr["path"])
+            expect(derived[:private_key]).to eq(addr["private_key"])
+            expect(derived[:public_key]).to eq(addr["public_key"])
+            expect(derived[:address]).to eq(addr["address"])
+          end
         end
       end
     end

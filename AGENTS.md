@@ -8,9 +8,9 @@ Keep the repository layout strict and predictable. Production code belongs under
 
 - `lib/skeleton_key/core/`: entropy and core primitives
 - `lib/skeleton_key/derivation/`: path parsing and BIP32 derivation logic
-- `lib/skeleton_key/bitcoin/`: Bitcoin-specific behavior
-- `lib/skeleton_key/ethereum/`: Ethereum-specific behavior
-- `lib/skeleton_key/solana/`: Solana-specific behavior
+- `lib/skeleton_key/chains/bitcoin/`: Bitcoin-specific behavior
+- `lib/skeleton_key/chains/ethereum/`: Ethereum-specific behavior
+- `lib/skeleton_key/chains/solana/`: Solana-specific behavior
 - `lib/skeleton_key/utils/`: tightly scoped shared helpers
 - `spec/lib/`: unit specs
 - `spec/integration/`: vector and cross-module verification
