@@ -1,10 +1,20 @@
 require "securerandom"
 
 module SkeletonKey
+  ##
+  # Canonical seed container shared by all chain derivation entry points.
+  #
+  # {Seed} is the normalization boundary between recovery inputs
+  # (BIP39/SLIP-0039), raw entropy-like byte material, and downstream chain
+  # derivation. Callers can import from several supported input forms, but once
+  # constructed the object always wraps validated raw bytes.
   class Seed
     include Utils::Encoding
     extend Utils::Encoding
 
+    # Raw seed bytes after normalization and validation.
+    #
+    # @return [String]
     attr_reader :bytes
 
     # @param bytes [String] raw seed bytes
@@ -32,8 +42,18 @@ module SkeletonKey
     class << self
       # Loads a seed from a given value
       #
-      # @param value [String, Seed, Array<Integer>] the hex string representing the seed
-      # @return [Seed] the loaded seed
+      # Supported inputs:
+      # - `nil` to generate a new random seed
+      # - existing {Seed}
+      # - validated {Recovery::Bip39}
+      # - hex string
+      # - mnemonic string
+      # - raw byte string
+      # - array of octets
+      #
+      # @param value [String, Seed, Recovery::Bip39, Array<Integer>, nil]
+      # @return [Seed]
+      # @raise [Errors::InvalidSeedError] if the value cannot be normalized
       def import(value)
         case
         when value.nil? then generate
@@ -87,6 +107,10 @@ module SkeletonKey
         new(seed.bytes)
       end
 
+      # Recovers a seed from a BIP39 mnemonic phrase.
+      #
+      # @param mnemonic [Recovery::Bip39, String]
+      # @return [Seed]
       def import_from_mnemonic(mnemonic)
         Recovery::Bip39.import(mnemonic).seed
       end

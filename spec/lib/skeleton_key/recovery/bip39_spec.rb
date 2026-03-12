@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe SkeletonKey::Recovery::Bip39 do
-  let(:fixture_rows) { JSON.load_file(SkeletonKey::ROOT + "/spec/fixtures/recovery/bip39_golden_master.json").fetch("list") }
+  let(:fixture_rows) { load_fixture("recovery/bip39_golden_master").fetch("list") }
 
   describe ".import" do
     it "imports a mnemonic string" do
@@ -16,6 +16,42 @@ RSpec.describe SkeletonKey::Recovery::Bip39 do
 
     it "raises a typed error for unsupported mnemonic input" do
       expect { described_class.import(%w[not a string]) }.to raise_error(SkeletonKey::Errors::InvalidMnemonicError)
+    end
+  end
+
+  describe ".generate" do
+    it "generates mnemonics at each supported BIP39 length" do
+      SkeletonKey::Constants::MNEMONIC_WORD_COUNTS.each do |word_count|
+        mnemonic = described_class.generate(word_count: word_count)
+
+        expect(mnemonic).to be_a(described_class)
+        expect(mnemonic.words.length).to eq(word_count)
+      end
+    end
+
+    it "reproduces the known all-zero 12-word BIP39 vector from explicit entropy" do
+      mnemonic = described_class.generate(word_count: 12, entropy: ("\x00".b * 16))
+
+      expect(mnemonic.phrase).to eq(
+        "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+      )
+    end
+
+    it "round-trips deterministic entropy across every supported entropy length" do
+      SkeletonKey::Constants::ENTROPY_LENGTHS.each do |byte_length|
+        entropy = (0...byte_length).to_a.pack("C*")
+
+        mnemonic = described_class.from_entropy(entropy)
+
+        expect(mnemonic.words.length).to eq((byte_length * 8 * 33) / (32 * 11))
+        expect(described_class.new(mnemonic.phrase).phrase).to eq(mnemonic.phrase)
+      end
+    end
+
+    it "raises a typed error for unsupported BIP39 word counts" do
+      expect do
+        described_class.generate(word_count: 14)
+      end.to raise_error(SkeletonKey::Errors::InvalidMnemonicConfigurationError)
     end
   end
 

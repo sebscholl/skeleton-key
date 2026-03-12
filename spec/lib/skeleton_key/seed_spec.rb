@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe SkeletonKey::Seed do
-  let(:fixture_rows) { JSON.load_file(SkeletonKey::ROOT + "/spec/fixtures/recovery/bip39_golden_master.json").fetch("list") }
+  let(:fixture_rows) { load_fixture("recovery/bip39_golden_master").fetch("list") }
 
   describe ".import" do
     it "imports a mnemonic string as a standard BIP39 seed" do

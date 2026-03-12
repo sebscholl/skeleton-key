@@ -2,6 +2,13 @@
 
 module SkeletonKey
   module Codecs
+    ##
+    # Local Bech32 and Bech32m codec implementation.
+    #
+    # This module implements the exact checksum and charset rules needed for
+    # Bitcoin SegWit address encoding. It is intentionally generic at the codec
+    # boundary: HRP handling, checksum creation, and bit conversion live here,
+    # while script semantics remain in the Bitcoin layer.
     module Bech32
       CHARSET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l".freeze
       CHARSET_INDEX = CHARSET.chars.each_with_index.to_h.freeze
@@ -16,6 +23,12 @@ module SkeletonKey
 
       module_function
 
+      # Encodes an HRP and 5-bit data words into a Bech32 or Bech32m string.
+      #
+      # @param hrp [String] human-readable prefix
+      # @param data [Array<Integer>] data words in the range 0..31
+      # @param encoding [Symbol] {Encoding::BECH32} or {Encoding::BECH32M}
+      # @return [String] encoded Bech32 string
       def encode(hrp, data, encoding = Encoding::BECH32)
         validate_hrp!(hrp)
         validate_data!(data)
@@ -25,6 +38,11 @@ module SkeletonKey
         "#{hrp}#{SEPARATOR}#{combined.map { |value| CHARSET[value] }.join}"
       end
 
+      # Decodes a Bech32/Bech32m string and validates its checksum.
+      #
+      # @param bech [String] encoded Bech32 string
+      # @return [Array(String, Array<Integer>, Symbol)] HRP, data words, encoding type
+      # @raise [Errors::InvalidBech32Error] if the string is malformed or the checksum fails
       def decode(bech)
         raise Errors::InvalidBech32Error unless bech.is_a?(String)
         raise Errors::InvalidBech32Error if bech.empty? || bech.length > MAX_LENGTH
@@ -56,6 +74,17 @@ module SkeletonKey
         [hrp, data[0...-6], encoding]
       end
 
+      # Converts a stream of fixed-width integers into another width.
+      #
+      # This is the normalization step required when moving between raw bytes
+      # (8-bit values) and Bech32 witness program words (5-bit values).
+      #
+      # @param data [Array<Integer>] source values
+      # @param from_bits [Integer] bit width of each source value
+      # @param to_bits [Integer] desired bit width of each output value
+      # @param pad [Boolean] whether trailing zero padding is permitted
+      # @return [Array<Integer>]
+      # @raise [Errors::InvalidConvertBitsError] if the input cannot be losslessly converted
       def convert_bits(data, from_bits, to_bits, pad)
         acc = 0
         bits = 0
@@ -83,6 +112,9 @@ module SkeletonKey
         result
       end
 
+      # Creates the six checksum words for the given payload.
+      #
+      # @return [Array<Integer>]
       def create_checksum(hrp, data, encoding)
         constant = checksum_constant(encoding)
         values = hrp_expand(hrp) + data
@@ -90,6 +122,9 @@ module SkeletonKey
         6.times.map { |idx| (polymod >> (5 * (5 - idx))) & 31 }
       end
 
+      # Verifies the checksum and returns the detected Bech32 encoding family.
+      #
+      # @return [Symbol, nil]
       def verify_checksum(hrp, data)
         value = polymod(hrp_expand(hrp) + data)
         return Encoding::BECH32 if value == 1
@@ -98,6 +133,9 @@ module SkeletonKey
         nil
       end
 
+      # Returns the checksum constant for the selected encoding family.
+      #
+      # @return [Integer]
       def checksum_constant(encoding)
         case encoding
         when Encoding::BECH32 then 1
@@ -107,6 +145,9 @@ module SkeletonKey
         end
       end
 
+      # Computes the Bech32 polymod checksum accumulator.
+      #
+      # @return [Integer]
       def polymod(values)
         chk = 1
         values.each do |value|
@@ -119,6 +160,9 @@ module SkeletonKey
         chk
       end
 
+      # Expands the HRP into the form required by the Bech32 checksum.
+      #
+      # @return [Array<Integer>]
       def hrp_expand(hrp)
         hrp.bytes.map { |byte| byte >> 5 } + [0] + hrp.bytes.map { |byte| byte & 31 }
       end

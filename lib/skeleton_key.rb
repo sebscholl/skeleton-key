@@ -19,6 +19,17 @@ require_relative "skeleton_key/derivation/slip10"
 
 # Core functionality
 require_relative "skeleton_key/core/entropy"
+require_relative "skeleton_key/recovery/slip39_support/protocol"
+require_relative "skeleton_key/recovery/slip39_support/share"
+require_relative "skeleton_key/recovery/slip39_support/bit_packing"
+require_relative "skeleton_key/recovery/slip39_support/checksum"
+require_relative "skeleton_key/recovery/slip39_support/interpolation"
+require_relative "skeleton_key/recovery/slip39_support/cipher"
+require_relative "skeleton_key/recovery/slip39_support/encoder"
+require_relative "skeleton_key/recovery/slip39_support/generated_set"
+require_relative "skeleton_key/recovery/slip39_support/decoder"
+require_relative "skeleton_key/recovery/slip39_support/secret_recovery"
+require_relative "skeleton_key/recovery/slip39_support/generator"
 require_relative "skeleton_key/recovery/slip39"
 
 # Higher-level abstractions
@@ -34,8 +45,16 @@ require_relative "skeleton_key/ethereum/account"
 require_relative "skeleton_key/solana/support"
 require_relative "skeleton_key/solana/account"
 
-
 module SkeletonKey
+  ##
+  # Top-level namespace for the SkeletonKey library.
+  #
+  # The file load order here reflects the repository architecture:
+  # - shared constants and typed errors
+  # - shared utilities and codecs
+  # - shared derivation primitives
+  # - recovery formats and seed normalization
+  # - chain-specific account implementations
   class Error < StandardError; end
 
   # Project root directory

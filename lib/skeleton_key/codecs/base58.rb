@@ -2,12 +2,23 @@
 
 module SkeletonKey
   module Codecs
+    ##
+    # Raw Base58 codec using the Bitcoin alphabet.
+    #
+    # This module performs plain Base58 conversion only. It does not append or
+    # validate checksums; callers that need Base58Check should use
+    # {Base58Check}. The implementation preserves leading zero bytes as `"1"`
+    # characters to match Bitcoin-compatible tooling.
     module Base58
       ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".freeze
       INDEXES = ALPHABET.chars.each_with_index.to_h.freeze
 
       module_function
 
+      # Encodes raw bytes as a Base58 string.
+      #
+      # @param bytes [String] binary payload
+      # @return [String] Base58 string
       def encode(bytes)
         return "" if bytes.empty?
 
@@ -23,6 +34,11 @@ module SkeletonKey
         ("1" * zero_prefixes) + encoded
       end
 
+      # Decodes a Base58 string into raw bytes.
+      #
+      # @param encoded [String] Base58 string
+      # @return [String] decoded binary payload
+      # @raise [Errors::InvalidBase58Error] if the string contains invalid characters
       def decode(encoded)
         raise Errors::InvalidBase58Error if encoded.nil?
         raise Errors::InvalidBase58Error unless encoded.is_a?(String)

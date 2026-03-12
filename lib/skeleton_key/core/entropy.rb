@@ -1,5 +1,11 @@
 module SkeletonKey
   module Core
+    ##
+    # Cryptographically secure entropy generation.
+    #
+    # This module is the raw randomness boundary for SkeletonKey. It generates
+    # entropy suitable for seed creation and mnemonic generation, but it does
+    # not interpret that entropy as a chain-specific key or address.
     module Entropy
       # Generates cryptographically secure random entropy
       #

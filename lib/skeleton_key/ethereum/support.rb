@@ -2,6 +2,15 @@
 
 module SkeletonKey
   module Ethereum
+    ##
+    # Ethereum-specific serialization and address helpers.
+    #
+    # This module owns the Ethereum-facing parts of account derivation:
+    # - extended key version bytes used by the current API surface
+    # - EIP-55 checksum address rendering
+    # - rendering of Ethereum child paths below an account node
+    #
+    # It intentionally does not own the underlying secp256k1 arithmetic.
     module Support
       extend Utils::Hashing
       extend Utils::Encoding
@@ -11,14 +20,25 @@ module SkeletonKey
 
       module_function
 
+      # Returns the four-byte version used for serialized extended private keys.
+      #
+      # @return [String] big-endian 4-byte version
       def extended_private_version
         [XPRV_VERSION].pack("N")
       end
 
+      # Returns the four-byte version used for serialized extended public keys.
+      #
+      # @return [String] big-endian 4-byte version
       def extended_public_version
         [XPUB_VERSION].pack("N")
       end
 
+      # Converts an uncompressed secp256k1 public key into a checksummed
+      # Ethereum address per EIP-55.
+      #
+      # @param pubkey_uncompressed [String] 65-byte uncompressed public key
+      # @return [String] checksummed `0x...` Ethereum address
       def to_checksum_address(pubkey_uncompressed)
         address_bytes = keccak256(pubkey_uncompressed.byteslice(1, 64)).byteslice(-20, 20)
         address_hex = bytes_to_hex(address_bytes)
@@ -33,6 +53,14 @@ module SkeletonKey
         "0x#{checksummed}"
       end
 
+      # Derives a child node below the current account/root node and returns the
+      # Ethereum-facing representation of that child.
+      #
+      # @param change [Integer] branch index
+      # @param index [Integer] child index within the branch
+      # @param hardened_change [Boolean] whether the branch step is hardened
+      # @param hardened_index [Boolean] whether the address step is hardened
+      # @return [Hash] rendered path, private key, public keys, address, and chain code
       def derive_address_from_node(change: 0, index: 0, hardened_change: false, hardened_index: false)
         k_int, chain_code = derived[:k_int], derived[:c]
         change_index = hardened_change ? change | Derivation::Path::HARDENED_FLAG : change
@@ -57,6 +85,12 @@ module SkeletonKey
         }
       end
 
+      # Derives and serializes a branch node directly beneath the current
+      # account/root prefix.
+      #
+      # @param change [Integer] branch index
+      # @param hardened_change [Boolean] whether the branch child is hardened
+      # @return [Hash] branch path with serialized xprv/xpub
       def derive_branch_extended_keys(change: 0, hardened_change: false)
         parent_key = derived[:k_int]
         parent_chain_code = derived[:c]
@@ -86,12 +120,18 @@ module SkeletonKey
         }
       end
 
+      # Renders the derived child path in canonical BIP32 string form.
+      #
+      # @return [String]
       def build_derived_path(change:, index:, hardened_change:, hardened_index:)
         rendered_change = hardened_change ? "#{change}'" : change.to_s
         rendered_index = hardened_index ? "#{index}'" : index.to_s
         "#{path}/#{rendered_change}/#{rendered_index}"
       end
 
+      # Renders the derived branch path in canonical BIP32 string form.
+      #
+      # @return [String]
       def branch_derived_path(change:, hardened_change:)
         rendered_change = hardened_change ? "#{change}'" : change.to_s
         "#{path}/#{rendered_change}"
