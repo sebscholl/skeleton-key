@@ -5,15 +5,15 @@ require_relative "lib/skeleton_key/version"
 Gem::Specification.new do |spec|
   spec.name          = "skeleton_key"
   spec.version       = SkeletonKey::VERSION
-  spec.authors       = ["Your Name"]
-  spec.email         = ["you@example.com"]
+  spec.authors       = ["Sebastian Scholl"]
+  spec.email         = ["sebscholl@gmail.com"]
 
-  spec.summary       = "A gem that provides a master key abstraction"
-  spec.description   = "SkeletonKey provides key management utilities..."
-  spec.homepage      = "https://github.com/yourname/skeleton_key"
+  spec.summary       = "Deterministic wallet recovery and derivation across chains"
+  spec.description   = "SkeletonKey provides deterministic wallet recovery, seed normalization, and key derivation for Bitcoin, Ethereum, and Solana."
+  spec.homepage      = "https://github.com/sebscholl/skeleton-key"
   spec.license       = "MIT"
 
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = ">= 3.1.0"
 
   spec.files         = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").select do |f|
@@ -27,7 +27,8 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "#{spec.homepage}/CHANGELOG.md"
+  spec.metadata["documentation_uri"] = "#{spec.homepage}#readme"
+  spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.add_development_dependency "rspec", "~> 3.12"
 end
