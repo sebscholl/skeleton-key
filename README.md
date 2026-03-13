@@ -30,7 +30,8 @@
                      ██████
 ```
 
-[![Gem Version](https://badge.fury.io/rb/skeleton_key.svg )](https://badge.fury.io/rb/skeleton_key )
+[![Gem Version](https://badge.fury.io/rb/skeleton_key.svg?icon=si%3Arubygems&icon_color=%23f00000)](https://badge.fury.io/rb/skeleton_key)
+[![Release](https://github.com/sebscholl/skeleton-key/actions/workflows/release.yml/badge.svg)](https://github.com/sebscholl/skeleton-key/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg )](LICENSE)
 [![Ruby](https://img.shields.io/badge/Ruby-%3E%3D%203.2-black )](https://www.ruby-lang.org )
 [![Safety-Critical](https://img.shields.io/badge/⚠%20Safety--Critical-black )](SECURITY.md)
