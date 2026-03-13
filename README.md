@@ -32,7 +32,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/skeleton_key.svg )](https://badge.fury.io/rb/skeleton_key )
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg )](LICENSE)
-[![Ruby](https://img.shields.io/badge/Ruby-%3E%3D%203.1-black )](https://www.ruby-lang.org )
+[![Ruby](https://img.shields.io/badge/Ruby-%3E%3D%203.2-black )](https://www.ruby-lang.org )
 [![Safety-Critical](https://img.shields.io/badge/⚠%20Safety--Critical-black )](SECURITY.md)
 
 SkeletonKey is a Ruby library for deterministic wallet recovery and key derivation across Bitcoin, Ethereum, and Solana. It is designed around a strict boundary:

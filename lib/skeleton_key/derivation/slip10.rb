@@ -17,6 +17,8 @@ module SkeletonKey
 
       HARDENED_FLAG = 0x8000_0000
       ED25519_PKCS8_PREFIX = "302e020100300506032b657004220420"
+      ED25519_PKCS8_PRIVATE_KEY_SIZE = 32
+      ED25519_SPKI_PUBLIC_KEY_SIZE = 32
 
       module_function
 
@@ -52,7 +54,35 @@ module SkeletonKey
       # @return [Array(String, String)] raw private key and raw public key
       def keypair_from_seed(seed)
         key = OpenSSL::PKey.read([ED25519_PKCS8_PREFIX + seed.unpack1("H*")].pack("H*"))
-        [key.raw_private_key, key.raw_public_key]
+        [raw_private_key(key), raw_public_key(key)]
+      end
+
+      # Extracts the 32-byte private seed from an Ed25519 key object.
+      #
+      # Some Ruby/OpenSSL builds expose `raw_private_key`; older builds only
+      # expose PKCS#8 DER serialization. The trailing 32 bytes of the PKCS#8
+      # structure are the original seed.
+      #
+      # @param key [OpenSSL::PKey::PKey] Ed25519 key object
+      # @return [String] 32-byte private seed
+      def raw_private_key(key)
+        return key.raw_private_key if key.respond_to?(:raw_private_key)
+
+        key.private_to_der.byteslice(-ED25519_PKCS8_PRIVATE_KEY_SIZE, ED25519_PKCS8_PRIVATE_KEY_SIZE)
+      end
+
+      # Extracts the 32-byte public key from an Ed25519 key object.
+      #
+      # Some Ruby/OpenSSL builds expose `raw_public_key`; older builds only
+      # expose SubjectPublicKeyInfo DER. The trailing 32 bytes of the SPKI
+      # structure are the Ed25519 public key bytes.
+      #
+      # @param key [OpenSSL::PKey::PKey] Ed25519 key object
+      # @return [String] 32-byte public key
+      def raw_public_key(key)
+        return key.raw_public_key if key.respond_to?(:raw_public_key)
+
+        key.public_to_der.byteslice(-ED25519_SPKI_PUBLIC_KEY_SIZE, ED25519_SPKI_PUBLIC_KEY_SIZE)
       end
     end
   end
