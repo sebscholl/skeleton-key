@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    skeleton_key (0.1.0)
+    skeleton_key (0.1.1)
 
 GEM
   remote: https://rubygems.org/

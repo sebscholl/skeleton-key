@@ -19,7 +19,7 @@ Keep the repository layout strict and predictable. Production code belongs under
 - `bin/`: local development scripts
 
 ## Architecture Boundary
-Keep the abstraction boundary explicit. Recovery code may parse and validate recovery material such as BIP39 mnemonics and SLIP-0039 shares. Shared derivation code may derive key material from normalized seeds and paths, but it must not know how Bitcoin or Ethereum encode addresses or serialize chain-facing keys. Chain modules own chain conventions, address construction, and external encodings. The canonical reference is [`ARCHITECTURE.md`](ARCHITECTURE.md).
+Keep the abstraction boundary explicit. Recovery code may parse and validate recovery material such as BIP39 mnemonics and SLIP-0039 shares. Shared derivation code may derive key material from normalized seeds and paths, but it must not know how Bitcoin or Ethereum encode addresses or serialize chain-facing keys. Chain modules own chain conventions, address construction, and external encodings. The canonical reference is [`ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 - Recovery layer: BIP39 mnemonic validation and seed derivation, SLIP-0039 share validation and master-secret recovery
 - Shared derivation layer: entropy, seed validation, path parsing, secp256k1/BIP32 primitives, SLIP-0010 hardened derivation, and generic extended-key serialization
