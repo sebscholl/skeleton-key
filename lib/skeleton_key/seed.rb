@@ -52,15 +52,16 @@ module SkeletonKey
       # - array of octets
       #
       # @param value [String, Seed, Recovery::Bip39, Array<Integer>, nil]
+      # @param passphrase [String] optional BIP39 passphrase for mnemonic input
       # @return [Seed]
       # @raise [Errors::InvalidSeedError] if the value cannot be normalized
-      def import(value)
+      def import(value, passphrase: "")
         case
         when value.nil? then generate
         when value.is_a?(Seed) then import_from_seed(value)
-        when value.is_a?(Recovery::Bip39) then import_from_mnemonic(value)
+        when value.is_a?(Recovery::Bip39) then import_from_mnemonic(value, passphrase: passphrase)
         when hex_string?(value) then import_from_hex(value)
-        when mnemonic_string?(value) then import_from_mnemonic(value)
+        when mnemonic_string?(value) then import_from_mnemonic(value, passphrase: passphrase)
         when byte_string?(value) then import_from_bytes(value)
         when octet_array?(value) then import_from_octets(value)
         else
@@ -110,9 +111,10 @@ module SkeletonKey
       # Recovers a seed from a BIP39 mnemonic phrase.
       #
       # @param mnemonic [Recovery::Bip39, String]
+      # @param passphrase [String] optional BIP39 passphrase
       # @return [Seed]
-      def import_from_mnemonic(mnemonic)
-        Recovery::Bip39.import(mnemonic).seed
+      def import_from_mnemonic(mnemonic, passphrase: "")
+        Recovery::Bip39.import(mnemonic).seed(passphrase: passphrase)
       end
 
       private

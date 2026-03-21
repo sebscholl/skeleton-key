@@ -12,6 +12,12 @@ RSpec.describe SkeletonKey::Chains::Solana::Account do
     it "uses the standard Solana account path prefix" do
       expect(account.path).to eq("m/44'/501'/0'")
     end
+
+    it "returns nil in Solana CLI no-path mode" do
+      no_path_account = described_class.new(seed: seed_bytes, derivation_path: nil)
+
+      expect(no_path_account.path).to be_nil
+    end
   end
 
   describe "#address" do
@@ -39,6 +45,26 @@ RSpec.describe SkeletonKey::Chains::Solana::Account do
 
       expect(account.address[:address]).not_to eq(other_account.address[:address])
     end
+
+    it "matches the no-path Solana CLI mode when derivation_path is nil" do
+      derived = described_class.new(seed: seed_bytes, derivation_path: nil).address
+
+      aggregate_failures do
+        expect(derived[:path]).to be_nil
+        expect(derived[:private_key]).to eq(seed_hex[0, 64])
+        expect(derived[:public_key]).to eq("40b2fd1cd81946fa2dcd08f7e3855cbc0ecfcd2448c4e9a4729c3f66018fdd6a")
+        expect(derived[:address]).to eq("5MZPgxin4yK3ggjMhHaymF3SC16jD7iBPYpU9yTtszhP")
+        expect(derived[:chain_code]).to be_nil
+      end
+    end
+
+    it "rejects child derivation in Solana CLI no-path mode" do
+      no_path_account = described_class.new(seed: seed_bytes, derivation_path: nil)
+
+      expect do
+        no_path_account.address(change: 0)
+      end.to raise_error(SkeletonKey::Errors::InvalidPathFormatError, /does not support child derivation/)
+    end
   end
 
   describe "#initialize" do
@@ -46,6 +72,18 @@ RSpec.describe SkeletonKey::Chains::Solana::Account do
       expect do
         described_class.new(seed: seed_bytes, purpose: 32)
       end.to raise_error(SkeletonKey::Errors::UnsupportedPurposeError, /unsupported purpose: 32/)
+    end
+
+    it "raises a typed error when no-path mode is used with account overrides" do
+      expect do
+        described_class.new(seed: seed_bytes, account_index: 1, derivation_path: nil)
+      end.to raise_error(SkeletonKey::Errors::InvalidPathFormatError, /incompatible with purpose, coin_type, or account_index/)
+    end
+
+    it "raises a typed error when no-path mode is requested for a short seed" do
+      expect do
+        described_class.new(seed: "\x01".b * 16, derivation_path: nil)
+      end.to raise_error(SkeletonKey::Errors::InvalidSeedError, /requires at least 32 seed bytes/)
     end
   end
 end

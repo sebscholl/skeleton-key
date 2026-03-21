@@ -1,0 +1,26 @@
+{
+  "coin": "solana",
+  "spec": "cli_default",
+  "vectors": [
+    {
+      "source": "solana-keygen new --no-outfile --word-count 12",
+      "bip39_mnemonic": "album result notable cotton govern wire random giraffe club afraid slow kitten",
+      "bip39_passphrase": "",
+      "bip39_seed": "00a6725192826f5b598609b343311766256c0bef9f991cdb0a514578630b06c087c79044eea0366779111554ac12a9d0639ddf6d754b444d57fa9a3e7bf86333",
+      "path": null,
+      "private_key": "00a6725192826f5b598609b343311766256c0bef9f991cdb0a514578630b06c0",
+      "public_key": "ea4cdab5ad9b9399540ec0bae2c3f54ce81373f5f14931a1d3a0556397f713a9",
+      "address": "GmcNZCJ3UznN3paL2D2rgv8gZg9FNexY1SW9fBUVLjje"
+    },
+    {
+      "source": "solana-keygen new --no-outfile --word-count 12",
+      "bip39_mnemonic": "caution stamp private poverty affair protect various defy toe still river belt",
+      "bip39_passphrase": "TREZOR",
+      "bip39_seed": "f7f5ed94fa6d9bc6dde1d0a26e0d7a810d3d0194ff2c2231b5075350cef86a84ac1d6bf443adf333f32ec3d577a9b704c5cbc93979451e7152173004b10f6846",
+      "path": null,
+      "private_key": "f7f5ed94fa6d9bc6dde1d0a26e0d7a810d3d0194ff2c2231b5075350cef86a84",
+      "public_key": "22f95eb5f25e69a377b1bcef1734ee088621358f8c52d8da95b569ba7a52e88a",
+      "address": "3MXQY4L6F5AbivaVnKuMLEzPXZMHZg4DcAtxntLTyBRs"
+    }
+  ]
+}

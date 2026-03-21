@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").select do |f|
-      f.match(%r{^(bin/|lib/|LICENSE|README)})
+      f.match(%r{^(bin/|lib/|LICENSE|README|CHANGELOG)})
     end
   end
 

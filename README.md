@@ -92,6 +92,15 @@ Generate a random keyring:
 keyring = SkeletonKey::Keyring.new
 ```
 
+Initialize from a mnemonic with a BIP39 passphrase:
+
+```ruby
+keyring = SkeletonKey::Keyring.new(
+  seed: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+  passphrase: "TREZOR"
+)
+```
+
 Initialize from an existing hex seed:
 
 ```ruby
@@ -152,13 +161,17 @@ You can also pass a mnemonic directly to `Seed.import` or `Keyring.new`:
 
 ```ruby
 seed = SkeletonKey::Seed.import(
-  "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+  "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+  passphrase: "TREZOR"
 )
 
 keyring = SkeletonKey::Keyring.new(
-  seed: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about"
+  seed: "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+  passphrase: "TREZOR"
 )
 ```
+
+The BIP39 passphrase is separate from the mnemonic. It is not an extra mnemonic word.
 
 What BIP39 validation currently enforces:
 
@@ -435,6 +448,18 @@ Derive deeper hardened children:
 
 ```ruby
 node = account.address(change: 0, index: 15)
+```
+
+Match the default no-path behavior of `solana-keygen new`:
+
+```ruby
+account = keyring.solana(derivation_path: nil)
+node = account.address
+
+node[:path]         # nil
+node[:private_key]  # first 32 bytes of the canonical seed, hex
+node[:public_key]   # 32-byte Ed25519 public key, hex
+node[:address]      # Base58-encoded Solana address
 ```
 
 Solana in SkeletonKey is hardened-only. There is no supported unhardened child derivation path.

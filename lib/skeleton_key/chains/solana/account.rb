@@ -26,18 +26,33 @@ module SkeletonKey
 
         DEFAULT_PURPOSE = 44
         SOLANA_COIN = 501
-        LEGACY_CHANGELESS_PURPOSE = 44
+        DEFAULT_DERIVATION_PATH = Object.new.freeze
+        UNSPECIFIED_CHANGE = Object.new.freeze
 
         # @param seed [String] canonical seed bytes
         # @param purpose [Integer] derivation purpose, fixed at 44
         # @param coin_type [Integer] SLIP-0044 coin type, fixed at 501
         # @param account_index [Integer] hardened account index
+        # @param derivation_path [nil] set to `nil` to match Solana CLI no-path mode
         # @raise [Errors::UnsupportedPurposeError] if non-Solana path parameters are requested
-        def initialize(seed:, purpose: DEFAULT_PURPOSE, coin_type: SOLANA_COIN, account_index: 0)
+        def initialize(
+          seed:, 
+          purpose: DEFAULT_PURPOSE, 
+          coin_type: SOLANA_COIN, 
+          account_index: 0,
+          derivation_path:
+          DEFAULT_DERIVATION_PATH
+        )
           @purpose = purpose
           @coin_type = coin_type
           @account_index = account_index
-          @derived = derive_from_seed(seed, purpose: purpose, coin_type: coin_type, account: account_index)
+          @derived = derive(
+            seed, 
+            purpose: purpose, 
+            coin_type: coin_type, 
+            account: account_index,                     
+            derivation_path: derivation_path
+          )
         end
 
         # Returns the hardened account prefix for future child derivation.
@@ -55,9 +70,12 @@ module SkeletonKey
         # @param change [Integer, nil] hardened child directly beneath the account
         # @param index [Integer, nil] hardened child beneath the change node
         # @return [Hash] path, private key, public key, address, and chain code
-        def address(change: 0, index: nil)
+        def address(change: UNSPECIFIED_CHANGE, index: nil)
+          return no_path_address(change: change, index: index) if path.nil?
+
           key_seed, chain_code = derived[:key_seed], derived[:chain_code]
           current_path = path
+          change = 0 if change.equal?(UNSPECIFIED_CHANGE)
 
           unless change.nil?
             current_path = "#{current_path}/#{change}'"
@@ -73,14 +91,24 @@ module SkeletonKey
 
           {
             path: current_path,
-            private_key: private_key.unpack1("H*"),
-            public_key: public_key.unpack1("H*"),
+            chain_code: chain_code,
             address: to_address(public_key),
-            chain_code: chain_code
+            public_key: public_key.unpack1("H*"),
+            private_key: private_key.unpack1("H*"),
           }
         end
 
         private
+
+        def derive(seed_bytes, purpose:, coin_type:, account:, derivation_path:)
+          return derive_without_path(seed_bytes, purpose: purpose, coin_type: coin_type, account: account) if derivation_path.nil?
+
+          unless derivation_path.equal?(DEFAULT_DERIVATION_PATH)
+            raise Errors::InvalidPathFormatError, "unsupported Solana derivation_path override"
+          end
+
+          derive_from_seed(seed_bytes, purpose: purpose, coin_type: coin_type, account: account)
+        end
 
         def derive_from_seed(seed_bytes, purpose:, coin_type:, account:)
           raise Errors::UnsupportedPurposeError.new(purpose) unless purpose == 44
@@ -101,6 +129,39 @@ module SkeletonKey
             path_prefix: "m/#{purpose}'/#{coin_type}'/#{account}'",
             key_seed: key_seed,
             chain_code: chain_code
+          }
+        end
+
+        def derive_without_path(seed_bytes, purpose:, coin_type:, account:)
+          unless purpose == DEFAULT_PURPOSE && coin_type == SOLANA_COIN && account.zero?
+            raise Errors::InvalidPathFormatError,
+                  "solana derivation_path=nil is incompatible with purpose, coin_type, or account_index overrides"
+          end
+
+          if seed_bytes.bytesize < Constants::PRIVATE_KEY_LENGTH
+            raise Errors::InvalidSeedError, "solana derivation_path=nil requires at least 32 seed bytes"
+          end
+
+          {
+            path_prefix: nil,
+            key_seed: seed_bytes.byteslice(0, Constants::PRIVATE_KEY_LENGTH),
+            chain_code: nil
+          }
+        end
+
+        def no_path_address(change:, index:)
+          unless (change.equal?(UNSPECIFIED_CHANGE) || change.nil?) && index.nil?
+            raise Errors::InvalidPathFormatError, "solana derivation_path=nil does not support child derivation"
+          end
+
+          private_key, public_key = keypair_from_seed(derived[:key_seed])
+
+          {
+            path: nil,
+            private_key: private_key.unpack1("H*"),
+            public_key: public_key.unpack1("H*"),
+            address: to_address(public_key),
+            chain_code: nil
           }
         end
 

@@ -4,6 +4,7 @@ require "spec_helper"
 
 RSpec.describe SkeletonKey::Seed do
   let(:fixture_rows) { load_fixture("recovery/bip39_golden_master").fetch("list") }
+  let(:generation_rows) { load_fixture("recovery/bip39_generation_golden_master").fetch("vectors") }
 
   describe ".import" do
     it "imports a mnemonic string as a standard BIP39 seed" do
@@ -21,6 +22,23 @@ RSpec.describe SkeletonKey::Seed do
       seed = described_class.import(mnemonic)
 
       expect(seed.hex).to eq(row.fetch("bip39_seed"))
+    end
+
+    it "imports a mnemonic string with an explicit BIP39 passphrase" do
+      row = generation_rows.find { |candidate| !candidate.fetch("passphrase").empty? }
+
+      seed = described_class.import(row.fetch("mnemonic"), passphrase: row.fetch("passphrase"))
+
+      expect(seed.hex).to eq(row.fetch("seed"))
+    end
+
+    it "imports a Mnemonic object with an explicit BIP39 passphrase" do
+      row = generation_rows.find { |candidate| !candidate.fetch("passphrase").empty? }
+      mnemonic = SkeletonKey::Recovery::Bip39.new(row.fetch("mnemonic"))
+
+      seed = described_class.import(mnemonic, passphrase: row.fetch("passphrase"))
+
+      expect(seed.hex).to eq(row.fetch("seed"))
     end
   end
 end

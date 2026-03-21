@@ -33,9 +33,10 @@ module SkeletonKey
     # Initializes a new Keyring with an optional seed
     #
     # @param seed [String, Seed, Array<Integer>, nil] the seed to initialize the Keyring with (optional)
+    # @param passphrase [String] optional BIP39 passphrase when `seed` is a mnemonic
     # @return [Keyring] the initialized Keyring
-    def initialize(seed: nil)
-      @seed = Seed.import(seed)
+    def initialize(seed: nil, passphrase: "")
+      @seed = Seed.import(seed, passphrase: passphrase)
     end
 
     # Access the Bitcoin account derived from the seed
