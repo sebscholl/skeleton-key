@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.metadata["documentation_uri"] = "#{spec.homepage}#readme"
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.add_development_dependency "rspec", "~> 3.12"
+  spec.add_development_dependency "rspec", "~> 3.0"
 end
